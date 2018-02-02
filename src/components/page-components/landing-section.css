@@ -1,0 +1,15 @@
+img {
+	width: 300px;
+}
+
+.right-section {
+  float: right;
+}
+
+.left-section {
+  float: left;
+}
+
+.blue {
+	color: #2F80ED;
+}
