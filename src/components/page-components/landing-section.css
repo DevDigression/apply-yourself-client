@@ -1,13 +1,34 @@
 img {
-	width: 300px;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.landing-section {
+	width: 90%;
+	height: 400px;
+	margin: 20px auto;
+	border: 2px solid black;
 }
 
 .right-section {
   float: right;
+  text-align: right;
 }
 
 .left-section {
   float: left;
+  text-align: left;
+}
+
+.landing-text {
+	display: inline-block;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.landing-image {
+	display: inline-block;
+	width: 40%;
 }
 
 .blue {

@@ -10,11 +10,11 @@ export default class LandingSection extends React.Component {
     let sectionImage;
 
     if (this.props.show === "right") {
-      textAlign = "right-section";
-      imageAlign = "left-section";
-    } else {
       textAlign = "left-section";
       imageAlign = "right-section";
+    } else {
+      textAlign = "right-section";
+      imageAlign = "left-section";
     }
 
     if (this.props.order === "1") {
@@ -25,7 +25,7 @@ export default class LandingSection extends React.Component {
                     Apply Yourself will keep your job applications organized
                     and allow you to spend more time levelling up your skills!
                   `;
-      sectionImage = "";
+      sectionImage = "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=ee742bee0f10b97a9d117d410d4887c8";
     } else if (this.props.order === "2") {
       sectionText = `<p>Forget which cover letter you sent where?
 
@@ -45,17 +45,17 @@ export default class LandingSection extends React.Component {
 
                     Then hone your skills to reach maximum potential and land your next job!
                     `;
-      sectionImage = "";
+      sectionImage = "https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=6227a3e0898cc8a411a8e10cdee75db4";
     } 
 
     return (
-      <div>
-        <img className={imageAlign} src={sectionImage} />
-        <div className={textAlign}>
+      <div className="landing-section">
+        <div className={imageAlign} className="landing-image">
+          <img src={sectionImage} />
+        </div>
+        <div className={textAlign} className="landing-text">
           <h2>{this.props.title}</h2>
-          <div>
-            {sectionText}
-          </div>
+          {sectionText}
         </div>
       </div>
     );

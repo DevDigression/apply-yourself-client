@@ -17,7 +17,7 @@ export function LandingPage(props) {
       <LandingSection title="App Stack Overflow" show="right" order="1" />
       <LandingSection title="Coordinate the Clutter" show="left" order="2" />
       <LandingSection title="Always Progressing" show="right" order="3" />
-      <Link to="/register">Register</Link>
+      {/* <Link to="/register">Register</Link> */}
     </div>
   );
 }
