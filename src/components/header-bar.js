@@ -19,9 +19,10 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar">
-                <h1>Apply Yourself</h1>
+               {/*  <h1>Apply Yourself</h1>
                 {logOutButton}
-            </div>
+                */}
+            </div> 
         );
     }
 }

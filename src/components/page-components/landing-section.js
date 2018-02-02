@@ -2,12 +2,15 @@ import React from "react";
 
 import "./landing-section.css";
 
+const InnerHTML = require('dangerously-set-inner-html')
+
 export default class LandingSection extends React.Component {
   render() {
     let textAlign;
     let imageAlign;
     let sectionText;
     let sectionImage;
+    let sectionBg;
 
     if (this.props.show === "right") {
       textAlign = "left-section";
@@ -26,6 +29,7 @@ export default class LandingSection extends React.Component {
                     and allow you to spend more time levelling up your skills!
                   `;
       sectionImage = "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=ee742bee0f10b97a9d117d410d4887c8";
+      sectionBg = "grey-bg";
     } else if (this.props.order === "2") {
       sectionText = `<p>Forget which cover letter you sent where?
 
@@ -36,6 +40,7 @@ export default class LandingSection extends React.Component {
                     <p>Compare your prospects to choose which job suites you best!</p>
                     `;
       sectionImage = `https://images.unsplash.com/photo-1503551723145-6c040742065b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=cfcb36b45801576b92d7a537edb53ac1`;
+      sectionBg = "white-bg";
     }  
       else if (this.props.order === "3") {
       sectionText = `How’d that interview go?
@@ -46,16 +51,17 @@ export default class LandingSection extends React.Component {
                     Then hone your skills to reach maximum potential and land your next job!
                     `;
       sectionImage = "https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=6227a3e0898cc8a411a8e10cdee75db4";
+      sectionBg = "grey-bg";
     } 
 
     return (
-      <div className="landing-section">
-        <div className={imageAlign} className="landing-image">
+      <div className={`landing-section ${sectionBg}`}>
+        <div className={`landing-image ${imageAlign}`}>
           <img src={sectionImage} />
         </div>
-        <div className={textAlign} className="landing-text">
-          <h2>{this.props.title}</h2>
-          {sectionText}
+        <div className={`landing-text ${textAlign}`}>
+            <h2>{this.props.title}</h2>
+            <div>{sectionText}</div>
         </div>
       </div>
     );
