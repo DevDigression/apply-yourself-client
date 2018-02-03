@@ -4,6 +4,7 @@ import { Route, withRouter } from "react-router-dom";
 
 import HeaderBar from "./header-bar";
 import LandingPage from "./pages/landing-page";
+import NavBar from "./navbar";
 import Dashboard from "./pages/dashboard";
 import RegistrationPage from "./pages/registration-page";
 import { refreshAuthToken } from "../actions/auth";

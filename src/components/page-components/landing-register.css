@@ -1,0 +1,18 @@
+* {
+	box-sizing: border-box;
+}
+
+.landing-register {
+	background-color: #EDEBEB;
+}
+
+.register-text {
+	text-align: left;
+	margin-left: 30%;
+}
+
+.landing-register button {
+	background-color: #2F80ED;
+	color: #FFF;
+	margin-left: 60%;
+}
