@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 
-import LoginForm from "../login-form";
+import Dashboard from './dashboard';
 import NavBar from "../navbar";
 import LandingIntro from "../page-components/landing-intro";
 import LandingSection from "../page-components/landing-section";
