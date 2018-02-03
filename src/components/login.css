@@ -1,0 +1,32 @@
+.login {
+	background-image: url('../img/login-background.jpg');
+	background-size: cover;
+	min-height: 100%;
+  	min-width: 1024px;
+  	width: 100%;
+  	height: auto;
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	z-index: -1;
+}
+
+.login-form {
+	width: 300px;
+	margin: 10% auto;
+	text-align: center;	
+	background: #C4C4C4;
+	padding: 50px;
+	border: 2px solid #333;
+	border-radius: 5px;
+}
+
+.login-form h2 {
+	margin-bottom: 50px;
+}
+
+.login-form button {
+	width: 100px;
+	background-color: #2F80ED;
+	color: #FFF;
+}
