@@ -1,0 +1,84 @@
+.stats {
+	padding: 0;
+}
+
+.stats img {
+	width: 300px;
+}
+
+.stats li {
+	list-style: none;
+}
+
+.progression-avg {
+	width: 90%;
+	display: block;
+	margin: 50px auto;
+}
+
+.stages {
+	width: 90%;
+	display: block;
+	margin: 50px auto;
+	padding-top: 50px;
+}
+
+.skills {
+	width: 90%;
+	display: block;
+	margin: 50px auto;
+	padding-top: 100px;
+}
+
+.stages-list {
+	width: 50%;
+	display: inline-block;
+}
+
+.stages-graph {
+	width: 30%;
+	display: inline-block;
+	float: left;
+}
+
+.skills-list {
+	width: 50%;
+	display: inline-block;
+}
+
+.skills-graph {
+	width: 30%;
+	display: inline-block;
+	float: right;
+}
+
+@media only screen and (max-width : 768px) {
+.stages-list {
+	text-align: center;
+	width: 100%;
+	display: block;
+	float: none;
+}
+
+.stages-graph {
+	text-align: center;
+	width: 100%;
+	display: block;
+	float: none;
+}
+
+.skills-list {
+	text-align: center;
+	width: 100%;
+	display: block;
+	float: none;
+}
+
+.skills-graph {
+	text-align: center;
+	width: 100%;
+	display: block;
+	float: none;
+}
+
+}
