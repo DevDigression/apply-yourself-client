@@ -7,32 +7,45 @@ h3 {
 }
 
 p {
+	margin: 0;
+}
 
+.landing-steps {
+	padding-top: 20px;
 }
 
 .steps-group {
-	margin-top: 50px;
 	text-align: center;
+	width: 100%;
 }
 
 .steps-section {
-	width: 30%;
-	padding: 20px;
+	width: 32%;
+	height: auto;
+	padding: 25px;
 	display: inline-block;
 	vertical-align: top;
 }
 
 .steps-section img {
-
+	width: 100%;
+	height: 250px;
 }
 
 
 @media only screen and (max-width : 768px) {
 
-	.steps-section {
-		width: 100%;
-		padding: 20px;
-		display: block;
-	}
+.steps-section {
+	width: 100%;
+	padding: 20px;
+	display: block;
+}
 
+.steps-section img {
+	width: 95%;
+}
+
+.steps-section p {
+	width: 95%;
+}
 }

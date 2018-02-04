@@ -4,15 +4,39 @@
 
 .landing-register {
 	background-color: #EDEBEB;
+	padding: 20px;
 }
 
 .register-text {
 	text-align: left;
 	margin-left: 30%;
+	display: inline-block;
+	font-size: 20px;
 }
 
 .landing-register button {
-	background-color: #2F80ED;
+	background-color: #2D9CDB;
 	color: #FFF;
 	margin-left: 60%;
+	display: inline-block;
+}
+
+@media only screen and (max-width : 768px) {
+.landing-register {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.landing-register button {
+	margin: 10px auto;
+	display: block;
+}
+
+.register-text {
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+}
+
 }

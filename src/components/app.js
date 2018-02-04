@@ -9,6 +9,7 @@ import Dashboard from "./pages/dashboard";
 import Stats from "./pages/stats";
 import RegistrationPage from "./pages/registration-page";
 import LoginPage from "./pages/login-page";
+import SingleJob from "./pages/single-job";
 import { refreshAuthToken } from "../actions/auth";
 
 export class App extends React.Component {
@@ -50,6 +51,7 @@ export class App extends React.Component {
         <Route exact path="/stats" component={Stats} />
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/job" component={SingleJob} />
       </div>
     );
   }

@@ -1,13 +1,16 @@
 .navbar {
 	background-color: #FFF;
+	border-bottom: 1px solid #333;
+/*	width: 100%;
+	position: fixed;*/
 }
 
 .logo {
-	color: #2F80ED;
+	color: #2D9CDB;
 	font-size: 24px;
 	display: inline;
 	float: left;
-	padding: 10px;
+	padding: 15px;
 }
 
 .links {
@@ -20,4 +23,17 @@
 .links li {
 	margin-right: 20px;
 	display: inline;
+}
+
+@media only screen and (max-width : 768px) {
+.logo {
+	font-size: 18px;
+	padding: 15px;
+}
+
+.links {
+	font-size: 14px;
+	padding: 18px;
+}
+
 }

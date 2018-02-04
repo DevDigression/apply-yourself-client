@@ -25,7 +25,7 @@ export default function LandingSteps(props) {
 					<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=6050a125f5034c4bf39301df9641f8f8" />
 					<h4>View Stats</h4>
 					<p>Analyze statistics about your job search as a whole.
-					Find weak spots to improve.
+					Find weak points to improve.
 					Focus and hone your skills in order to come back stronger.</p>
 				</div>
 			</div>
