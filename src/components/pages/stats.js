@@ -9,7 +9,7 @@ export default class Stats extends React.Component {
 
   render() {
 
-    let links = ["Job List"];
+    let links = ["Dashboard"];
 
     return (
       <div className="stats">

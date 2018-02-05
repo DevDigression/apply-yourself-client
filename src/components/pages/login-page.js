@@ -12,7 +12,7 @@ export function LoginPage(props) {
     return <Redirect to="/dashboard" />;
   }
 
-  let links = ["Signup"];
+  let links = ["Register"];
 
   return (
     <div className="login">

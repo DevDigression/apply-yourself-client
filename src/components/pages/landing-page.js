@@ -16,10 +16,9 @@ export function LandingPage(props) {
     return <Redirect to="/dashboard" />;
   }
 
-  let links = ["Login", "Signup"];
+  let links = ["Login", "Register"];
   return (
     <div className="home">
-      {/* <LoginForm /> */}
       <NavBar links={links} />
       <LandingIntro header="Apply Yourself" />
       <LandingSection title="App Stack Overflow" show="right" order="1" />
@@ -28,7 +27,6 @@ export function LandingPage(props) {
       <LandingSteps />
       <LandingRegister />
       <LandingFooter text="Created by Chris Rodgers" />
-      {/* <Link to="/register">Register</Link> */}
     </div>
   );
 }
