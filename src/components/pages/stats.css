@@ -12,8 +12,12 @@
 
 .progression-avg {
 	width: 90%;
-	display: block;
+	/*	display: block;*/
 	margin: 50px auto;
+}
+
+.progression-avg img {
+	margin: 0 auto;
 }
 
 .stages {
@@ -52,33 +56,32 @@
 	float: right;
 }
 
-@media only screen and (max-width : 768px) {
-.stages-list {
-	text-align: center;
-	width: 100%;
-	display: block;
-	float: none;
-}
+@media only screen and (max-width: 768px) {
+	.stages-list {
+		text-align: center;
+		width: 100%;
+		display: block;
+		float: none;
+	}
 
-.stages-graph {
-	text-align: center;
-	width: 100%;
-	display: block;
-	float: none;
-}
+	.stages-graph {
+		text-align: center;
+		width: 100%;
+		display: block;
+		float: none;
+	}
 
-.skills-list {
-	text-align: center;
-	width: 100%;
-	display: block;
-	float: none;
-}
+	.skills-list {
+		text-align: center;
+		width: 100%;
+		display: block;
+		float: none;
+	}
 
-.skills-graph {
-	text-align: center;
-	width: 100%;
-	display: block;
-	float: none;
-}
-
+	.skills-graph {
+		text-align: center;
+		width: 100%;
+		display: block;
+		float: none;
+	}
 }
