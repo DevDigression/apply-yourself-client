@@ -25,6 +25,22 @@
 	display: inline;
 }
 
+.nav-logo {
+	text-decoration: none;
+}
+
+.nav-link {
+	text-decoration: none;
+}
+
+.nav-link:visited, .nav-logo:visited {
+	color: #2D9CDB;
+}
+
+.nav-link:hover {
+	color: #C4C4C4;
+}
+
 @media only screen and (max-width : 768px) {
 .logo {
 	font-size: 18px;

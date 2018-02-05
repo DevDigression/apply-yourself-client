@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./landing-register.css";
 
@@ -13,7 +14,7 @@ export default function LandingRegister(props) {
 				<p>All you need for success is to</p>
 				<p>Apply Yourself</p>
 			</div>
-			<button>Try It Now!</button>
+			<Link to={`/register`}><button>Try It Now!</button></Link>
 		</div>
 	);
 }

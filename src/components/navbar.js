@@ -8,12 +8,12 @@ const InnerHTML = require('dangerously-set-inner-html')
 export default class NavBar extends React.Component { 
 
 	render() {
-		let links = this.props.links.map(link => <li><Link to={`/${link.toLowerCase()}`}>{link}</Link></li>);
+		let links = this.props.links.map(link => <li><Link to={`/${link.toLowerCase()}`} className={`nav-link`}>{link}</Link></li>);
 
 		return (
 			<div className={`navbar`}>
 				<div className={`logo`}>
-					Apply Yourself
+					<Link to={`/`} className={`nav-logo`}>Apply Yourself</Link>
 				</div>
 				<div className={`links`}>
 						{links}
