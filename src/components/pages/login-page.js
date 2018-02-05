@@ -18,7 +18,6 @@ export function LoginPage(props) {
     <div className="login">
       <NavBar links={links} />
       <LoginForm />
-      <Link to="/register">Signup</Link>
     </div>
   );
 }

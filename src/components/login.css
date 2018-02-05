@@ -13,12 +13,16 @@
 
 .login-form {
 	width: 300px;
-	margin: 10% auto;
+	margin: 5% auto;
 	text-align: center;	
 	background: #C4C4C4;
 	padding: 50px;
 	border: 2px solid #333;
 	border-radius: 5px;
+}
+
+.login-form input {
+	margin: 10px auto;
 }
 
 .login-form h2 {
@@ -31,6 +35,7 @@
 	background-color: #2F80ED;
 	color: #FFF;
 	font-size: 18px;
+	margin-top: 20px;
 }
 
 @media only screen and (max-width : 768px) {
@@ -40,7 +45,8 @@
 }
 
 .login-form {
-	width: 90%;
+	margin: 10% auto;
+	width: 275px;
 }
 
 }
