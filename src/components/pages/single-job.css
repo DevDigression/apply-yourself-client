@@ -1,6 +1,6 @@
 .job-header img {
-	width: 300px;
-	height: 100px;
+	width: 400px;
+	height: 200px;
 	margin: 0 auto;
 }
 
@@ -9,13 +9,13 @@
 	margin: 0 auto;
 	display: block;
 	text-align: center;
-	background-color: #EDEBEB;
+	background-color: #edebeb;
 	padding: 20px;
 }
 
 .job-header h2 {
 	font-size: 32px;
-	color: #2F80ED;
+	color: #2f80ed;
 }
 
 .job-header h3 {
@@ -25,10 +25,10 @@
 .job-header button {
 	width: 150px;
 	height: 35px;
-	background-color: #2F80ED;
-	color: #FFF;
+	background-color: #2f80ed;
+	color: #fff;
 	font-size: 18px;
-	margin: 20px auto;
+	margin: 50px auto;
 	display: block;
 }
 
@@ -39,7 +39,13 @@
 }
 
 .job-info ul {
+	padding: 0;
 	list-style: none;
+	font-size: 20px;
+}
+
+.job-info li {
+	padding: 20px;
 }
 
 .job-info-list {
@@ -49,15 +55,15 @@
 
 .job-info-buttons {
 	float: right;
-	width: 30%;
+	width: 40%;
 	margin: 0 auto;
 }
 
 .job-info-buttons button {
 	width: 100px;
 	height: 30px;
-	background-color: #2F80ED;
-	color: #FFF;
+	background-color: #2f80ed;
+	color: #fff;
 	font-size: 14px;
 	margin-left: 10px;
 }
@@ -65,7 +71,12 @@
 .job-notes {
 	width: 100%;
 	padding: 20px;
-	background-color: #EDEBEB;
+	background-color: #edebeb;
+}
+
+.job-notes h4,
+.job-notes p {
+	padding-left: 20%;
 }
 
 .job-checkpoints {
@@ -79,32 +90,81 @@
 	height: 100px;
 	border-top: 1px solid #333;
 	padding-top: 20px;
-
 }
 
-@media only screen and (max-width : 768px) {
-.job-info-list {
-	width: 100%;
-	margin: 0 auto;
+.checkpoints-header h3 {
+	font-size: 32px;
+	padding-left: 20%;
+	display: inline-block;
+}
+
+.checkpoints-header button {
+	width: 150px;
+	height: 35px;
+	background-color: #2f80ed;
+	color: #fff;
+	font-size: 18px;
+	margin-left: 30%;
+	display: inline-block;
+}
+
+.checkpoints-list {
+	margin: 50px auto;
+}
+
+.checkpoint {
+	margin-left: 20%;
+	margin-top: 50px;
 	display: block;
-	text-align: center;
-	padding: 20px;
 }
 
-.job-info-buttons {
-	width: 100%;
-	margin: 0 auto;
-	display: block;
-	text-align: center;
-	padding: 20px;
+.checkpoint h5 {
+	font-size: 24px;
+	color: #2f80ed;
 }
 
-.job-notes {
-	width: 100%;
-	margin: 0 auto;
-	display: block;
-	text-align: center;
-	padding: 20px;
+.checkpoint p {
+	font-size: 18px;
 }
 
+@media only screen and (max-width: 768px) {
+	.job-info-list {
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+		padding: 20px;
+	}
+
+	.job-info-buttons {
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+		padding: 20px;
+	}
+
+	.job-notes {
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+		padding: 20px;
+	}
+
+	.job-notes h4,
+	.job-notes p {
+		padding-left: 0;
+	}
+
+	.checkpoints-header h3 {
+		padding-left: 0;
+		text-align: center;
+		display: block;
+	}
+
+	.checkpoints-header button {
+		margin: 0 auto;
+		display: block;
+	}
 }
