@@ -1,21 +1,21 @@
 .login {
-	background-image: url('../img/login-background.jpg');
+	background-image: url("../img/login-background.jpg");
 	background-size: cover;
 	min-height: 100%;
-/*  	min-width: 1024px;*/
-  	width: 100%;
-  	height: auto;
-  	position: fixed;
-  	top: 0;
-  	left: 0;
-  	z-index: -1;
+	/*  	min-width: 1024px;*/
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
 .login-form {
 	width: 300px;
 	margin: 5% auto;
-	text-align: center;	
-	background: #C4C4C4;
+	text-align: center;
+	background: #c4c4c4;
 	padding: 50px;
 	border: 2px solid #333;
 	border-radius: 5px;
@@ -32,21 +32,19 @@
 .login-form button {
 	width: 100px;
 	height: 35px;
-	background-color: #2F80ED;
-	color: #FFF;
+	background-color: #2f80ed;
+	color: #fff;
 	font-size: 18px;
 	margin-top: 20px;
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
+	.login {
+		max-width: 100%;
+	}
 
-.login {
-	max-width: 100%;
-}
-
-.login-form {
-	margin: 10% auto;
-	width: 275px;
-}
-
+	.login-form {
+		margin: 10% auto;
+		width: 275px;
+	}
 }

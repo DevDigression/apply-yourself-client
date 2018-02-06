@@ -3,7 +3,7 @@
 }
 
 .landing-register {
-	background-color: #EDEBEB;
+	background-color: #edebeb;
 	padding: 20px;
 }
 
@@ -11,32 +11,40 @@
 	text-align: left;
 	margin-left: 30%;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 30px;
 }
 
 .landing-register button {
-	background-color: #2D9CDB;
-	color: #FFF;
+	width: 150px;
+	height: 35px;
+	background-color: #2f80ed;
+	color: #fff;
+	font-size: 18px;
 	margin-left: 60%;
 	display: inline-block;
 }
 
-@media only screen and (max-width : 768px) {
-.landing-register {
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
+.blue {
+	color: #2d9cdb;
 }
 
-.landing-register button {
-	margin: 10px auto;
-	display: block;
-}
+@media only screen and (max-width: 768px) {
+	.landing-register {
+		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+	}
 
-.register-text {
-	text-align: center;
-	margin: 0 auto;
-	display: block;
-}
+	.landing-register button {
+		margin: 10px auto;
+		display: block;
+	}
 
+	.register-text {
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		font-size: 24px;
+		padding: 10px;
+	}
 }

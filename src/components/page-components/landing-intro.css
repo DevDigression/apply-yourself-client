@@ -5,21 +5,21 @@
 .landing-intro {
 	width: 100%;
 	min-height: 800px;
-	background-image: url('../../img/landing-resume.jpeg');
+	background-image: url("../../img/landing-resume.jpeg");
 	background-size: cover;
 }
 
 .landing-intro hr {
-	color: #2D9CDB;
+	color: #2d9cdb;
 	width: 500px;
 	height: 5px;
-    border: 0;
-    box-shadow: inset 0 12px 12px 12px;
+	border: 0;
+	box-shadow: inset 0 12px 12px 12px;
 }
 
 .intro-heading {
 	font-size: 72px;
-	color: #FFF;
+	color: #fff;
 	text-align: center;
 	text-shadow: 2px 2px #333;
 	padding-top: 50px;
@@ -27,32 +27,30 @@
 
 .intro-subheading {
 	font-size: 32px;
-	color: #FFF;
+	color: #fff;
 	text-align: right;
 	text-shadow: 2px 2px #333;
-	padding-top: 30%;
-	padding-right: 6%;
+	padding-top: 10%;
+	padding-right: 5%;
 	margin: 0 auto;
 }
 
+@media only screen and (max-width: 768px) {
+	.intro-heading {
+		font-size: 60px;
+	}
 
-@media only screen and (max-width : 768px) {
-.intro-heading {
-	font-size: 60px;
-}
+	.intro-subheading {
+		text-align: center;
+		padding: 20px;
+		font-size: 24px;
+	}
 
-.intro-subheading {
-	text-align: center;
-	padding: 20px;
-	font-size: 24px;
-}
+	.landing-intro {
+		min-height: 600px;
+	}
 
-.landing-intro {
-	min-height: 600px;
-}
-
-.landing-intro hr {
-	width: 80%;
-}
-
+	.landing-intro hr {
+		width: 80%;
+	}
 }

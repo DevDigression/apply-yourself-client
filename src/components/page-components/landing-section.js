@@ -31,7 +31,7 @@ export default class LandingSection extends React.Component {
         </div>
         <div className={`landing-text ${textAlign}`}>
           <h2>{this.props.title}</h2>
-          <div>{this.props.content}</div>
+          <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
         </div>
       </div>
     );
