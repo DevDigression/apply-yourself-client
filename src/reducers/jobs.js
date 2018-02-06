@@ -1,21 +1,20 @@
 import {
-  FETCH_PROTECTED_DATA_SUCCESS,
-  FETCH_PROTECTED_DATA_ERROR
+  FETCH_JOBS_SUCCESS,
+  FETCH_JOBS_ERROR
 } from "../actions/protected-data";
 
 const initialState = {
   data: "",
-  error: null,
-  jobs: [{ title: "asd", notes: "aasdsasd" }]
+  error: null
 };
 
 export default function reducer(state = initialState, action) {
   if (action.type === FETCH_JOBS_SUCCESS) {
     return Object.assign({}, state, {
-      jobs: action.jobs,
+      data: action.data,
       error: null
     });
-  } else if (action.type === FETCH_ERROR) {
+  } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
     return Object.assign({}, state, {
       error: action.error
     });
