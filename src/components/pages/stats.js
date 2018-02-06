@@ -6,9 +6,7 @@ import NavBar from "../navbar";
 import "./stats.css";
 
 export default class Stats extends React.Component {
-
   render() {
-
     let links = ["Dashboard"];
 
     return (
@@ -16,7 +14,9 @@ export default class Stats extends React.Component {
         <NavBar links={links} />
         <div className="progression-avg">
           <h3>Average Jobs Progression</h3>
-          <img src="http://nvd3.org/examples/img/bullet.png" />
+          <div className="progression-graph">
+            <img src="http://nvd3.org/examples/img/bullet.png" />
+          </div>
         </div>
         <div className="stages">
           <h3>Jobs at Each Stage</h3>
@@ -25,9 +25,11 @@ export default class Stats extends React.Component {
           </div>
           <div className="stages-list">
             <ul>
-              <li>One</li>
-              <li>Two</li>
-              <li>Three</li>
+              <li>Applied: 17</li>
+              <li>Callback: 3</li>
+              <li>Technical Interview: 2</li>
+              <li>Onsite Interview: 1</li>
+              <li>Total: 23</li>
             </ul>
           </div>
         </div>
@@ -38,9 +40,10 @@ export default class Stats extends React.Component {
           </div>
           <div className="skills-list">
             <ul>
-              <li>One</li>
-              <li>Two</li>
-              <li>Three</li>
+              <li>Javascript: 50%</li>
+              <li>Node: 20%</li>
+              <li>PHP: 10%</li>
+              <li>React: 20%</li>
             </ul>
           </div>
         </div>
