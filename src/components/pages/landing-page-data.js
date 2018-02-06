@@ -4,8 +4,7 @@ var data = [
     sectionText: `<p>How many applications does it take to land a job?</p>
                 <p>Just one.</p>
                 <p>But let’s face it: many more will come first.</p>
-                <p><span class="blue">Apply Yourself</span> will keep your job applications organized</p>
-                <p>and allow you to spend more time levelling up your skills!</p>
+                <p><span class="blue">Apply Yourself</span> will keep your job applications organized and allow you to spend more time levelling up your skills!</p>
                 </div>
               `,
     sectionImage:

@@ -21,7 +21,7 @@ img {
 }
 
 .landing-section p {
-	line-height: 2em;
+	padding-top: 20px;
 	font-size: 24px;
 }
 
@@ -61,24 +61,20 @@ img {
 	color: #2d9cdb;
 }
 
-@media only screen and (max-width: 1280px) {
-	.landing-section h2 {
-		font-size: 24px;
-	}
-
+@media only screen and (max-width: 1200px) {
 	.landing-section p {
-		line-height: 1.25em;
+		font-size: 20px;
 	}
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1000px) {
 	.landing-section h2 {
-		font-size: 24px;
+		font-size: 20px;
 	}
 
 	.landing-section p {
-		line-height: 1;
-		font-size: 20px;
+		padding-top: 5px;
+		font-size: 16px;
 	}
 }
 
