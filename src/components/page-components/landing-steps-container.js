@@ -22,12 +22,7 @@ export default function LandingSteps(props) {
           img="https://images.unsplash.com/photo-1511871893393-82e9c16b81e3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=f6ae3f201177b8677ecc928160d743f4"
         >
           Track your progress for each job by adding checkpoints such as sending
-<<<<<<< HEAD
-          your resume, scheduling interviews, and following up with employers
-=======
-          your resume, scheduling interviews, and following up with{" "}
-          <b>employers</b>
->>>>>>> ac80c7a5d3621f987a55f1944e705f979ca8bfff
+          your resume, scheduling interviews, and following up with employers.
         </LandingStep>
 
         <LandingStep

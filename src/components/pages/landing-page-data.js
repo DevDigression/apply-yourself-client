@@ -27,20 +27,7 @@ var data = [
     sectionText: `<p>How’d that interview go?</p>
                 <p><span class="blue">Mark your progress</span> on each job prospect
                 and find out where your weak points lie.</p>
-
                 <p>Then hone your skills to reach maximum potential and land your next job!</p>
-                `,
-    sectionImage:
-      "https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=6227a3e0898cc8a411a8e10cdee75db4"
-  },
-  {
-    title: "Do stuff",
-    sectionText: `How’d that interview go?
-
-                Mark your progress on each job prospect
-                and find out where your weak points lie.
-
-                Then hone your skills to reach maximum potential and land your next job!
                 `,
     sectionImage:
       "https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=6227a3e0898cc8a411a8e10cdee75db4"
