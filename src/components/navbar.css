@@ -1,12 +1,12 @@
 .navbar {
-	background-color: #FFF;
+	background-color: #fff;
 	border-bottom: 1px solid #333;
-/*	width: 100%;
+	/*	width: 100%;
 	position: fixed;*/
 }
 
 .logo {
-	color: #2D9CDB;
+	color: #2d9cdb;
 	font-size: 24px;
 	display: inline;
 	float: left;
@@ -33,23 +33,23 @@
 	text-decoration: none;
 }
 
-.nav-link:visited, .nav-logo:visited {
-	color: #2D9CDB;
+.nav-link:visited,
+.nav-logo:visited {
+	color: #2d9cdb;
 }
 
 .nav-link:hover {
-	color: #C4C4C4;
+	color: #c4c4c4;
 }
 
-@media only screen and (max-width : 768px) {
-.logo {
-	font-size: 18px;
-	padding: 15px;
-}
+@media only screen and (max-width: 768px) {
+	.logo {
+		font-size: 18px;
+		padding: 15px;
+	}
 
-.links {
-	font-size: 14px;
-	padding: 18px;
-}
-
+	.links {
+		font-size: 14px;
+		padding: 18px;
+	}
 }
