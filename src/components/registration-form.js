@@ -1,17 +1,17 @@
-import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import {registerUser} from '../actions/users';
-import {login} from '../actions/auth';
-import Input from './input';
-import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-import './register.css';
-const passwordLength = length({min: 10, max: 72});
-const matchesPassword = matches('password');
+import React from "react";
+import { Field, reduxForm, focus } from "redux-form";
+import { registerUser } from "../actions/users";
+import { login } from "../actions/auth";
+import Input from "./input";
+import { required, nonEmpty, matches, length, isTrimmed } from "../validators";
+import "./register.css";
+const passwordLength = length({ min: 10, max: 72 });
+const matchesPassword = matches("password");
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
-        const {username, password} = values;
-        const user = {username, password};
+        const { username, password } = values;
+        const user = { username, password };
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
@@ -23,8 +23,9 @@ export class RegistrationForm extends React.Component {
                 className="registration-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
-                )}>
-                <h2>Signup</h2>
+                )}
+            >
+                <h2>Register</h2>
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
@@ -48,7 +49,8 @@ export class RegistrationForm extends React.Component {
                 />
                 <button
                     type="submit"
-                    disabled={this.props.pristine || this.props.submitting}>
+                    disabled={this.props.pristine || this.props.submitting}
+                >
                     Submit
                 </button>
             </form>
@@ -57,7 +59,7 @@ export class RegistrationForm extends React.Component {
 }
 
 export default reduxForm({
-    form: 'registration',
+    form: "registration",
     onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('registration', Object.keys(errors)[0]))
+        dispatch(focus("registration", Object.keys(errors)[0]))
 })(RegistrationForm);

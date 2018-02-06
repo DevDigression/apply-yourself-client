@@ -13,7 +13,9 @@ export default function LandingRegister(props) {
 				<p>You've got prospects.</p>
 				<p>All you need for success is to</p>
 				<p>
-					<span class="blue">Apply Yourself</span>
+					<span className="blue">
+						<strong>Apply Yourself</strong>
+					</span>
 				</p>
 			</div>
 			<Link to={`/register`}>

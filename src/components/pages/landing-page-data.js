@@ -1,12 +1,11 @@
 var data = [
   {
     title: "App Stack Overflow",
-    sectionText: `<div class="section-text">
-                How many applications does it take to land a job?
-                Just one.
-                But let’s face it: many more will come first.
-                <span class="blue">Apply Yourself</span> will keep your job applications organized
-                and allow you to spend more time levelling up your skills!
+    sectionText: `<p>How many applications does it take to land a job?</p>
+                <p>Just one.</p>
+                <p>But let’s face it: many more will come first.</p>
+                <p><span class="blue">Apply Yourself</span> will keep your job applications organized</p>
+                <p>and allow you to spend more time levelling up your skills!</p>
                 </div>
               `,
     sectionImage:
@@ -19,6 +18,7 @@ var data = [
                 <p><span class="blue">Track each step</span> of the application process
                 for each job, from resumes to interviews
                 to job offers.</p>
+                <p>Compare your prospects to choose which job suites you best!</p>
                 `,
     sectionImage: `https://images.unsplash.com/photo-1503551723145-6c040742065b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=cfcb36b45801576b92d7a537edb53ac1`
   },

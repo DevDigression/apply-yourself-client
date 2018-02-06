@@ -9,6 +9,7 @@ img {
 .landing-section {
 	width: 100%;
 	margin: 0 auto;
+	/*	min-height: 500px;*/
 	/*	display: block;*/
 	clear: both;
 }
@@ -41,10 +42,6 @@ img {
 	padding: 50px;
 }
 
-.section-text {
-	width: 100%;
-}
-
 .landing-image {
 	display: inline-block;
 	width: 50%;
@@ -64,9 +61,31 @@ img {
 	color: #2d9cdb;
 }
 
+@media only screen and (max-width: 1280px) {
+	.landing-section h2 {
+		font-size: 24px;
+	}
+
+	.landing-section p {
+		line-height: 1.25em;
+	}
+}
+
+@media only screen and (max-width: 1080px) {
+	.landing-section h2 {
+		font-size: 24px;
+	}
+
+	.landing-section p {
+		line-height: 1;
+		font-size: 20px;
+	}
+}
+
 @media only screen and (max-width: 768px) {
 	.landing-section {
 		width: 100%;
+		/*		min-height: 0;*/
 		margin: 0 auto;
 		padding: 20px;
 		display: block;
