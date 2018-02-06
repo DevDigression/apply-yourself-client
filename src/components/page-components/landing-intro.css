@@ -53,4 +53,10 @@
 	.landing-intro hr {
 		width: 80%;
 	}
+
+	.background-overlay {
+		background-image: url("../../img/landing-resume.jpeg");
+		background: rgba(0, 0, 0, 0.5);
+		min-height: 600px;
+	}
 }
