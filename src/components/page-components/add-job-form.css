@@ -1,0 +1,26 @@
+.add-job-form {
+	width: 300px;
+	margin: 5% auto;
+	text-align: center;
+	background: #c4c4c4;
+	padding: 20px;
+	border: 2px solid #333;
+	border-radius: 5px;
+}
+
+.add-job-form input {
+	margin: 5px auto;
+}
+
+.add-job-form h2 {
+	margin-bottom: 20px;
+}
+
+.add-job-form button {
+	width: 100px;
+	height: 35px;
+	background-color: #2f80ed;
+	color: #fff;
+	font-size: 18px;
+	margin-top: 20px;
+}
