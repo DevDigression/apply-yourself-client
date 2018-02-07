@@ -1,14 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import requiresLogin from "../requires-login";
 import { fetchProtectedData } from "../../actions/protected-data";
+import { fetchJobs } from "../../actions/users";
 import NavBar from "../navbar";
 import "./dashboard.css";
 
-export default class Dashboard extends React.Component {
-  // componentDidMount() {
-  //   this.props.dispatch(fetchProtectedData());
-  // }
+export class Dashboard extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(fetchJobs());
+  }
 
   render() {
     let links = ["Stats", "Logout"];
@@ -23,7 +25,9 @@ export default class Dashboard extends React.Component {
             </h5>
           </div>
           <div className="add-job">
-            <button>Add Job</button>
+            <Link to={`/add-job`}>
+              <button>Add Job</button>
+            </Link>
           </div>
           <div className="clear" />
         </div>
@@ -34,7 +38,7 @@ export default class Dashboard extends React.Component {
               <img src="https://dcassetcdn.com/design_img/8324/18028/18028_236752_8324_thumbnail.jpg" />
             </div>
             <div className="job-text">
-              <h6>{/*{job.title}*/}</h6>
+              <h6>Junior Software Developer{/*{job.title}*/}</h6>
               <p>Current Stage:</p>
               <p>7. Job Offer</p>
             </div>
@@ -88,4 +92,5 @@ const mapStateToProps = state => {
   };
 };
 
+export default connect(mapStateToProps)(Dashboard);
 // export default requiresLogin()(connect(mapStateToProps)(Dashboard));

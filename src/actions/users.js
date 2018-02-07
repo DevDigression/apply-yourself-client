@@ -61,3 +61,39 @@ export const addJob = (title, company, contact, deadline) => dispatch => {
     // );
     // })
 };
+
+export const fetchJobs = () => dispatch => {
+    // dispatch(authRequest());
+    fetch(`${API_BASE_URL}/jobs`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+        // ,
+        // body: JSON.stringify({
+        //     message: "Hello World"
+        // })
+    })
+        .then(res => res.json())
+        .then(data => data.jobs.forEach(job => console.log(job)));
+    // Reject any requests which don't return a 200 status, creating
+    // errors which follow a consistent format
+    // .then(res => normalizeResponseErrors(res))
+    // .then(res => res.json())
+    // .then(({ authToken }) => storeAuthInfo(authToken, dispatch))
+    // .catch(err => {
+    //     const { code } = err;
+    //     const message =
+    //         code === 401
+    //             ? "Invalid information"
+    //             : "Unable to create new job, please try again";
+    //     dispatch(authError(err));
+    //     // Could not authenticate, so return a SubmissionError for Redux
+    //     // Form
+    //     return Promise.reject(
+    //         new SubmissionError({
+    //             _error: message
+    //         })
+    // );
+    // })
+};
