@@ -1,7 +1,4 @@
-import {
-  FETCH_PROTECTED_DATA_SUCCESS,
-  FETCH_PROTECTED_DATA_ERROR
-} from "../actions/protected-data";
+import { FETCH_JOBS_SUCCESS, FETCH_ERROR } from "../actions/protected-data";
 
 const initialState = {
   data: "",

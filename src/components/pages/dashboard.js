@@ -26,14 +26,14 @@ export default class Dashboard extends React.Component {
               <img src="https://dcassetcdn.com/design_img/8324/18028/18028_236752_8324_thumbnail.jpg" />
             </div>
             <div className="job-text">
-              <h6>{job.title}</h6>
+              <h6>{/*{job.title}*/}</h6>
               <p>Current Stage:</p>
               <p>7. Job Offer</p>
             </div>
             <div className="job-status">
               <p>01/20/2018</p>
               <p>Completion: 100%</p>
-              {job.notes}
+              {/*{job.notes}*/}
             </div>
           </div>
           ))
