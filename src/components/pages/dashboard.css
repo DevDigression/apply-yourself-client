@@ -10,11 +10,40 @@
 	font-size: 24px;
 }
 
-.sort {
-	text-align: center;
-	font-size: 24px;
+.jobs-header {
 	background-color: #edebeb;
-	padding: 5px;
+	display: block;
+}
+
+.sort {
+	width: 50%;
+	font-size: 24px;
+	display: inline-block;
+	float: left;
+	margin: 0 auto;
+	text-align: center;
+	padding: 10px;
+}
+
+.add-job {
+	width: 30%;
+	display: inline-block;
+	background-color: #edebeb;
+	padding: 40px;
+	float: right;
+	margin: 0 auto;
+}
+
+.add-job button {
+	width: 100px;
+	height: 35px;
+	background-color: #2d9cdb;
+	color: #fff;
+	font-size: 18px;
+}
+
+.clear {
+	clear: both;
 }
 
 .jobs-list {
@@ -56,22 +85,6 @@
 	display: inline-block;
 }
 
-.add-job {
-	clear: both;
-	text-align: center;
-	background-color: #edebeb;
-	margin-top: 200px;
-	padding: 10px;
-}
-
-.add-job button {
-	width: 100px;
-	height: 35px;
-	background-color: #2d9cdb;
-	color: #fff;
-	font-size: 18px;
-}
-
 @media only screen and (max-width: 768px) {
 	.dashboard h6 {
 		font-size: 20px;
@@ -110,12 +123,18 @@
 		display: inline-block;
 	}
 
+	.sort {
+		width: 50%;
+		font-size: 20px;
+	}
+
 	.add-job {
-		clear: both;
-		text-align: center;
-		background-color: #edebeb;
-		margin-top: 100px;
-		margin-right: 25px;
-		padding: 10px;
+		margin-right: 50px;
+	}
+
+	.add-job button {
+		margin-right: 20px;
+		width: 80px;
+		font-size: 14px;
 	}
 }

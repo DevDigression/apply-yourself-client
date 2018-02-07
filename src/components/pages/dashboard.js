@@ -16,11 +16,19 @@ export default class Dashboard extends React.Component {
     return (
       <div className="dashboard">
         <NavBar links={links} />
-        <div className="sort">
-          <h5>Sort by: Date | Status</h5>
+        <div className="jobs-header">
+          <div className="sort">
+            <h5>
+              Sort by: <span>Date | Status</span>
+            </h5>
+          </div>
+          <div className="add-job">
+            <button>Add Job</button>
+          </div>
+          <div className="clear" />
         </div>
         <div className="jobs-list">
-          this.props.jobs.map(job=>( // TODO: MAKE job-section A COMPONENT
+          {/* this.props.jobs.map(job=>( // TODO: MAKE job-section A COMPONENT */}
           <div className="job-section">
             <div className="job-image">
               <img src="https://dcassetcdn.com/design_img/8324/18028/18028_236752_8324_thumbnail.jpg" />
@@ -36,10 +44,7 @@ export default class Dashboard extends React.Component {
               {/*{job.notes}*/}
             </div>
           </div>
-          ))
-        </div>
-        <div className="add-job">
-          <button>Add Job</button>
+          {/*} )) */}
         </div>
       </div>
     );
