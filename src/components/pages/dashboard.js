@@ -15,7 +15,7 @@ export class Dashboard extends React.Component {
 
   render() {
     let links = ["Stats", "Logout"];
-    console.log(this.props.state);
+    console.log(this.props.jobs);
     return (
       <div className="dashboard">
         <NavBar links={links} />
@@ -33,7 +33,9 @@ export class Dashboard extends React.Component {
           <div className="clear" />
         </div>
         <div className="jobs-list" />
-        <JobSection />
+        {this.props.jobs.map((job, index) => (
+          <JobSection key={index} job={job} />
+        ))}
       </div>
     );
   }

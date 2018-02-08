@@ -8,8 +8,9 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === FETCH_JOBS_SUCCESS) {
+    console.log(action);
     return Object.assign({}, state, {
-      jobs: action.jobs,
+      jobs: [...action.data.jobs],
       error: null
     });
   } else if (action.type === FETCH_ERROR) {

@@ -65,6 +65,7 @@ export const addJob = (title, company, contact, deadline) => dispatch => {
 };
 
 export const fetchJobs = () => dispatch => {
+    console.log("fetchJobs");
     // dispatch(authRequest());
     fetch(`${API_BASE_URL}/jobs`, {
         method: "GET",
