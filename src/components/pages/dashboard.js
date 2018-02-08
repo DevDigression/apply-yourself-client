@@ -5,6 +5,7 @@ import requiresLogin from "../requires-login";
 import { fetchProtectedData } from "../../actions/protected-data";
 import { fetchJobs } from "../../actions/users";
 import NavBar from "../navbar";
+import JobSection from "../page-components/job-section";
 import "./dashboard.css";
 
 export class Dashboard extends React.Component {
@@ -14,7 +15,7 @@ export class Dashboard extends React.Component {
 
   render() {
     let links = ["Stats", "Logout"];
-
+    console.log(this.props.state);
     return (
       <div className="dashboard">
         <NavBar links={links} />
@@ -31,25 +32,8 @@ export class Dashboard extends React.Component {
           </div>
           <div className="clear" />
         </div>
-        <div className="jobs-list">
-          {/* this.props.jobs.map(job=>( // TODO: MAKE job-section A COMPONENT */}
-          <div className="job-section">
-            <div className="job-image">
-              <img src="https://dcassetcdn.com/design_img/8324/18028/18028_236752_8324_thumbnail.jpg" />
-            </div>
-            <div className="job-text">
-              <h6>Junior Software Developer{/*{job.title}*/}</h6>
-              <p>Current Stage:</p>
-              <p>7. Job Offer</p>
-            </div>
-            <div className="job-status">
-              <p>01/20/2018</p>
-              <p>Completion: 100%</p>
-              {/*{job.notes}*/}
-            </div>
-          </div>
-          {/*} )) */}
-        </div>
+        <div className="jobs-list" />
+        <JobSection />
       </div>
     );
   }
