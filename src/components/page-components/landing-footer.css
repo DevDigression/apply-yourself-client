@@ -2,7 +2,20 @@
 	box-sizing: border-box;
 }
 
+.blue {
+	color: #2d9cdb;
+}
+
 .footer {
 	padding: 20px;
 	text-align: center;
 }
+
+.footer a {
+	text-decoration: none;
+}
+
+.footer a:visited {
+	color: #2d9cdb;
+}
+

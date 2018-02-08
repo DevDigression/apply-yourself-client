@@ -16,7 +16,7 @@
 	margin: 5% auto;
 	text-align: center;
 	background: #c4c4c4;
-	padding: 50px;
+	padding: 20px;
 	border: 2px solid #333;
 	border-radius: 5px;
 }
@@ -36,6 +36,7 @@
 	color: #fff;
 	font-size: 18px;
 	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -44,7 +45,7 @@
 	}
 
 	.registration-form {
-		margin: 10% auto;
+		margin: 20% auto;
 		width: 275px;
 	}
 }

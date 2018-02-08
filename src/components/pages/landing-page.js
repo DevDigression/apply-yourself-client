@@ -9,6 +9,7 @@ import LandingStepsContainer from "../page-components/landing-steps-container";
 import LandingRegister from "../page-components/landing-register";
 import LandingFooter from "../page-components/landing-footer";
 import landingPageData from "./landing-page-data";
+import footerText from "../page-components/landing-footer-data";
 
 export function LandingPage(props) {
   // If we are logged in redirect straight to the user's dashboard
@@ -34,7 +35,7 @@ export function LandingPage(props) {
 
       <LandingStepsContainer />
       <LandingRegister />
-      <LandingFooter text="Created by Chris Rodgers" />
+      <LandingFooter text={footerText} />
     </div>
   );
 }
