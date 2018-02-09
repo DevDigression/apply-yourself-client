@@ -1,20 +1,13 @@
 import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
 import Input from "../input";
-import { addJob } from "../../actions/users";
+import { addJob } from "../../actions/protected-data";
 import { required, nonEmpty } from "../../validators";
 import "./add-job-form.css";
 
 export class AddJobForm extends React.Component {
     onSubmit(values) {
-        return this.props.dispatch(
-            addJob(
-                values.title,
-                values.company,
-                values.contact,
-                values.deadline
-            )
-        );
+        return this.props.dispatch(addJob(values));
     }
 
     render() {

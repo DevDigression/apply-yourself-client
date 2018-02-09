@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import requiresLogin from "../requires-login";
 import { fetchProtectedData } from "../../actions/protected-data";
-import { fetchJobs } from "../../actions/users";
+import { fetchJobs } from "../../actions/protected-data";
 import NavBar from "../navbar";
 import JobSection from "../page-components/job-section";
 import "./dashboard.css";
