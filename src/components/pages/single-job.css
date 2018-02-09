@@ -22,8 +22,12 @@
 	font-size: 24px;
 }
 
+.job-header a {
+	text-decoration: none;
+}
+
 .job-header button {
-	width: 150px;
+	width: 200px;
 	height: 35px;
 	background-color: #2f80ed;
 	color: #fff;

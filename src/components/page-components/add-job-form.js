@@ -56,6 +56,13 @@ export class AddJobForm extends React.Component {
                     id="company"
                     validate={[required, nonEmpty]}
                 />
+                <label htmlFor="">Posting</label>
+                <Field
+                    component={Input}
+                    type="text"
+                    name="posting"
+                    id="posting"
+                />
                 <label htmlFor="contact">Primary Contact</label>
                 <Field
                     component={Input}
@@ -70,6 +77,22 @@ export class AddJobForm extends React.Component {
                     name="deadline"
                     id="deadline"
                 />
+                <label htmlFor="style">Style of Company</label>
+                <Field component={Input} type="text" name="style" id="style" />
+                <label htmlFor="keywords">Tech Keywords</label>
+                <Field
+                    component={Input}
+                    type="text"
+                    name="keywords"
+                    id="keywords"
+                />
+                {/* <label htmlFor="notes">Notes</label>
+                <Field
+                    component={Input}
+                    type="text"
+                    name="notes"
+                    id="notes"
+                />*/}
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Submit
                 </button>

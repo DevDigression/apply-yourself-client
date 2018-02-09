@@ -83,8 +83,12 @@ export const addJob = job => dispatch => {
         body: JSON.stringify({
             title: job.title,
             company: job.company,
+            posting: job.posting,
             contact: job.contact,
-            deadline: job.deadline
+            deadline: job.deadline,
+            style: job.style,
+            keywords: job.keywords,
+            notes: job.notes
         })
     })
         .then(data => console.log(data))

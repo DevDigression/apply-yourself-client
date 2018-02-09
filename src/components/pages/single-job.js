@@ -22,14 +22,16 @@ export class SingleJob extends React.Component {
     if (this.state.redirect) {
       return <Redirect to="/dashboard" />;
     }
-
+    console.log(this.props.currentJob);
     return (
       <div className="single-job">
         <NavBar links={links} />
         <div className="job-header">
           <h2>{this.props.currentJob.title}</h2>
           <h3>{this.props.currentJob.company}</h3>
-          <button>See Job Posting</button>
+          <a href={this.props.currentJob.posting} target="_blank">
+            <button>See Job Posting</button>
+          </a>
           <img src="http://nvd3.org/examples/img/bullet.png" />
         </div>
         <div className="job-info">
@@ -37,9 +39,15 @@ export class SingleJob extends React.Component {
             <button>Edit</button>
             <button
               onClick={() => {
-                this.props
-                  .dispatch(deleteJob(this.props.match.params.jobid))
-                  .then(() => this.setState({ redirect: true }));
+                if (
+                  window.confirm(
+                    `Are you sure that you want to delete this job from your list?`
+                  )
+                ) {
+                  this.props
+                    .dispatch(deleteJob(this.props.match.params.jobid))
+                    .then(() => this.setState({ redirect: true }));
+                }
               }}
             >
               Remove
