@@ -2,10 +2,6 @@
 	padding: 0;
 }
 
-.dashboard h6 {
-	font-size: 28px;
-}
-
 .jobs-list p {
 	font-size: 24px;
 }
@@ -52,15 +48,15 @@
 
 .job-section {
 	width: 100%;
-	margin: 20px auto;
+	margin: 10px auto;
 	display: block;
 	clear: both;
 }
 
 .job-image {
-	width: 20%;
+	width: 30%;
 	margin: 0 auto;
-	padding-top: 50px;
+	padding-top: 20px;
 	padding-left: 50px;
 	float: left;
 	display: inline-block;
@@ -71,17 +67,47 @@
 }
 
 .job-text {
-	width: 60%;
+	width: 50%;
 	display: inline-block;
-	text-align: center;
-	margin: 0 auto;
+	text-align: left;
+	margin: 30px auto;
 	float: left;
 }
 
+.job-text h5 {
+	font-size: 28px;
+	color: #2d9cdb;
+	margin-bottom: 0;
+}
+
+.job-text h6 {
+	font-size: 22px;
+	color: #333;
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+.job-text p {
+	color: #333;
+	padding-top: 10px;
+}
+
+.job-main {
+	width: 50%;
+	display: inline-block;
+}
+
+.job-stage {
+	display: inline-block;
+	width: 30%;
+	text-align: right;
+}
+
 .job-status {
+	color: #333;
 	width: 20%;
 	margin: 0 auto;
-	padding-top: 70px;
+	padding-top: 80px;
 	display: inline-block;
 }
 
@@ -95,7 +121,7 @@
 	}
 
 	.job-image {
-		width: 20%;
+		width: 30%;
 		margin: 0 auto;
 		padding-top: 50px;
 		padding-left: 20px;
@@ -108,6 +134,7 @@
 	}
 
 	.job-text {
+		padding-top: 50px;
 		width: 50%;
 		display: inline-block;
 		text-align: center;
@@ -115,11 +142,24 @@
 		float: left;
 	}
 
+	.job-main {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+
+	.job-stage {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+
 	.job-status {
+		font-size: 12px;
 		width: 20%;
 		margin: 0 auto;
 		padding-top: 50px;
-		padding-right: 20px;
+		padding-right: 10px;
 		display: inline-block;
 	}
 

@@ -1,16 +1,27 @@
 import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
 import Input from "../input";
+import { Link, Redirect } from "react-router-dom";
 import { addJob } from "../../actions/protected-data";
 import { required, nonEmpty } from "../../validators";
 import "./add-job-form.css";
 
 export class AddJobForm extends React.Component {
+    state = {
+        redirect: false
+    };
+
     onSubmit(values) {
-        return this.props.dispatch(addJob(values));
+        return this.props
+            .dispatch(addJob(values))
+            .then(() => this.setState({ redirect: true }));
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to="/dashboard" />;
+        }
+
         let error;
         if (this.props.error) {
             error = (
@@ -19,6 +30,7 @@ export class AddJobForm extends React.Component {
                 </div>
             );
         }
+
         return (
             <form
                 className="add-job-form"

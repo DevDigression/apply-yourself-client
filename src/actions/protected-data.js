@@ -1,3 +1,8 @@
+import React from "react";
+import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+import Dashboard from "../components/pages/dashboard";
+
 import { API_BASE_URL } from "../config";
 import { normalizeResponseErrors } from "./utils";
 
@@ -36,24 +41,6 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         });
 };
 
-export const addJob = job => dispatch => {
-    // dispatch(authRequest());
-    return fetch(`${API_BASE_URL}/jobs`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            title: job.title,
-            company: job.company,
-            contact: job.contact,
-            deadline: job.deadline
-        })
-    });
-    //.then()    ---> clear add job form, redirect
-    //.catch()
-};
-
 export const fetchJobs = () => dispatch => {
     console.log("fetchJobs");
     // dispatch(authRequest());
@@ -81,6 +68,40 @@ export const fetchJobById = id => dispatch => {
     })
         .then(res => res.json())
         .then(data => dispatch(fetchSingleJobSuccess(data)))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};
+
+export const addJob = job => dispatch => {
+    // dispatch(authRequest());
+    return fetch(`${API_BASE_URL}/jobs`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: job.title,
+            company: job.company,
+            contact: job.contact,
+            deadline: job.deadline
+        })
+    })
+        .then(data => console.log(data))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};
+
+export const deleteJob = jobid => dispatch => {
+    // dispatch(authRequest());
+    return fetch(`${API_BASE_URL}/jobs/${jobid}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then(dispatch(fetchJobs()))
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
         });

@@ -2,17 +2,26 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { fetchJobById } from "../../actions/protected-data";
+import { deleteJob } from "../../actions/protected-data";
 import NavBar from "../navbar";
 import "./single-job.css";
 
 export class SingleJob extends React.Component {
+  state = {
+    redirect: false
+  };
+
   componentDidMount() {
     this.props.dispatch(fetchJobById(this.props.match.params.jobid));
   }
 
   render() {
-    let links = ["Job List", "Logout"];
+    let links = ["Dashboard", "Logout"];
     console.log(this.props.currentJob);
+
+    if (this.state.redirect) {
+      return <Redirect to="/dashboard" />;
+    }
 
     return (
       <div className="single-job">
@@ -26,7 +35,15 @@ export class SingleJob extends React.Component {
         <div className="job-info">
           <div className="job-info-buttons">
             <button>Edit</button>
-            <button>Remove</button>
+            <button
+              onClick={() => {
+                this.props
+                  .dispatch(deleteJob(this.props.match.params.jobid))
+                  .then(() => this.setState({ redirect: true }));
+              }}
+            >
+              Remove
+            </button>
           </div>
           <div className="job-info-list">
             <ul>
