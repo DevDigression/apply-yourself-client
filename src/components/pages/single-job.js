@@ -17,12 +17,11 @@ export class SingleJob extends React.Component {
 
   render() {
     let links = ["Dashboard", "Logout"];
-    console.log(this.props.currentJob);
+    console.log(this.props);
 
     if (this.state.redirect) {
       return <Redirect to="/dashboard" />;
     }
-    console.log(this.props.currentJob);
     return (
       <div className="single-job">
         <NavBar links={links} />
@@ -36,7 +35,9 @@ export class SingleJob extends React.Component {
         </div>
         <div className="job-info">
           <div className="job-info-buttons">
-            <button>Edit</button>
+            <Link to={`edit/${this.props.match.params.jobid}`}>
+              <button>Edit</button>
+            </Link>
             <button
               onClick={() => {
                 if (

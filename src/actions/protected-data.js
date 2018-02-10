@@ -97,6 +97,30 @@ export const addJob = job => dispatch => {
         });
 };
 
+export const editJob = job => dispatch => {
+    // dispatch(authRequest());
+    return fetch(`${API_BASE_URL}/jobs/edit/${job.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: job.title,
+            company: job.company,
+            posting: job.posting,
+            contact: job.contact,
+            deadline: job.deadline,
+            style: job.style,
+            keywords: job.keywords,
+            notes: job.notes
+        })
+    })
+        .then(data => console.log(data))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};
+
 export const deleteJob = jobid => dispatch => {
     // dispatch(authRequest());
     return fetch(`${API_BASE_URL}/jobs/${jobid}`, {
