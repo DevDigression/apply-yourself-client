@@ -1,8 +1,3 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
-import Dashboard from "../components/pages/dashboard";
-
 import { API_BASE_URL } from "../config";
 import { normalizeResponseErrors } from "./utils";
 

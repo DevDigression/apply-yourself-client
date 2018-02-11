@@ -5,8 +5,6 @@ export default class LandingSection extends React.Component {
   render() {
     let textAlign;
     let imageAlign;
-    let sectionText;
-    let sectionImage;
     let sectionBg;
 
     if (this.props.show === "right") {
@@ -18,16 +16,11 @@ export default class LandingSection extends React.Component {
       imageAlign = "left-section";
       sectionBg = "white-bg";
     }
-    // <h2
-    //   dangerouslySetInnerHTML={{
-    //     __html: this.props.title
-    //   }}
-    // />
 
     return (
       <div className={`landing-section ${sectionBg}`}>
         <div className={`landing-image ${imageAlign}`}>
-          <img src={this.props.image} />
+          <img src={this.props.image} alt="placeholder" />
         </div>
         <div className={`landing-text ${textAlign}`}>
           <h2>{this.props.title}</h2>

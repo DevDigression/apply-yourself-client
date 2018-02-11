@@ -2,8 +2,6 @@ import { SubmissionError } from "redux-form";
 
 import { API_BASE_URL } from "../config";
 import { normalizeResponseErrors } from "./utils";
-import { FETCH_JOBS_SUCCESS } from "./protected-data";
-import { fetchProtectedDataSuccess } from "./protected-data";
 
 export const registerUser = user => dispatch => {
     return fetch(`${API_BASE_URL}/users`, {

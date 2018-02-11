@@ -1,7 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import requiresLogin from "../requires-login";
-import { fetchProtectedData } from "../../actions/protected-data";
 import NavBar from "../navbar";
 import "./stats.css";
 
@@ -15,13 +12,19 @@ export default class Stats extends React.Component {
         <div className="progression-avg">
           <h3>Average Jobs Progression</h3>
           <div className="progression-graph">
-            <img src="http://nvd3.org/examples/img/bullet.png" />
+            <img
+              src="http://nvd3.org/examples/img/bullet.png"
+              alt="placeholder"
+            />
           </div>
         </div>
         <div className="stages">
           <h3>Jobs at Each Stage</h3>
           <div className="stages-graph">
-            <img src="http://codesuki.github.io/react-d3-components/piechart.png" />
+            <img
+              src="http://codesuki.github.io/react-d3-components/piechart.png"
+              alt="placeholder"
+            />
           </div>
           <div className="stages-list">
             <ul>
@@ -36,7 +39,10 @@ export default class Stats extends React.Component {
         <div className="skills">
           <h3>Desired Skills</h3>
           <div className="skills-graph">
-            <img src="https://jrue.github.io/assets/images/exercise_images/barchart.jpg" />
+            <img
+              src="https://jrue.github.io/assets/images/exercise_images/barchart.jpg"
+              alt="placeholder"
+            />
           </div>
           <div className="skills-list">
             <ul>

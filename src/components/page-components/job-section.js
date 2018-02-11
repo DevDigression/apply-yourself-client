@@ -8,7 +8,10 @@ export default class JobSection extends React.Component {
       <div className="job-section">
         <Link to={`job/${this.props.job.id}`}>
           <div className="job-image">
-            <img src="https://dcassetcdn.com/design_img/8324/18028/18028_236752_8324_thumbnail.jpg" />
+            <img
+              src="https://dcassetcdn.com/design_img/8324/18028/18028_236752_8324_thumbnail.jpg"
+              alt="placeholder"
+            />
           </div>
           <div className="job-text">
             <div className="job-main">

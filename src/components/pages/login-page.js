@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import NavBar from "../navbar";
 import LoginForm from "../login-form";
-import '../login.css';
+import "../login.css";
 
 export function LoginPage(props) {
   // If we are logged in (which happens automatically when registration

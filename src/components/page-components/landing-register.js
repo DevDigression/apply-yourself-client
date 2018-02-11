@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 import "./landing-register.css";
 
-const InnerHTML = require("dangerously-set-inner-html");
-
 export default function LandingRegister(props) {
 	return (
 		<div className={`landing-register`}>

@@ -2,8 +2,6 @@ import React from "react";
 import LandingStep from "./landing-step";
 import "./landing-steps-container.css";
 
-const InnerHTML = require("dangerously-set-inner-html");
-
 export default function LandingSteps(props) {
   return (
     <div className={`landing-steps`}>

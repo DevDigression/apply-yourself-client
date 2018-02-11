@@ -1,9 +1,9 @@
 import React from "react";
-import { Field, reduxForm, focus, initialize } from "redux-form";
+import { Field, reduxForm, focus } from "redux-form";
 import Input from "../input";
 import NavBar from "../navbar";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { editJob } from "../../actions/protected-data";
 import { fetchJobById } from "../../actions/protected-data";
 import { required, nonEmpty } from "../../validators";

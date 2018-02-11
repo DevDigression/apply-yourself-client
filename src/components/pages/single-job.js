@@ -31,7 +31,10 @@ export class SingleJob extends React.Component {
           <a href={this.props.currentJob.posting} target="_blank">
             <button>See Job Posting</button>
           </a>
-          <img src="http://nvd3.org/examples/img/bullet.png" />
+          <img
+            src="http://nvd3.org/examples/img/bullet.png"
+            alt="placeholder"
+          />
         </div>
         <div className="job-info">
           <div className="job-info-buttons">

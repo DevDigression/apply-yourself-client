@@ -2,8 +2,6 @@ import React from "react";
 
 import "./landing-intro.css";
 
-const InnerHTML = require("dangerously-set-inner-html");
-
 export default class LandingIntro extends React.Component {
   render() {
     return (

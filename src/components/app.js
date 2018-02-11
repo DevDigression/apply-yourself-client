@@ -4,14 +4,12 @@ import { Route, withRouter } from "react-router-dom";
 
 import HeaderBar from "./header-bar";
 import LandingPage from "./pages/landing-page";
-import NavBar from "./navbar";
 import Dashboard from "./pages/dashboard";
 import Stats from "./pages/stats";
 import RegistrationPage from "./pages/registration-page";
 import LoginPage from "./pages/login-page";
 import SingleJob from "./pages/single-job";
 import AddJobPage from "./pages/add-job-page";
-import AddJobForm from "./page-components/add-job-form";
 import EditJobForm from "./page-components/edit-job-form";
 import { refreshAuthToken } from "../actions/auth";
 

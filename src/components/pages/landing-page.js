@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
-import Dashboard from "./dashboard";
+import { Redirect } from "react-router-dom";
 import NavBar from "../navbar";
 import LandingIntro from "../page-components/landing-intro";
 import LandingSection from "../page-components/landing-section";
@@ -27,7 +26,7 @@ export function LandingPage(props) {
         <LandingSection
           title={landingSectionData.title}
           content={landingSectionData.sectionText}
-          show={index % 2 == 0 ? "right" : "left"}
+          show={index % 2 === 0 ? "right" : "left"}
           image={landingSectionData.sectionImage}
           key={index}
         />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
 import Input from "../input";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { addJob } from "../../actions/protected-data";
 import { required, nonEmpty } from "../../validators";
 import "./add-job-form.css";

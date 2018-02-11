@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
 import NavBar from "../navbar";
 import AddJobForm from "../page-components/add-job-form";
 import "./add-job-page.css";
