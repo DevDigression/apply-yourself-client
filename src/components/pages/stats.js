@@ -46,10 +46,10 @@ export default class Stats extends React.Component {
           </div>
           <div className="skills-list">
             <ul>
-              <li>Javascript: 50%</li>
+              {/* <li>Javascript: 50%</li>
               <li>Node: 20%</li>
               <li>PHP: 10%</li>
-              <li>React: 20%</li>
+              <li>React: 20%</li> */}
             </ul>
           </div>
         </div>
