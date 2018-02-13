@@ -4,12 +4,13 @@ import "../pages/dashboard.css";
 
 export default class JobSection extends React.Component {
   render() {
+    console.log(this.props.job)
     return (
       <div className="job-section">
         <Link to={`job/${this.props.job.id}`}>
           <div className="job-image">
             <img
-              src={this.props.image}
+              src={this.props.job.image}
               alt="placeholder"
             />
           </div>
@@ -20,12 +21,12 @@ export default class JobSection extends React.Component {
             </div>
             <div className="job-stage">
               <p>Current Stage:</p>
-              <p>{this.props.stage}</p>
+              <p>{this.props.job.stage}</p>
             </div>
           </div>
           <div className="job-status">
-            <p>{this.props.date}</p>
-            <p>Completion: {this.props.completion}</p>
+            <p>{this.props.job.date}</p>
+            <p>Completion: {this.props.job.completion}</p>
           </div>
         </Link>
       </div>

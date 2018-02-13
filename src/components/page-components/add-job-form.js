@@ -86,13 +86,13 @@ export class AddJobForm extends React.Component {
                     name="keywords"
                     id="keywords"
                 />
-                {/* <label htmlFor="notes">Notes</label>
+                <label htmlFor="image">Company Image</label>
                 <Field
                     component={Input}
                     type="text"
-                    name="notes"
-                    id="notes"
-                />*/}
+                    name="image"
+                    id="image"
+                />
                 <button disabled={this.props.pristine || this.props.submitting}>
                     Submit
                 </button>

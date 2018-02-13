@@ -79,6 +79,7 @@ export const addJob = job => dispatch => {
             title: job.title,
             company: job.company,
             posting: job.posting,
+            image: job.image,
             contact: job.contact,
             deadline: job.deadline,
             style: job.style,
@@ -87,7 +88,8 @@ export const addJob = job => dispatch => {
             date: job.date,
             stage: job.stage,
             completion: job.completion,
-            checkpoints: job. checkpoints
+            checkpoints: job. checkpoints,
+            id: job._id
         })
     })
         .then(data => console.log(data))
@@ -107,6 +109,7 @@ export const editJob = job => dispatch => {
             title: job.title,
             company: job.company,
             posting: job.posting,
+            image: job.image,
             contact: job.contact,
             deadline: job.deadline,
             style: job.style,
@@ -115,7 +118,8 @@ export const editJob = job => dispatch => {
             date: job.date,
             stage: job.stage,
             completion: job.completion,
-            checkpoints: job. checkpoints
+            checkpoints: job. checkpoints,
+            id: job._id
         })
     })
         .then(data => console.log(data))
