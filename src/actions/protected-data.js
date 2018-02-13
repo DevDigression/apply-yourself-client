@@ -88,7 +88,7 @@ export const addJob = job => dispatch => {
             date: job.date,
             stage: job.stage,
             completion: job.completion,
-            checkpoints: job. checkpoints,
+            checkpoints: job.checkpoints,
             id: job._id
         })
     })
@@ -118,7 +118,7 @@ export const editJob = job => dispatch => {
             date: job.date,
             stage: job.stage,
             completion: job.completion,
-            checkpoints: job. checkpoints,
+            checkpoints: job.checkpoints,
             id: job._id
         })
     })
