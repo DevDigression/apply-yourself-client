@@ -39,7 +39,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
 export const fetchJobs = () => dispatch => {
     console.log("fetchJobs");
     // dispatch(authRequest());
-    fetch(`${API_BASE_URL}/jobs`, {
+    fetch(`${API_BASE_URL}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -55,7 +55,7 @@ export const fetchJobs = () => dispatch => {
 export const fetchJobById = id => dispatch => {
     console.log("fetchJobById: " + id);
     // dispatch(authRequest());
-    fetch(`${API_BASE_URL}/jobs/${id}`, {
+    fetch(`${API_BASE_URL}/${id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -70,7 +70,7 @@ export const fetchJobById = id => dispatch => {
 
 export const addJob = job => dispatch => {
     // dispatch(authRequest());
-    return fetch(`${API_BASE_URL}/jobs`, {
+    return fetch(`${API_BASE_URL}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -94,7 +94,7 @@ export const addJob = job => dispatch => {
 
 export const editJob = job => dispatch => {
     // dispatch(authRequest());
-    return fetch(`${API_BASE_URL}/jobs/edit/${job.id}`, {
+    return fetch(`${API_BASE_URL}/edit/${job.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -118,7 +118,7 @@ export const editJob = job => dispatch => {
 
 export const deleteJob = jobid => dispatch => {
     // dispatch(authRequest());
-    return fetch(`${API_BASE_URL}/jobs/${jobid}`, {
+    return fetch(`${API_BASE_URL}/${jobid}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
