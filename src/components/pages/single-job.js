@@ -61,17 +61,15 @@ export class SingleJob extends React.Component {
             <ul>
               <li>Contact Info: {this.props.currentJob.contact}</li>
               <li>Application Deadline: {this.props.currentJob.deadline}</li>
-              <li>Style of Company: Startup</li>
-              <li>Tech Keywords: HTML5, CSS3, Javascript, React</li>
+              <li>Style of Company: {this.props.currentJob.style}</li>
+              <li>Tech Keywords: {this.props.currentJob.keywords}</li>
             </ul>
           </div>
           <div className="job-notes">
             <h4>Notes</h4>
             <p>
-              Remote work available - emphasize independent work in cover letter
+              {this.props.currentJob.notes}
             </p>
-            <p>Java + .NET are a plus - brush up on .NET</p>
-            <p>40 minute commute</p>
           </div>
         </div>
         <div className="job-checkpoints">

@@ -83,7 +83,11 @@ export const addJob = job => dispatch => {
             deadline: job.deadline,
             style: job.style,
             keywords: job.keywords,
-            notes: job.notes
+            notes: job.notes,
+            date: job.date,
+            stage: job.stage,
+            completion: job.completion,
+            checkpoints: job. checkpoints
         })
     })
         .then(data => console.log(data))
@@ -107,7 +111,11 @@ export const editJob = job => dispatch => {
             deadline: job.deadline,
             style: job.style,
             keywords: job.keywords,
-            notes: job.notes
+            notes: job.notes,
+            date: job.date,
+            stage: job.stage,
+            completion: job.completion,
+            checkpoints: job. checkpoints
         })
     })
         .then(data => console.log(data))

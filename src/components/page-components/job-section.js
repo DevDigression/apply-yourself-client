@@ -9,7 +9,7 @@ export default class JobSection extends React.Component {
         <Link to={`job/${this.props.job.id}`}>
           <div className="job-image">
             <img
-              src="https://dcassetcdn.com/design_img/8324/18028/18028_236752_8324_thumbnail.jpg"
+              src={this.props.image}
               alt="placeholder"
             />
           </div>
@@ -20,12 +20,12 @@ export default class JobSection extends React.Component {
             </div>
             <div className="job-stage">
               <p>Current Stage:</p>
-              <p>7. Job Offer</p>
+              <p>{this.props.stage}</p>
             </div>
           </div>
           <div className="job-status">
-            <p>01/20/2018</p>
-            <p>Completion: 100%</p>
+            <p>{this.props.date}</p>
+            <p>Completion: {this.props.completion}</p>
           </div>
         </Link>
       </div>
