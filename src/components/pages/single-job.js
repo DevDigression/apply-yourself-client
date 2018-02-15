@@ -7,9 +7,6 @@ import NavBar from "../navbar";
 import "./single-job.css";
 
 export class SingleJob extends React.Component {
-  state = {
-    redirect: false
-  };
 
   componentDidMount() {
     this.props.dispatch(fetchJobById(this.props.match.params.jobid));
@@ -18,10 +15,6 @@ export class SingleJob extends React.Component {
   render() {
     let links = ["Dashboard", "Logout"];
     console.log(this.props);
-
-    if (this.state.redirect) {
-      return <Redirect to="/dashboard" />;
-    }
     return (
       <div className="single-job">
         <NavBar links={links} />
@@ -50,7 +43,7 @@ export class SingleJob extends React.Component {
                 ) {
                   this.props
                     .dispatch(deleteJob(this.props.match.params.jobid))
-                    .then(() => this.setState({ redirect: true }));
+                    .then(() => this.props.history.push('/dashboard'));
                 }
               }}
             >
