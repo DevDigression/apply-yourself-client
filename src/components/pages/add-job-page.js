@@ -14,7 +14,7 @@ export function AddJobPage(props) {
   return (
     <div className="add-job-page">
       <NavBar links={links} />
-      <div className="add-job">
+      <div className="add-job-container">
       <AddJobForm />
       </div>
     </div>

@@ -15,7 +15,7 @@
 	width: 100%;
 	margin: 0 auto;
 }
-.add-job {
+.add-job-container {
 	padding: 20px 0;
 	margin: 0 auto;
 	width: 100%;
@@ -31,9 +31,9 @@
 }
 
 @media only screen and (max-width: 768px) {
-.add-job {
+/*.add-job-container {
 	padding: 20px auto;
-}
+}*/
 
 /*	.add-job-page {
 		max-width: 100%;
