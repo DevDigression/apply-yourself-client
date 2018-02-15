@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { fetchJobById } from "../../actions/protected-data";
 import { deleteJob } from "../../actions/protected-data";
 import NavBar from "../navbar";
