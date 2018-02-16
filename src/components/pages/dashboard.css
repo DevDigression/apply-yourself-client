@@ -56,15 +56,16 @@
 .job-image {
 	width: 30%;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding-top: 50px;
 	padding-left: 50px;
 	float: left;
 	display: inline-block;
 }
 
 .job-image img {
-	max-width: 100%;
+	max-width: 250px;
 	max-height: 250px;
+	margin: 0 auto;
 }
 
 .job-text {
@@ -101,13 +102,14 @@
 .job-stage {
 	display: inline-block;
 	width: 30%;
-	text-align: right;
+	text-align: left;
 }
 
 .job-status {
 	color: #333;
 	width: 20%;
 	margin: 0 auto;
+	text-align: left;
 	padding-top: 80px;
 	display: inline-block;
 }
@@ -125,7 +127,7 @@
 		width: 30%;
 		margin: 0 auto;
 		padding-top: 50px;
-		padding-left: 20px;
+		padding-left: 50px;
 		float: left;
 		display: inline-block;
 	}

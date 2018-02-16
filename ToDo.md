@@ -1,10 +1,10 @@
 
 # Frontend
 
-- Keywords: Split them into arrays before submitting to server
+<!-- - Keywords: Split them into arrays before submitting to server -->
 <!-- - Style of company -> make it a dropdown -->
-- Make images smaller on the left [jobs page]
-- Add/edit job form -> make it wider
+<!-- - Make images smaller on the left [jobs page] -->
+<!-- - Add/edit job form -> make it wider -->
 <!-- - Change `visit job site` to be an `<a>` tag -->
 - Delete the console logs
 - Change all state-based redirects

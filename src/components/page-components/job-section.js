@@ -4,7 +4,6 @@ import "../pages/dashboard.css";
 
 export default class JobSection extends React.Component {
   render() {
-    console.log(this.props.job)
     return (
       <div className="job-section">
         <Link to={`job/${this.props.job.id}`}>

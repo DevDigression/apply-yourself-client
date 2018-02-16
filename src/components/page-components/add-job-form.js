@@ -2,8 +2,10 @@ import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
 import Input from "../input";
 import Dropdown from "../dropdown";
+import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { addJob } from "../../actions/protected-data";
+import { addJob, editJob } from "../../actions/protected-data";
+import { fetchJobById } from "../../actions/protected-data";
 import { required, nonEmpty } from "../../validators";
 import "./add-job-form.css";
 
@@ -12,13 +14,31 @@ export class AddJobForm extends React.Component {
         redirect: false
     };
 
+    componentDidMount () {
+    if (Object.keys(this.props.initialValues).length !== 0) {
+        this.props.dispatch(fetchJobById(this.props.initialValues.id));
+        }
+    }
+    
     onSubmit(values) {
-        return this.props
+        let keywordsArray = [];
+        let keywords = values.keywords.split(",");
+        keywords.forEach(word => keywordsArray.push(word));
+        values.keywords = keywordsArray;
+        console.log(values);
+        if (Object.keys(this.props.initialValues).length !== 0) {
+            return this.props
+            .dispatch(editJob(values))
+            .then(() => this.setState({ redirect: true }));
+        } else {
+            return this.props
             .dispatch(addJob(values))
             .then(() => this.setState({ redirect: true }));
+        }
     }
 
     render() {
+        console.log(this.props);
         if (this.state.redirect) {
             return <Redirect to="/dashboard" />;
         }
@@ -106,7 +126,13 @@ export class AddJobForm extends React.Component {
     }
 }
 
-export default reduxForm({
+AddJobForm = reduxForm({
     form: "add-job",
     onSubmitFail: (errors, dispatch) => dispatch(focus("add-job", "title"))
 })(AddJobForm);
+
+AddJobForm = connect(state => ({
+    initialValues: state.protectedData.currentJob
+}))(AddJobForm);
+
+export default AddJobForm;

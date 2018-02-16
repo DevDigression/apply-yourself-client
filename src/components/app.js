@@ -50,7 +50,7 @@ export class App extends React.Component {
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/job/:jobid" component={SingleJob} />
-        <Route exact path="/job/edit/:jobid" component={EditJobForm} />
+        <Route exact path="/job/edit/:jobid" component={AddJobPage} />
         <Route exact path="/add-job" component={AddJobPage} />
       </div>
     );
