@@ -26,7 +26,7 @@ export class EditJobPage extends React.Component {
       <div className="add-job-page">
         <NavBar links={links} />
         <div className="add-job-container">
-          <JobForm onSubmit={values => this.onSubmit(values)} />
+          <JobForm title="Edit Job" onSubmit={(values) => this.onSubmit(values)} />
         </div>
       </div>
     );

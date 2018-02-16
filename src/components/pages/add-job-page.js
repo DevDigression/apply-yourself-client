@@ -29,7 +29,7 @@ export class AddJobPage extends React.Component {
   onSubmit(values) {
     values.keywords = values.keywords.split(",");
     this.props.dispatch(addJob(values));
-    return this.props.history.push('/dashboard'); // TODO props.history .... to redirect
+    return this.props.history.push('/dashboard');
   }
 
   render() {
@@ -39,7 +39,7 @@ export class AddJobPage extends React.Component {
       <div className="add-job-page">
         <NavBar links={links} />
         <div className="add-job-container">
-          <JobForm onSubmit={values => this.onSubmit(values)} />
+          <JobForm title="Add Job" onSubmit={(values) => this.onSubmit(values)} />
         </div>
       </div>
     );

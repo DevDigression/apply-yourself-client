@@ -23,13 +23,13 @@ export class JobForm extends React.Component {
 
     return (
       <form
-        className="add-job-form"
+        className="job-form"
         onSubmit={this.props.handleSubmit(values =>
           this.props.onSubmit(values)
         )}
       >
         {error}
-        <h2>Add Job</h2>
+        <h2>{this.props.title}</h2>
         <label htmlFor="title">Job Title</label>
         <Field
           component={Input}
@@ -66,9 +66,11 @@ export class JobForm extends React.Component {
   }
 }
 
+
 JobForm = reduxForm({
   form: "job-form",
-  onSubmitSuccess: (result, dispatch) => dispatch(reset(JobForm)),
+  enableReinitialize: true,
+  onSubmitSuccess: (result, dispatch) => dispatch(reset("job-form")),
   onSubmitFail: (errors, dispatch) => dispatch(focus("job-form", "title"))
 })(JobForm);
 

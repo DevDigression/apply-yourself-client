@@ -25,10 +25,24 @@ export default function reducer(state = initialState, action) {
       error: null
     });
   } else if (action.type === CLEAR_JOB_SUCCESS) {
-    console.log(action);
+    console.log(action.data);
     return Object.assign({}, state, {
-      currentJob: action.data,
-      error: null
+      currentJob: {
+            title: "",
+            company: "",
+            posting: "",
+            image: "",
+            contact: "",
+            deadline: "",
+            style: "",
+            keywords: [],
+            notes: [],
+            date: "",
+            stage: "",
+            completion: "",
+            checkpoints: [],
+            id: ""
+          }
     });
   } else if (action.type === FETCH_ERROR) {
     return Object.assign({}, state, {
