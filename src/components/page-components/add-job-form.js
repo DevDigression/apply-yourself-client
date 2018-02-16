@@ -15,9 +15,7 @@ export class AddJobForm extends React.Component {
     };
 
     componentDidMount () {
-    if (Object.keys(this.props.initialValues).length !== 0) {
-        this.props.dispatch(fetchJobById(this.props.initialValues.id));
-        }
+        this.props.dispatch(fetchJobById(this.props.jobid));
     }
     
     onSubmit(values) {
@@ -26,7 +24,7 @@ export class AddJobForm extends React.Component {
         keywords.forEach(word => keywordsArray.push(word));
         values.keywords = keywordsArray;
         console.log(values);
-        if (Object.keys(this.props.initialValues).length !== 0) {
+        if (this.props.jobid) {
             return this.props
             .dispatch(editJob(values))
             .then(() => this.setState({ redirect: true }));
@@ -38,7 +36,6 @@ export class AddJobForm extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         if (this.state.redirect) {
             return <Redirect to="/dashboard" />;
         }

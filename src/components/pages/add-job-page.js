@@ -10,12 +10,12 @@ export function AddJobPage(props) {
   // }
 
   let links = ["Stats", "Dashboard"];
-
+  console.log(props);
   return (
     <div className="add-job-page">
       <NavBar links={links} />
       <div className="add-job-container">
-      <AddJobForm />
+      <AddJobForm jobid={props.match.params.jobid} />
       </div>
     </div>
   );
