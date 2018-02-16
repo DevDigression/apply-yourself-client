@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, reduxForm, focus } from "redux-form";
+import { Field, reduxForm, focus, reset } from "redux-form";
 import Input from "../input";
 import Dropdown from "../dropdown";
 import { connect } from "react-redux";
@@ -11,6 +11,7 @@ import "./job-form.css";
 
 export class JobForm extends React.Component {
   render() {
+    console.log(this.props);
     let error;
     if (this.props.error) {
       error = (
@@ -65,13 +66,14 @@ export class JobForm extends React.Component {
   }
 }
 
-AddJobForm = reduxForm({
-  form: "add-job",
-  onSubmitFail: (errors, dispatch) => dispatch(focus("add-job", "title"))
-})(AddJobForm);
+JobForm = reduxForm({
+  form: "job-form",
+  onSubmitSuccess: (result, dispatch) => dispatch(reset(JobForm)),
+  onSubmitFail: (errors, dispatch) => dispatch(focus("job-form", "title"))
+})(JobForm);
 
-AddJobForm = connect(state => ({
+JobForm = connect(state => ({
   initialValues: state.protectedData.currentJob
-}))(AddJobForm);
+}))(JobForm);
 
-export default AddJobForm;
+export default JobForm;

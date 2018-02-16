@@ -13,6 +13,12 @@ export const fetchSingleJobSuccess = data => ({
     data
 });
 
+export const CLEAR_JOB_SUCCESS = "CLEAR_JOB_SUCCESS";
+export const clearJobSuccess = data => ({
+    type: CLEAR_JOB_SUCCESS,
+    data
+});
+
 export const FETCH_ERROR = "FETCH_ERROR";
 export const fetchProtectedDataError = error => ({
     type: FETCH_ERROR,
@@ -34,6 +40,11 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
         });
+};
+
+export const clearJobData = clear => dispatch => {
+    console.log(clear);
+    dispatch(clearJobSuccess(clear));
 };
 
 export const fetchJobs = () => dispatch => {

@@ -2,29 +2,44 @@ import React from "react";
 import { connect } from "react-redux";
 import NavBar from "../navbar";
 import JobForm from "../page-components/job-form";
+import { addJob, clearJobData } from "../../actions/protected-data";
 import "./add-job-page.css";
 
 export class AddJobPage extends React.Component {
   componentDidMount() {
-    this.props.dispatch(DISPATCH_AN_ACTION_THAT_CLEANS_CURRENT_JOB);
-    // a clean currentJob would be:
-    // {title:"", company:"" checkpoints:[] .... and so on..  }
-    // NOT a null or empty object.
+    let clearJob = {
+            title: "",
+            company: "",
+            posting: "",
+            image: "",
+            contact: "",
+            deadline: "",
+            style: "",
+            keywords: [],
+            notes: [],
+            date: "",
+            stage: "",
+            completion: "",
+            checkpoints: [],
+            id: ""
+    };
+    this.props.dispatch(clearJobData(clearJob));
   }
 
   onSubmit(values) {
     values.keywords = values.keywords.split(",");
     this.props.dispatch(addJob(values));
-    return; // TODO props.history .... to redirect
+    return this.props.history.push('/dashboard'); // TODO props.history .... to redirect
   }
 
   render() {
+    console.log(this.props.currentJob);
     let links = ["Stats", "Dashboard"];
     return (
       <div className="add-job-page">
         <NavBar links={links} />
         <div className="add-job-container">
-          <JobForm onSubmit={() => onSubmit()} />
+          <JobForm onSubmit={values => this.onSubmit(values)} />
         </div>
       </div>
     );

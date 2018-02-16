@@ -1,6 +1,7 @@
 import {
   FETCH_JOBS_SUCCESS,
   FETCH_SINGLE_JOB_SUCCESS,
+  CLEAR_JOB_SUCCESS,
   FETCH_ERROR
 } from "../actions/protected-data";
 
@@ -19,6 +20,11 @@ export default function reducer(state = initialState, action) {
       error: null
     });
   } else if (action.type === FETCH_SINGLE_JOB_SUCCESS) {
+    return Object.assign({}, state, {
+      currentJob: action.data,
+      error: null
+    });
+  } else if (action.type === CLEAR_JOB_SUCCESS) {
     console.log(action);
     return Object.assign({}, state, {
       currentJob: action.data,
