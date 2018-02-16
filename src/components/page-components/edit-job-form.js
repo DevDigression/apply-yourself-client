@@ -70,7 +70,7 @@ export class EditJobForm extends React.Component {
                         id="company"
                         validate={[required, nonEmpty]}
                     />
-                    <label htmlFor="">Posting</label>
+                    <label htmlFor="posting">Posting</label>
                     <Field
                         component={Input}
                         type="text"

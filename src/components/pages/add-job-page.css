@@ -12,11 +12,6 @@
 }*/
 
 .add-job-page {
-	width: 100%;
-	margin: 0 auto;
-}
-.add-job-container {
-	padding: 20px 0;
 	margin: 0 auto;
 	width: 100%;
 	min-height: 600px;
@@ -24,16 +19,22 @@
 	background-size: cover;
 	height: auto;
 }
-
-.add-job-form {
+.add-job-container {
+	padding: 20px 0;
+	width: 500px;
 	margin: 0 auto;
-	width: 275px;
+/*	margin: 0 auto;
+	width: 100%;
+	min-height: 600px;
+	background-image: url("../../img/new-job.jpeg");
+	background-size: cover;
+	height: auto;*/
 }
 
 @media only screen and (max-width: 768px) {
-/*.add-job-container {
-	padding: 20px auto;
-}*/
+.add-job-container {
+	width: 100%;
+}
 
 /*	.add-job-page {
 		max-width: 100%;

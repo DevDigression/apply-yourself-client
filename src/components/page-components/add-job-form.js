@@ -1,6 +1,7 @@
 import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
 import Input from "../input";
+import Dropdown from "../dropdown";
 import { Redirect } from "react-router-dom";
 import { addJob } from "../../actions/protected-data";
 import { required, nonEmpty } from "../../validators";
@@ -56,7 +57,7 @@ export class AddJobForm extends React.Component {
                     id="company"
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="">Posting</label>
+                <label htmlFor="posting">Posting</label>
                 <Field
                     component={Input}
                     type="text"
@@ -78,7 +79,11 @@ export class AddJobForm extends React.Component {
                     id="deadline"
                 />
                 <label htmlFor="style">Style of Company</label>
-                <Field component={Input} type="text" name="style" id="style" />
+                <Field component={Dropdown} 
+                    type="select" 
+                    name="style" 
+                    id="style" 
+                />
                 <label htmlFor="keywords">Tech Keywords</label>
                 <Field
                     component={Input}
