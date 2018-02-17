@@ -19,6 +19,12 @@ export const clearJobSuccess = data => ({
     data
 });
 
+export const SORT_JOBS_BY_DATE = "SORT_JOBS_BY_DATE";
+export const sortJobsByDate = data => ({
+    type: SORT_JOBS_BY_DATE,
+    data
+});
+
 export const FETCH_ERROR = "FETCH_ERROR";
 export const fetchProtectedDataError = error => ({
     type: FETCH_ERROR,
@@ -46,6 +52,10 @@ export const clearJobData = clear => dispatch => {
     console.log(clear);
     dispatch(clearJobSuccess(clear));
 };
+
+export const sortByDate = jobs => dispatch => {
+    dispatch(sortJobsByDate(jobs));
+}
 
 export const fetchJobs = () => dispatch => {
     console.log("fetchJobs");
@@ -96,7 +106,7 @@ export const addJob = job => dispatch => {
             style: job.style,
             keywords: job.keywords,
             notes: job.notes,
-            date: job.date,
+            date: new Date(),
             stage: job.stage,
             completion: job.completion,
             checkpoints: job.checkpoints,

@@ -3,9 +3,6 @@ import { Field, reduxForm, focus, reset } from "redux-form";
 import Input from "../input";
 import Dropdown from "../dropdown";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
-import { addJob, editJob } from "../../actions/protected-data";
-import { fetchJobById } from "../../actions/protected-data";
 import { required, nonEmpty } from "../../validators";
 import "./job-form.css";
 
@@ -54,9 +51,9 @@ export class JobForm extends React.Component {
         <Field component={Input} type="date" name="deadline" id="deadline" />
         <label htmlFor="style">Style of Company</label>
         <Field component={Dropdown} type="select" name="style" id="style" />
-        <label htmlFor="keywords">Tech Keywords</label>
+        <label htmlFor="keywords">Tech Keywords (separated by commas)</label>
         <Field component={Input} type="text" name="keywords" id="keywords" />
-        <label htmlFor="image">Company Image</label>
+        <label htmlFor="image">Company Image (paste image URL)</label>
         <Field component={Input} type="text" name="image" id="image" />
         <button disabled={this.props.pristine || this.props.submitting}>
           Submit

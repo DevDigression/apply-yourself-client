@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchJobs } from "../../actions/protected-data";
+import { fetchJobs, sortByDate } from "../../actions/protected-data";
 import NavBar from "../navbar";
 import JobSection from "../page-components/job-section";
 import "./dashboard.css";
@@ -13,6 +13,8 @@ export class Dashboard extends React.Component {
 
   render() {
     let links = ["Stats", "Logout"];
+    let jobs = this.props.jobs;
+
     console.log(this.props.jobs);
     return (
       <div className="dashboard">
@@ -20,7 +22,7 @@ export class Dashboard extends React.Component {
         <div className="jobs-header">
           <div className="sort">
             <h5>
-              Sort by: <span>Date | Status</span>
+              Sort by: <span onClick={() => this.props.dispatch(sortByDate(jobs))}>Date</span> | <span>Status</span>
             </h5>
           </div>
           <div className="add-job">
@@ -31,7 +33,7 @@ export class Dashboard extends React.Component {
           <div className="clear" />
         </div>
         <div className="jobs-list" />
-        {this.props.jobs.map((job, index) => (
+        {jobs.map((job, index) => (
           <JobSection key={index} job={job} />
         ))}
       </div>

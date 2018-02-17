@@ -2,6 +2,7 @@ import {
   FETCH_JOBS_SUCCESS,
   FETCH_SINGLE_JOB_SUCCESS,
   CLEAR_JOB_SUCCESS,
+  SORT_JOBS_BY_DATE,
   FETCH_ERROR
 } from "../actions/protected-data";
 
@@ -14,7 +15,6 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === FETCH_JOBS_SUCCESS) {
-    console.log(action);
     return Object.assign({}, state, {
       jobs: action.data.jobs,
       error: null
@@ -25,24 +25,20 @@ export default function reducer(state = initialState, action) {
       error: null
     });
   } else if (action.type === CLEAR_JOB_SUCCESS) {
-    console.log(action.data);
     return Object.assign({}, state, {
-      currentJob: {
-            title: "",
-            company: "",
-            posting: "",
-            image: "",
-            contact: "",
-            deadline: "",
-            style: "",
-            keywords: [],
-            notes: [],
-            date: "",
-            stage: "",
-            completion: "",
-            checkpoints: [],
-            id: ""
-          }
+      currentJob: action.data,
+      error: null
+    });
+  } else if (action.type === SORT_JOBS_BY_DATE) {
+      let jobsByDate = action.data.sort(function(a, b) { 
+        let dateA = new Date(a.date);
+        let dateB = new Date(b.date);
+        return dateB - dateA;
+      });
+      console.log(jobsByDate);
+    return Object.assign({}, state, {
+      jobs: [...jobsByDate],
+      error: null
     });
   } else if (action.type === FETCH_ERROR) {
     return Object.assign({}, state, {
