@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import NavBar from "../navbar";
 import JobForm from "../page-components/job-form";
 import { addJob, clearJobData } from "../../actions/protected-data";
-import "./add-job-page.css";
+import "./job-form-page.css";
 
 export class AddJobPage extends React.Component {
   componentDidMount() {
@@ -27,7 +27,9 @@ export class AddJobPage extends React.Component {
   }
 
   onSubmit(values) {
+    if (values.keywords.length > 0) {
     values.keywords = values.keywords.split(",");
+  }
     this.props.dispatch(addJob(values));
     return this.props.history.push('/dashboard');
   }

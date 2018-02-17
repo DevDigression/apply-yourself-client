@@ -11,14 +11,29 @@
 	display: block;
 }
 
-.sort {
+.sort-section {
 	width: 50%;
 	font-size: 24px;
 	display: inline-block;
 	float: left;
 	margin: 0 auto;
 	text-align: center;
-	padding: 10px;
+	padding-top: 45px;
+}
+
+.sort-section h5 {
+	font-size: 20px;
+	display: inline;
+	padding-right: 20px;
+}
+
+.sort-options {
+	font-size: 20px;
+	display: inline;
+}
+
+.sort-options:active {
+	color: #edebeb;
 }
 
 .add-job {
@@ -101,7 +116,7 @@
 
 .job-stage {
 	display: inline-block;
-	width: 30%;
+	width: 10%;
 	text-align: left;
 }
 
@@ -112,24 +127,32 @@
 	text-align: left;
 	padding-top: 80px;
 	display: inline-block;
+	text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {
 	.dashboard h6 {
 		font-size: 20px;
 	}
-
+	
 	.jobs-list p {
 		font-size: 16px;
 	}
+	
+	.job-section {
+		margin: 20px auto;
+	}
 
 	.job-image {
-		width: 30%;
-		margin: 0 auto;
-		padding-top: 50px;
-		padding-left: 50px;
-		float: left;
+		max-width: 100px;
+		max-height: 100px;
+		width: 100%;
+		padding-left: 0;
+		padding-top: 0;
+		margin-left: 175px;
+		margin-right: auto;
 		display: inline-block;
+		float: left;
 	}
 
 	.job-image img {
@@ -137,12 +160,24 @@
 	}
 
 	.job-text {
-		padding-top: 50px;
-		width: 50%;
+		padding-bottom: 20px;
+		padding-top: 0;
+		width: 100%;
+		font-size: 16px;
 		display: inline-block;
 		text-align: center;
 		margin: 0 auto;
-		float: left;
+/*		float: left;*/
+		clear: both;
+		display: block;
+	}
+
+	.job-text h5, .job-text h6 {
+		margin-top: 0;
+	}
+	
+	.job-text p {
+		padding-top: 5px;
 	}
 
 	.job-main {
@@ -155,20 +190,32 @@
 		display: block;
 		text-align: center;
 		width: 100%;
+		padding-bottom: 30px;
 	}
 
 	.job-status {
 		font-size: 12px;
-		width: 20%;
+		width: 100%;
 		margin: 0 auto;
-		padding-top: 50px;
+		padding-top: 30px;
 		padding-right: 10px;
-		display: inline-block;
+		display: block;
+		text-align: center;
 	}
 
-	.sort {
+	.sort-section {
 		width: 50%;
-		font-size: 20px;
+		font-size: 16px;
+		padding-top: 35px;
+	}
+
+	.sort-section h5 {
+		font-size: 16px;
+	}
+
+	.sort-options {
+		display: block;
+		font-size: 18px;
 	}
 
 	.add-job {
@@ -180,4 +227,16 @@
 		width: 80px;
 		font-size: 14px;
 	}
+}
+
+@media only screen and (max-width: 625px) {
+.job-image {
+	margin-left: 125px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+.job-image {
+	margin-left: 50px;
+}
 }

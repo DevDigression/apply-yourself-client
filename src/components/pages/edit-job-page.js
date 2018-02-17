@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import NavBar from "../navbar";
 import JobForm from "../page-components/job-form";
 import { fetchJobById, editJob } from "../../actions/protected-data";
-
-import "./add-job-page.css"; // TODO if the styles are the same, reuse them, dont create edit-job-page-css. but rename them to something that works for add + edit
+import "./job-form-page.css";
 
 export class EditJobPage extends React.Component {
   componentDidMount() {
@@ -15,7 +14,9 @@ export class EditJobPage extends React.Component {
   }
 
   onSubmit(values) {
+    if (values.keywords.length > 0) {
     values.keywords = values.keywords.split(",");
+  }
     this.props.dispatch(editJob(values));
     return this.props.history.push('/dashboard');
   }

@@ -4,6 +4,13 @@ import "../pages/dashboard.css";
 
 export default class JobSection extends React.Component {
   render() {
+      function formatDate(newDate) {
+      let date = new Date(newDate);
+      let month = date.getMonth() + 1;
+      let day = date.getDate();
+      let year = date.getFullYear();
+      return `${month}/${day}/${year}`;
+    }
     return (
       <div className="job-section">
         <Link to={`job/${this.props.job.id}`}>
@@ -24,7 +31,7 @@ export default class JobSection extends React.Component {
             </div>
           </div>
           <div className="job-status">
-            <p>{this.props.job.date}</p>
+            <p>Added {formatDate(this.props.job.date)}</p>
             <p>Completion: {this.props.job.completion}</p>
           </div>
         </Link>
