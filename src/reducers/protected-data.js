@@ -35,7 +35,6 @@ export default function reducer(state = initialState, action) {
         let dateB = new Date(b.date);
         return dateB - dateA;
       });
-      console.log(jobsByDate);
     return Object.assign({}, state, {
       jobs: [...jobsByDate],
       error: null

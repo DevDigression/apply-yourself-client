@@ -1,8 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
 import NavBar from "../navbar";
+import requiresLogin from "../requires-login";
 import "./stats.css";
 
-export default class Stats extends React.Component {
+
+
+
+export class Stats extends React.Component {
   render() {
     let links = ["Dashboard"];
 
@@ -57,3 +62,14 @@ export default class Stats extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+    const {currentUser} = state.auth;
+    return {
+        username: state.auth.currentUser.username,
+        name: `${currentUser.firstName} ${currentUser.lastName}`,
+        protectedData: state.protectedData.data
+    };
+};
+
+export default requiresLogin()(connect(mapStateToProps)(Stats));

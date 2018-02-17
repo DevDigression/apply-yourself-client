@@ -33,7 +33,6 @@ export class AddJobPage extends React.Component {
   }
 
   render() {
-    console.log(this.props.currentJob);
     let links = ["Stats", "Dashboard"];
     return (
       <div className="add-job-page">

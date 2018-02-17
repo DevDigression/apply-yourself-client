@@ -49,7 +49,6 @@ export const fetchProtectedData = () => (dispatch, getState) => {
 };
 
 export const clearJobData = clear => dispatch => {
-    console.log(clear);
     dispatch(clearJobSuccess(clear));
 };
 
@@ -58,7 +57,6 @@ export const sortByDate = jobs => dispatch => {
 }
 
 export const fetchJobs = () => dispatch => {
-    console.log("fetchJobs");
     // dispatch(authRequest());
     fetch(`${API_BASE_URL}/jobs`, {
         method: "GET",
@@ -74,7 +72,6 @@ export const fetchJobs = () => dispatch => {
 };
 
 export const fetchJobById = id => dispatch => {
-    console.log("fetchJobById: " + id);
     // dispatch(authRequest());
     fetch(`${API_BASE_URL}/jobs/${id}`, {
         method: "GET",
@@ -113,7 +110,6 @@ export const addJob = job => dispatch => {
             id: job._id
         })
     })
-        .then(data => console.log(data))
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
         });
@@ -143,7 +139,6 @@ export const editJob = job => dispatch => {
             id: job._id
         })
     })
-        .then(data => console.log(data))
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
         });

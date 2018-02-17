@@ -8,7 +8,6 @@ import "./job-form.css";
 
 export class JobForm extends React.Component {
   render() {
-    console.log(this.props);
     let error;
     if (this.props.error) {
       error = (

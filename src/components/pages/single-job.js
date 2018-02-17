@@ -14,7 +14,6 @@ export class SingleJob extends React.Component {
 
   render() {
     let links = ["Dashboard", "Logout"];
-    console.log(this.props.currentJob.keywords);
     return (
       <div className="single-job">
         <NavBar links={links} />
