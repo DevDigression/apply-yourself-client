@@ -115,6 +115,26 @@ export const addJob = job => dispatch => {
         });
 };
 
+export const addCheckpoint = checkpoint => dispatch => {
+    // dispatch(authRequest());
+    console.log(checkpoint);
+    return fetch(`${API_BASE_URL}/jobs/checkpoint/${checkpoint.id}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            stage: checkpoint.stage,
+            content: checkpoint.content,
+            job: checkpoint.id
+        })
+    })
+        .then(res => res.json())
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};
+
 export const editJob = job => dispatch => {
     // dispatch(authRequest());
     return fetch(`${API_BASE_URL}/jobs/edit/${job.id}`, {

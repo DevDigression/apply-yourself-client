@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Dropdown extends React.Component {
+export default class JobDropdown extends React.Component {
     render() {
         return (
             <div className="form-dropdown">

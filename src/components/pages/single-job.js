@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchJobById } from "../../actions/protected-data";
-import { deleteJob } from "../../actions/protected-data";
+import { fetchJobById, deleteJob, addCheckpoint } from "../../actions/protected-data";
 import NavBar from "../navbar";
+import Checkpoint from "../page-components/checkpoint";
 import "./single-job.css";
 
 export class SingleJob extends React.Component {
@@ -14,6 +14,8 @@ export class SingleJob extends React.Component {
 
   render() {
     let links = ["Dashboard", "Logout"];
+    let checkpoints = this.props.checkpoints;
+    console.log(checkpoints);
     return (
       <div className="single-job">
         <NavBar links={links} />
@@ -67,26 +69,10 @@ export class SingleJob extends React.Component {
         <div className="job-checkpoints">
           <div className="checkpoints-header">
             <h3>Checkpoints</h3>
-            <button>Add Checkpoint</button>
+            <Link to={`/checkpoint/${this.props.match.params.jobid}`}><button>Add Checkpoint</button></Link>
           </div>
           <div className="checkpoints-list">
-            <div className="checkpoint">
-              <h5>1. Resume Sent</h5>
-              <p>Cover letter included:</p>
-              <p>Dear Hiring Manager ...</p>
-            </div>
-            <div className="checkpoint">
-              <h5>2. Phone Screen</h5>
-              <p>Simple algorithm questions</p>
-              <p>Asked about Node vs SQL</p>
-            </div>
-            <div className="checkpoint">
-              <h5>3. First Interview (Culture Fit)</h5>
-              <p>Got good feedback</p>
-              <p>
-                Questions: Why did you pick Automattic? I like working remotely
-              </p>
-            </div>
+            {checkpoints}
           </div>
         </div>
       </div>
@@ -94,8 +80,15 @@ export class SingleJob extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  currentJob: state.protectedData.currentJob
-});
+const mapStateToProps = state => {
+    const {currentUser} = state.auth;
+    return {
+        // username: state.auth.currentUser.username,
+        // name: `${currentUser.firstName} ${currentUser.lastName}`,
+        // protectedData: state.protectedData.data,
+        currentJob: state.protectedData.currentJob,
+        checkpoints: state.protectedData.currentJob.checkpoints
+    };
+};
 
 export default connect(mapStateToProps)(SingleJob);

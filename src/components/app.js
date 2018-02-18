@@ -8,6 +8,7 @@ import RegistrationPage from "./pages/registration-page";
 import LoginPage from "./pages/login-page";
 import SingleJob from "./pages/single-job";
 import AddJobPage from "./pages/add-job-page";
+import AddCheckpointPage from "./pages/add-checkpoint-page";
 import EditJobPage from "./pages/edit-job-page";
 import { refreshAuthToken } from "../actions/auth";
 
@@ -52,6 +53,7 @@ export class App extends React.Component {
         <Route exact path="/job/:jobid" component={SingleJob} />
         <Route exact path="/job/edit/:jobid" component={EditJobPage} />
         <Route exact path="/add-job" component={AddJobPage} />
+        <Route exact path="/checkpoint/:jobid" component={AddCheckpointPage} />
       </div>
     );
   }

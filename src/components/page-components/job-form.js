@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, reduxForm, focus, reset } from "redux-form";
 import Input from "../input";
-import Dropdown from "../dropdown";
+import JobDropdown from "../job-dropdown";
 import { connect } from "react-redux";
 import { required, nonEmpty } from "../../validators";
 import "./job-form.css";
@@ -49,7 +49,7 @@ export class JobForm extends React.Component {
         <label htmlFor="deadline">Deadline</label>
         <Field component={Input} type="date" name="deadline" id="deadline" />
         <label htmlFor="style">Style of Company</label>
-        <Field component={Dropdown} type="select" name="style" id="style" />
+        <Field component={JobDropdown} type="select" name="style" id="style" />
         <label htmlFor="keywords">Tech Keywords (separated by commas)</label>
         <Field component={Input} type="text" name="keywords" id="keywords" />
         <label htmlFor="image">Company Image (paste image URL)</label>

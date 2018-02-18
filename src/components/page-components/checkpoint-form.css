@@ -1,0 +1,47 @@
+.checkpoint-form {
+	width: 90%;
+	margin: 50px auto;
+	text-align: center;
+	background: #c4c4c4;
+	padding: 20px;
+	border: 2px solid #333;
+	border-radius: 5px;
+}
+
+.checkpoint-form input {
+	margin: 10px auto;
+	width: 70%;
+}
+
+.checkpoint-form h2 {
+	margin-bottom: 20px;
+}
+
+.checkpoint-form button {
+	width: 100px;
+	height: 35px;
+	background-color: #2f80ed;
+	color: #fff;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+.checkpoint-form {
+	width: 80%;
+}
+
+.checkpoint-form input {
+	width: 90%;
+}
+}
+
+@media only screen and (max-width: 540px) {
+.checkpoint-form {
+	width: 90%;
+}
+
+.checkpoint-form input {
+	width: 95%;
+}
+}
