@@ -75,7 +75,8 @@
 
 .job-section {
 	width: 100%;
-	margin: 10px auto;
+	margin: 0 auto;
+	padding-bottom: 40px;
 	display: block;
 	clear: both;
 }
@@ -152,9 +153,12 @@
 	.jobs-list p {
 		font-size: 16px;
 	}
-	
+
 	.job-section {
-		margin: 20px auto;
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	clear: both;
 	}
 
 	.job-image {
@@ -163,8 +167,7 @@
 		width: 100%;
 		padding-left: 0;
 		padding-top: 0;
-		margin-left: 175px;
-		margin-right: auto;
+		margin: 20px auto 0 175px;
 		display: inline-block;
 		float: left;
 	}
@@ -174,14 +177,12 @@
 	}
 
 	.job-text {
-		padding-bottom: 20px;
 		padding-top: 0;
 		width: 100%;
 		font-size: 16px;
 		display: inline-block;
 		text-align: center;
 		margin: 0 auto;
-/*		float: left;*/
 		clear: both;
 		display: block;
 	}
@@ -204,15 +205,14 @@
 		display: block;
 		text-align: center;
 		width: 100%;
-		padding-bottom: 30px;
 		padding-top: 0;
 	}
 
 	.job-status {
 		font-size: 12px;
 		width: 100%;
-		margin: 0 auto;
-		padding-top: 15px;
+		margin: 10px auto;
+		padding-top: 40px;
 		padding-right: 10px;
 		display: block;
 		text-align: center;
