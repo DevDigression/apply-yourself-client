@@ -11,9 +11,9 @@ export class AddCheckpointPage extends React.Component {
   }
 
   onSubmit(values) {
-    console.log(values);
+    values.jobid = this.props.match.params.jobid;
     this.props.dispatch(addCheckpoint(values));
-    return this.props.history.push('/dashboard');
+    return this.props.history.push(`/job/${this.props.match.params.jobid}`);
   }
 
   render() {

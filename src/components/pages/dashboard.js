@@ -34,7 +34,7 @@ export class Dashboard extends React.Component {
         </div>
         <div className="jobs-list" />
         {jobs.map((job, index) => (
-          <JobSection key={index} job={job} />
+          <JobSection key={index} job={job} bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"} />
         ))}
       </div>
     );

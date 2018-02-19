@@ -118,7 +118,7 @@ export const addJob = job => dispatch => {
 export const addCheckpoint = checkpoint => dispatch => {
     // dispatch(authRequest());
     console.log(checkpoint);
-    return fetch(`${API_BASE_URL}/jobs/checkpoint/${checkpoint.id}`, {
+    return fetch(`${API_BASE_URL}/jobs/${checkpoint.jobid}/checkpoint`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -126,7 +126,7 @@ export const addCheckpoint = checkpoint => dispatch => {
         body: JSON.stringify({
             stage: checkpoint.stage,
             content: checkpoint.content,
-            job: checkpoint.id
+            job: checkpoint.jobid
         })
     })
         .then(res => res.json())

@@ -10,8 +10,10 @@ const initialState = {
   data: "",
   error: null,
   jobs: [],
-  currentJob: {},
-  checkpoints: []
+  currentJob: {
+    keywords: [],
+    checkpoints: []
+  },
 };
 
 export default function reducer(state = initialState, action) {

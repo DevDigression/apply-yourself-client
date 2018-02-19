@@ -14,7 +14,7 @@ export class SingleJob extends React.Component {
 
   render() {
     let links = ["Dashboard", "Logout"];
-    let checkpoints = this.props.checkpoints;
+    let checkpoints = this.props.currentJob.checkpoints;
     console.log(this.props.currentJob);
     return (
       <div className="single-job">
@@ -56,7 +56,7 @@ export class SingleJob extends React.Component {
               <li>Contact Info: {this.props.currentJob.contact}</li>
               <li>Application Deadline: {this.props.currentJob.deadline}</li>
               <li>Style of Company: {this.props.currentJob.style}</li>
-              <li>Tech Keywords: {this.props.currentJob.keywords}</li>
+              <li>Tech Keywords: {this.props.currentJob.keywords.join(", ")}</li>
             </ul>
           </div>
           <div className="job-notes">

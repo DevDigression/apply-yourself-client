@@ -27,13 +27,6 @@ export class CheckpointForm extends React.Component {
       >
         {error}
         <h2>{this.props.title}</h2>
-        <label htmlFor="content">Job ID</label>
-        <Field
-          component={Input}
-          type="text"
-          name="jobid"
-          id="jobid"
-        />
         <label htmlFor="stage">Stage</label>
         <Field component={CheckpointDropdown} type="select" name="stage" id="stage" />
         <label htmlFor="content">Additional Info</label>
@@ -52,15 +45,13 @@ export class CheckpointForm extends React.Component {
 }
 
 
-CheckpointForm = reduxForm({
+export default CheckpointForm = reduxForm({
   form: "checkpoint-form",
   enableReinitialize: true,
   onSubmitSuccess: (result, dispatch) => dispatch(reset("checkpoint-form")),
   onSubmitFail: (errors, dispatch) => dispatch(focus("checkpoint-form", "title"))
 })(CheckpointForm);
 
-CheckpointForm = connect(state => ({
-  initialValues: state.protectedData.currentJob
-}))(CheckpointForm);
-
-export default CheckpointForm;
+// CheckpointForm = connect(state => ({
+//   initialValues: state.protectedData.currentJob
+// }))(CheckpointForm);

@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import "../pages/dashboard.css";
 
 export default class JobSection extends React.Component {
-  render() {
-      function formatDate(newDate) {
+  formatDate(newDate) {
       let date = new Date(newDate);
       let month = date.getMonth() + 1;
       let day = date.getDate();
       let year = date.getFullYear();
       return `${month}/${day}/${year}`;
     }
+
+  render() {
+    let jobBg = this.props.bgColor;
+
     return (
-      <div className="job-section">
+      <div className={`job-section ${jobBg}`}>
         <Link to={`job/${this.props.job.id}`}>
           <div className="job-image">
             <img
@@ -31,10 +34,11 @@ export default class JobSection extends React.Component {
             </div>
           </div>
           <div className="job-status">
-            <p>Added {formatDate(this.props.job.date)}</p>
+            <p>Added {this.formatDate(this.props.job.date)}</p>
             <p>Completion: {this.props.job.completion}</p>
           </div>
         </Link>
+        <div className="clear" />
       </div>
     );
   }
