@@ -177,3 +177,17 @@ export const deleteJob = jobid => dispatch => {
             dispatch(fetchProtectedDataError(err));
         });
 };
+
+export const deleteCheckpoint = checkpointid => dispatch => {
+    // dispatch(authRequest());
+    return fetch(`${API_BASE_URL}/jobs/checkpoint/${checkpointid}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then(dispatch(fetchJobs()))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};
