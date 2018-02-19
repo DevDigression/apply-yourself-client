@@ -10,7 +10,8 @@ const initialState = {
   data: "",
   error: null,
   jobs: [],
-  currentJob: {}
+  currentJob: {},
+  checkpoints: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -22,6 +23,7 @@ export default function reducer(state = initialState, action) {
   } else if (action.type === FETCH_SINGLE_JOB_SUCCESS) {
     return Object.assign({}, state, {
       currentJob: action.data,
+      checkpoints: [...action.data.checkpoints],
       error: null
     });
   } else if (action.type === CLEAR_JOB_SUCCESS) {

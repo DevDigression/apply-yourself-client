@@ -4,6 +4,7 @@ import "../pages/single-job.css";
 export default class Checkpoint extends React.Component {
 
   render() {
+  	console.log(this.props);
     return (
       <div className="checkpoint">
         <h5>1. Resume Sent</h5>
