@@ -8,9 +8,8 @@ export default class Checkpoint extends React.Component {
   	console.log(this.props);
     return (
       <div className="checkpoint">
-        <h5>1. Resume Sent</h5>
-          <p>Cover letter included:</p>
-          <p>Dear Hiring Manager ...</p>
+        <h5>{this.props.checkpoint.stage}</h5>
+          <p>{this.props.checkpoint.content}</p>
           <button
               onClick={() => {
                 if (
@@ -19,12 +18,12 @@ export default class Checkpoint extends React.Component {
                   )
                 ) {
                   this.props
-                    .dispatch(deleteCheckpoint(this.props.checkpoint))
-                    .then(() => this.props.history.push('/dashboard'));
+                    .dispatch(deleteCheckpoint(this.props));
+                    return this.props.history.push(`/job/${this.props.jobid}`);
                 }
               }}
             >
-              Delete Checkpoint
+              Delete
             </button>
       </div>
       );

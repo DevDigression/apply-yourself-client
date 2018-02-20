@@ -15,7 +15,7 @@ export class SingleJob extends React.Component {
   render() {
     let links = ["Dashboard", "Logout"];
     let checkpoints = this.props.currentJob.checkpoints;
-    console.log(this.props.currentJob);
+    console.log(this.props);
     return (
       <div className="single-job">
         <NavBar links={links} />
@@ -73,7 +73,7 @@ export class SingleJob extends React.Component {
           </div>
           <div className="checkpoints-list">
             {checkpoints.map((checkpoint, index) => (
-            <Checkpoint key={index} checkpoint={checkpoint} />
+            <Checkpoint key={index} checkpoint={checkpoint} jobid={this.props.match.params.jobid} checkpointid={index} dispatch={this.props.dispatch} history={this.props.history}/>
           ))}
           </div>
         </div>

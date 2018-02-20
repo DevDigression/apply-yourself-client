@@ -19,7 +19,7 @@ ToDos
 - After adding a checkpoint/editing -> go back to job/3423 not to jobs. 
 - Make the jobs on /jobs responsive more cohesive
 - Finish add/delete checkpoints
-- Sort checkpoints `job.chekpoints.sort(function(a, b){return a.stage > b.stage})`
+- Sort checkpoints `job.checkpoints.sort(function(a, b){return a.stage > b.stage})`
 
 Notes!
 - Add a big textArea where you can write and it autosaves!.

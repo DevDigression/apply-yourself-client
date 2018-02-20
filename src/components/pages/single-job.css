@@ -122,6 +122,15 @@
 	display: block;
 }
 
+.checkpoint button {
+	width: 70px;
+	height: 30px;
+	background-color: #2f80ed;
+	color: #fff;
+	font-size: 12px;
+	margin-top: 20px;
+}
+
 .checkpoint h5 {
 	font-size: 24px;
 	color: #2f80ed;
