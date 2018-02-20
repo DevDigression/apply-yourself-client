@@ -12,7 +12,8 @@ const initialState = {
   jobs: [],
   currentJob: {
     keywords: [],
-    checkpoints: []
+    checkpoints: [],
+    notes: ''
   },
 };
 

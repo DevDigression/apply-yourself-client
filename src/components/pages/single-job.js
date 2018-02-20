@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchJobById, deleteJob, addCheckpoint } from "../../actions/protected-data";
 import NavBar from "../navbar";
+import Notes from "../page-components/notes";
 import Checkpoint from "../page-components/checkpoint";
 import "./single-job.css";
 
@@ -61,6 +62,7 @@ export class SingleJob extends React.Component {
           </div>
           <div className="job-notes">
             <h4>Notes</h4>
+            <Notes jobid={this.props.match.params.jobid} dispatch={this.props.dispatch} history={this.props.history} />
             <p>
               {this.props.currentJob.notes}
             </p>

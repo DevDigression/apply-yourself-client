@@ -195,3 +195,21 @@ export const deleteCheckpoint = checkpoint => dispatch => {
             dispatch(fetchProtectedDataError(err));
         });
 };
+
+export const addNotes = notes => dispatch => {
+    // dispatch(authRequest());
+    return fetch(`${API_BASE_URL}/jobs/${notes.jobid}/notes`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            notes: notes.notes,
+            job: notes.jobid
+        })
+    })
+        .then(res => res.json())
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};

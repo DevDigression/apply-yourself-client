@@ -78,6 +78,17 @@
 	background-color: #edebeb;
 }
 
+.notes-form {
+	margin: 0 auto;
+	padding-left: 170px;
+}
+
+.notes-form textarea {
+	width: 50%;
+	height: 100px;
+	margin: 0 auto;
+}
+
 .job-notes h4,
 .job-notes p {
 	padding-left: 20%;
