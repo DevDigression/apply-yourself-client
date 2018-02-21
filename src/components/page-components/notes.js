@@ -5,29 +5,49 @@ import "../pages/single-job.css";
 export default class Notes extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props.initialValue);
     this.state = {
-      notes: '',
-      jobid: this.props.jobid
+      notes: props.initialValue
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.sendNotesToServer = this.sendNotesToServer.bind(this);
+  }
+
+  componentWillReceiveProps(props) {
+    this.setState({
+      notes: props.initialValue
+    });
+  }
+
+  componentWillUnmount(props) {
+    this.props.dispatch(
+      addNotes({
+        notes: this.state.notes,
+        jobid: this.props.jobid
+      })
+    );
   }
 
   handleChange(event) {
     let timer = null;
-    clearTimeout(timer); 
-    timer = setTimeout(this.handleSubmit, 1000)
-    this.setState({notes: event.target.value});
+    clearTimeout(timer);
+    timer = setTimeout(this.sendNotesToServer, 3000);
+    this.setState({ notes: event.target.value });
   }
 
-  handleSubmit(event) {
+  sendNotesToServer(event) {
     // alert(this.state.notes);
-    this.props.dispatch(addNotes(this.state));
+    this.props.dispatch(
+      addNotes({
+        notes: this.state.notes,
+        jobid: this.props.jobid
+      })
+    );
   }
 
   render() {
-    console.log(this.state.notes);
+    console.log(this.state);
     return (
       <div className="notes-form">
         <form>

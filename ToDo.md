@@ -16,18 +16,19 @@ Delete the console logs -->
 
 
 ToDos
-- After adding a checkpoint/editing -> go back to job/3423 not to jobs. 
-- Make the jobs on /jobs responsive more cohesive
-- Finish add/delete checkpoints
-- Sort checkpoints `job.checkpoints.sort(function(a, b){return a.stage > b.stage})`
 
-Notes!
-- Add a big textArea where you can write and it autosaves!.
-- Notes is going to be a `String` on the model
-- New route to edit notes!.  Post job/jobId/notes
-- When the user writes. Wait 10 secs and save the note by posting to the route 
-- when you open job/324543 prepopulate notes. 
-- As a backup. Also Post job/jobId/notes on componentWillUnmount.  
+Stats: 
+1. Create a component for PieChart
+2. Make it render with default/burned data.
+3. Responsiveness
+4. Change calculateData to use real data.
+5. All other charts. 
+
+Pending: 
+- Secure the app (is logged in) + (Auth for routes) 
+- Only display jobs for currentUser
+- Check nav links. "About Us" works?
+- Test
 
 Bonus
 - react-nvd3 https://github.com/NuCivic/react-nvd3

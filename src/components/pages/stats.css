@@ -24,13 +24,13 @@
 }
 
 .stages {
-	width: 80%;
+	width: 90%;
 	display: block;
 	margin: 50px auto;
 }
 
 .skills {
-	width: 80%;
+	width: 90%;
 	display: block;
 	margin: 50px auto;
 	padding-top: 100px;
@@ -38,7 +38,7 @@
 }
 
 .stages-list {
-	width: 40%;
+	width: 50%;
 	display: inline-block;
 	margin: 0 auto;
 	text-align: right;
@@ -52,8 +52,12 @@
 	margin: 0 auto;
 }
 
+.job-stage-piechart {
+	width: 100%;
+}
+
 .skills-list {
-	width: 40%;
+	width: 50%;
 	display: inline-block;
 	margin: 0 auto;
 	float: left;
@@ -68,7 +72,7 @@
 
 .stages-list li,
 .skills-list li {
-	font-size: 32px;
+	font-size: 24px;
 	padding: 10px;
 }
 

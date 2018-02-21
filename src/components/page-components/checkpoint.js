@@ -18,7 +18,10 @@ export default class Checkpoint extends React.Component {
                   )
                 ) {
                   this.props
-                    .dispatch(deleteCheckpoint(this.props));
+                    .dispatch(deleteCheckpoint({
+                      jobid: this.props.jobid,
+                      checkpointid: this.props.checkpointid
+                    }));
                     return this.props.history.push(`/job/${this.props.jobid}`);
                 }
               }}

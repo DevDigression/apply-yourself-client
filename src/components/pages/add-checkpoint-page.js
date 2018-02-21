@@ -7,7 +7,7 @@ import "./checkpoint-form-page.css";
 
 export class AddCheckpointPage extends React.Component {
   componentDidMount() {
-      this.props.dispatch(fetchJobById(this.props.match.params.jobid));
+    this.props.dispatch(fetchJobById(this.props.match.params.jobid));
   }
 
   onSubmit(values) {
@@ -23,7 +23,10 @@ export class AddCheckpointPage extends React.Component {
       <div className="add-checkpoint-page">
         <NavBar links={links} />
         <div className="add-checkpoint-container">
-          <CheckpointForm title="Add Checkpoint" onSubmit={(values) => this.onSubmit(values)} />
+          <CheckpointForm
+            title="Add Checkpoint"
+            onSubmit={values => this.onSubmit(values)}
+          />
         </div>
       </div>
     );

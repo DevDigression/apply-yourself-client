@@ -9,8 +9,17 @@
 }
 
 .job-form input {
-	margin: 5px auto;
+	margin: 10px auto;
 	width: 70%;
+}
+
+.job-form select {
+	margin: 10px auto;
+	width: 70%;
+}
+
+.job-form option {
+	text-align: center;
 }
 
 .job-form h2 {
@@ -34,6 +43,10 @@
 .job-form input {
 	width: 90%;
 }
+
+.job-form select {
+	width: 90%;
+}
 }
 
 @media only screen and (max-width: 540px) {
@@ -42,6 +55,10 @@
 }
 
 .job-form input {
+	width: 95%;
+}
+
+.job-form select {
 	width: 95%;
 }
 }

@@ -10,11 +10,13 @@ const initialState = {
   data: "",
   error: null,
   jobs: [],
+  stages: [],
+  skills: [],
   currentJob: {
     keywords: [],
     checkpoints: [],
-    notes: ''
-  },
+    notes: ""
+  }
 };
 
 export default function reducer(state = initialState, action) {
@@ -35,11 +37,11 @@ export default function reducer(state = initialState, action) {
       error: null
     });
   } else if (action.type === SORT_JOBS_BY_DATE) {
-      let jobsByDate = action.data.sort(function(a, b) { 
-        let dateA = new Date(a.date);
-        let dateB = new Date(b.date);
-        return dateB - dateA;
-      });
+    let jobsByDate = action.data.sort(function(a, b) {
+      let dateA = new Date(a.date);
+      let dateB = new Date(b.date);
+      return dateB - dateA;
+    });
     return Object.assign({}, state, {
       jobs: [...jobsByDate],
       error: null

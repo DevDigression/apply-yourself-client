@@ -73,6 +73,7 @@ export const fetchJobs = () => dispatch => {
 
 export const fetchJobById = id => dispatch => {
     // dispatch(authRequest());
+    console.log('fetchJobById');
     fetch(`${API_BASE_URL}/jobs/${id}`, {
         method: "GET",
         headers: {
@@ -130,6 +131,7 @@ export const addCheckpoint = checkpoint => dispatch => {
         })
     })
         .then(res => res.json())
+        .then(data => dispatch(fetchSingleJobSuccess(data)))
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
         });
@@ -190,7 +192,8 @@ export const deleteCheckpoint = checkpoint => dispatch => {
             job: checkpoint.jobid
         })
     })
-        .then(dispatch(fetchJobById(checkpoint.jobid)))
+        .then(res => res.json())
+        .then(data => dispatch(fetchSingleJobSuccess(data)))
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
         });
