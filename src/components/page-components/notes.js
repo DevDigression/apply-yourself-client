@@ -5,7 +5,6 @@ import "../pages/single-job.css";
 export default class Notes extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props.initialValue);
     this.state = {
       notes: props.initialValue
     };
@@ -47,7 +46,6 @@ export default class Notes extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="notes-form">
         <form>

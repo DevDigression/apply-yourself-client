@@ -54,7 +54,7 @@ export const clearJobData = clear => dispatch => {
 
 export const sortByDate = jobs => dispatch => {
     dispatch(sortJobsByDate(jobs));
-}
+};
 
 export const fetchJobs = () => dispatch => {
     // dispatch(authRequest());
@@ -73,7 +73,7 @@ export const fetchJobs = () => dispatch => {
 
 export const fetchJobById = id => dispatch => {
     // dispatch(authRequest());
-    console.log('fetchJobById');
+    console.log("fetchJobById");
     fetch(`${API_BASE_URL}/jobs/${id}`, {
         method: "GET",
         headers: {
@@ -105,15 +105,14 @@ export const addJob = job => dispatch => {
             keywords: job.keywords,
             notes: job.notes,
             date: new Date(),
-            stage: job.stage,
+            // stage: job.stage,
             completion: job.completion,
             checkpoints: job.checkpoints,
             id: job._id
         })
-    })
-        .catch(err => {
-            dispatch(fetchProtectedDataError(err));
-        });
+    }).catch(err => {
+        dispatch(fetchProtectedDataError(err));
+    });
 };
 
 export const addCheckpoint = checkpoint => dispatch => {
@@ -131,7 +130,10 @@ export const addCheckpoint = checkpoint => dispatch => {
         })
     })
         .then(res => res.json())
-        .then(data => dispatch(fetchSingleJobSuccess(data)))
+        .then(data => {
+            console.log(data);
+            dispatch(fetchSingleJobSuccess(data));
+        })
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
         });
@@ -155,15 +157,14 @@ export const editJob = job => dispatch => {
             keywords: job.keywords,
             notes: job.notes,
             date: job.date,
-            stage: job.stage,
+            // stage: job.stage,
             completion: job.completion,
             checkpoints: job.checkpoints,
             id: job._id
         })
-    })
-        .catch(err => {
-            dispatch(fetchProtectedDataError(err));
-        });
+    }).catch(err => {
+        dispatch(fetchProtectedDataError(err));
+    });
 };
 
 export const deleteJob = jobid => dispatch => {

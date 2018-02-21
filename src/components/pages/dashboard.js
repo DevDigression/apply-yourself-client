@@ -15,6 +15,7 @@ export class Dashboard extends React.Component {
   render() {
     let links = ["Stats", "Logout"];
     let jobs = this.props.jobs;
+    console.log(this.props.jobs);
     return (
       <div className="dashboard">
         <NavBar links={links} />
@@ -22,7 +23,13 @@ export class Dashboard extends React.Component {
           <div className="sort-section">
             <h5>Sort By:</h5>
             <div className="sort-options">
-              <span className="sort-date" onClick={() => this.props.dispatch(sortByDate(jobs))}>Date</span> | <span className="sort-status">Status</span>
+              <span
+                className="sort-date"
+                onClick={() => this.props.dispatch(sortByDate(jobs))}
+              >
+                Date
+              </span>{" "}
+              | <span className="sort-status">Status</span>
             </div>
           </div>
           <div className="add-job">
@@ -34,7 +41,11 @@ export class Dashboard extends React.Component {
         </div>
         <div className="jobs-list" />
         {jobs.map((job, index) => (
-          <JobSection key={index} job={job} bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"} />
+          <JobSection
+            key={index}
+            job={job}
+            bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"}
+          />
         ))}
       </div>
     );
@@ -42,13 +53,13 @@ export class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
-    return {
-        // username: state.auth.currentUser.username,
-        // name: `${currentUser.firstName} ${currentUser.lastName}`,
-        // protectedData: state.protectedData.data,
-        jobs: state.protectedData.jobs
-    };
+  const { currentUser } = state.auth;
+  return {
+    // username: state.auth.currentUser.username,
+    // name: `${currentUser.firstName} ${currentUser.lastName}`,
+    // protectedData: state.protectedData.data,
+    jobs: state.protectedData.jobs
+  };
 };
 
 export default connect(mapStateToProps)(Dashboard);

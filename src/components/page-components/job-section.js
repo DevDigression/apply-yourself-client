@@ -1,27 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "../pages/dashboard.css";
 
 export default class JobSection extends React.Component {
   formatDate(newDate) {
-      let date = new Date(newDate);
-      let month = date.getMonth() + 1;
-      let day = date.getDate();
-      let year = date.getFullYear();
-      return `${month}/${day}/${year}`;
-    }
+    let date = new Date(newDate);
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+  }
 
   render() {
     let jobBg = this.props.bgColor;
-
+    let currentStage = this.props.job.checkpoints.length;
+    console.log(currentStage);
     return (
       <div className={`job-section ${jobBg}`}>
         <Link to={`job/${this.props.job.id}`}>
           <div className="job-image">
-            <img
-              src={this.props.job.image}
-              alt="placeholder"
-            />
+            <img src={this.props.job.image} alt="placeholder" />
           </div>
           <div className="job-text">
             <div className="job-main">

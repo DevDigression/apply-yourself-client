@@ -74,23 +74,28 @@
 
 .job-notes {
 	width: 100%;
-	padding: 20px;
+	padding: 40px;
 	background-color: #edebeb;
 }
 
+.autosave {
+	padding-left: 10px;
+	font-size: 16px;
+}
+
 .notes-form {
-	margin: 0 auto;
-	padding-left: 170px;
+	margin-left: 20%;
 }
 
 .notes-form textarea {
-	width: 50%;
-	height: 100px;
+	width: 70%;
+	height: 150px;
 	margin: 0 auto;
 }
 
 .job-notes h4,
 .job-notes p {
+	font-size: 20px;
 	padding-left: 20%;
 }
 
@@ -168,14 +173,13 @@
 		padding: 20px;
 	}
 
-	.job-notes {
-		width: 100%;
-		margin: 0 auto;
-		display: block;
-		text-align: center;
-		padding: 20px;
+	.notes-form {
+		margin-left: 0;
 	}
 
+	.notes-form textarea {
+		width: 100%;
+	}
 	.job-notes h4,
 	.job-notes p {
 		padding-left: 0;

@@ -1,23 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchJobById, deleteJob, addCheckpoint } from "../../actions/protected-data";
+import {
+  fetchJobById,
+  deleteJob,
+  addCheckpoint
+} from "../../actions/protected-data";
 import NavBar from "../navbar";
 import Notes from "../page-components/notes";
+import JobProgressionSingle from "../page-components/job-progression-single";
 import Checkpoint from "../page-components/checkpoint";
 import "./single-job.css";
 
 export class SingleJob extends React.Component {
-
   componentDidMount() {
     this.props.dispatch(fetchJobById(this.props.match.params.jobid));
   }
 
   render() {
-    console.log(this.props.currentJob.notes);
+    console.log(this.props);
     let links = ["Dashboard", "Logout"];
     let checkpoints = this.props.currentJob.checkpoints;
-    console.log(this.props);
     return (
       <div className="single-job">
         <NavBar links={links} />
@@ -27,10 +30,7 @@ export class SingleJob extends React.Component {
           <a href={this.props.currentJob.posting} target="_blank">
             <button>See Job Posting</button>
           </a>
-          <img
-            src="http://nvd3.org/examples/img/bullet.png"
-            alt="placeholder"
-          />
+          <JobProgressionSingle />
         </div>
         <div className="job-info">
           <div className="job-info-buttons">
@@ -46,7 +46,7 @@ export class SingleJob extends React.Component {
                 ) {
                   this.props
                     .dispatch(deleteJob(this.props.match.params.jobid))
-                    .then(() => this.props.history.push('/dashboard'));
+                    .then(() => this.props.history.push("/dashboard"));
                 }
               }}
             >
@@ -58,23 +58,41 @@ export class SingleJob extends React.Component {
               <li>Contact Info: {this.props.currentJob.contact}</li>
               <li>Application Deadline: {this.props.currentJob.deadline}</li>
               <li>Style of Company: {this.props.currentJob.style}</li>
-              <li>Tech Keywords: {this.props.currentJob.keywords.join(", ")}</li>
+              <li>
+                Tech Keywords: {this.props.currentJob.keywords.join(", ")}
+              </li>
             </ul>
           </div>
           <div className="job-notes">
-            <h4>Notes</h4>
-            <Notes initialValue={this.props.currentJob.notes} jobid={this.props.match.params.jobid} dispatch={this.props.dispatch} history={this.props.history} />
+            <h4>
+              Notes <span className="autosave">(autosave on exit)</span>
+            </h4>
+            <Notes
+              initialValue={this.props.currentJob.notes}
+              jobid={this.props.match.params.jobid}
+              dispatch={this.props.dispatch}
+              history={this.props.history}
+            />
           </div>
         </div>
         <div className="job-checkpoints">
           <div className="checkpoints-header">
             <h3>Checkpoints</h3>
-            <Link to={`/checkpoint/${this.props.match.params.jobid}`}><button>Add Checkpoint</button></Link>
+            <Link to={`/checkpoint/${this.props.match.params.jobid}`}>
+              <button>Add Checkpoint</button>
+            </Link>
           </div>
           <div className="checkpoints-list">
             {checkpoints.map((checkpoint, index) => (
-            <Checkpoint key={index} checkpoint={checkpoint} jobid={this.props.match.params.jobid} checkpointid={index} dispatch={this.props.dispatch} history={this.props.history}/>
-          ))}
+              <Checkpoint
+                key={index}
+                checkpoint={checkpoint}
+                jobid={this.props.match.params.jobid}
+                checkpointid={index}
+                dispatch={this.props.dispatch}
+                history={this.props.history}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -83,14 +101,14 @@ export class SingleJob extends React.Component {
 }
 
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
-    return {
-        // username: state.auth.currentUser.username,
-        // name: `${currentUser.firstName} ${currentUser.lastName}`,
-        // protectedData: state.protectedData.data,
-        currentJob: state.protectedData.currentJob,
-        checkpoints: state.protectedData.checkpoints
-    };
+  const { currentUser } = state.auth;
+  return {
+    // username: state.auth.currentUser.username,
+    // name: `${currentUser.firstName} ${currentUser.lastName}`,
+    // protectedData: state.protectedData.data,
+    currentJob: state.protectedData.currentJob,
+    checkpoints: state.protectedData.checkpoints
+  };
 };
 
 export default connect(mapStateToProps)(SingleJob);

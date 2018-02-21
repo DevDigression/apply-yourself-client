@@ -53,6 +53,6 @@ export default (CheckpointForm = reduxForm({
     dispatch(focus("checkpoint-form", "title"))
 })(CheckpointForm));
 
-// CheckpointForm = connect(state => ({
-//   initialValues: state.protectedData.currentJob
-// }))(CheckpointForm);
+CheckpointForm = connect(state => ({
+  initialValues: state.protectedData.currentJob
+}))(CheckpointForm);

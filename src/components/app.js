@@ -8,8 +8,8 @@ import RegistrationPage from "./pages/registration-page";
 import LoginPage from "./pages/login-page";
 import SingleJob from "./pages/single-job";
 import AddJobPage from "./pages/add-job-page";
-import AddCheckpointPage from "./pages/add-checkpoint-page";
 import EditJobPage from "./pages/edit-job-page";
+import AddCheckpointPage from "./pages/add-checkpoint-page";
 import { refreshAuthToken } from "../actions/auth";
 
 export class App extends React.Component {
