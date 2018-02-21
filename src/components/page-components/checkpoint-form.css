@@ -13,6 +13,11 @@
 	width: 70%;
 }
 
+.checkpoint-form textarea {
+	margin: 10px auto;
+	width: 70%;
+}
+
 .checkpoint-form h2 {
 	margin-bottom: 20px;
 }
@@ -27,21 +32,21 @@
 }
 
 @media only screen and (max-width: 768px) {
-.checkpoint-form {
-	width: 80%;
-}
+	.checkpoint-form {
+		width: 80%;
+	}
 
-.checkpoint-form input {
-	width: 90%;
-}
+	.checkpoint-form input {
+		width: 90%;
+	}
 }
 
 @media only screen and (max-width: 540px) {
-.checkpoint-form {
-	width: 90%;
-}
+	.checkpoint-form {
+		width: 90%;
+	}
 
-.checkpoint-form input {
-	width: 95%;
-}
+	.checkpoint-form input {
+		width: 95%;
+	}
 }

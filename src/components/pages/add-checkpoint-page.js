@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import NavBar from "../navbar";
+import Notes from "../page-components/notes";
 import CheckpointForm from "../page-components/checkpoint-form";
 import { addCheckpoint, fetchJobById } from "../../actions/protected-data";
 import "./checkpoint-form-page.css";
@@ -25,6 +26,7 @@ export class AddCheckpointPage extends React.Component {
         <div className="add-checkpoint-container">
           <CheckpointForm
             title="Add Checkpoint"
+            jobid={this.props.match.params.jobid}
             onSubmit={values => this.onSubmit(values)}
           />
         </div>

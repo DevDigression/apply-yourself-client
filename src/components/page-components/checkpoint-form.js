@@ -1,6 +1,7 @@
 import React from "react";
 import { Field, reduxForm, focus, reset } from "redux-form";
 import Input from "../input";
+import Textarea from "../textarea";
 import CheckpointDropdown from "../checkpoint-dropdown";
 import { connect } from "react-redux";
 import { required, nonEmpty } from "../../validators";
@@ -28,14 +29,14 @@ export class CheckpointForm extends React.Component {
         {error}
         <h2>{this.props.title}</h2>
         <label htmlFor="stage">Stage</label>
-        <Field component={CheckpointDropdown} type="select" name="stage" id="stage" />
-        <label htmlFor="content">Additional Info</label>
         <Field
-          component={Input}
-          type="text"
-          name="content"
-          id="content"
+          component={CheckpointDropdown}
+          type="select"
+          name="stage"
+          id="stage"
         />
+        <label htmlFor="content">Additional Info</label>
+        <Field component={Textarea} type="text" name="content" id="content" />
         <button disabled={this.props.pristine || this.props.submitting}>
           Submit
         </button>
@@ -44,13 +45,13 @@ export class CheckpointForm extends React.Component {
   }
 }
 
-
-export default CheckpointForm = reduxForm({
+export default (CheckpointForm = reduxForm({
   form: "checkpoint-form",
   enableReinitialize: true,
   onSubmitSuccess: (result, dispatch) => dispatch(reset("checkpoint-form")),
-  onSubmitFail: (errors, dispatch) => dispatch(focus("checkpoint-form", "title"))
-})(CheckpointForm);
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus("checkpoint-form", "title"))
+})(CheckpointForm));
 
 // CheckpointForm = connect(state => ({
 //   initialValues: state.protectedData.currentJob
