@@ -105,7 +105,6 @@ export const addJob = job => dispatch => {
             keywords: job.keywords,
             notes: job.notes,
             date: new Date(),
-            // stage: job.stage,
             completion: job.completion,
             checkpoints: job.checkpoints,
             id: job._id
@@ -117,7 +116,6 @@ export const addJob = job => dispatch => {
 
 export const addCheckpoint = checkpoint => dispatch => {
     // dispatch(authRequest());
-    console.log(checkpoint);
     return fetch(`${API_BASE_URL}/jobs/${checkpoint.jobid}/checkpoint`, {
         method: "POST",
         headers: {
@@ -131,7 +129,6 @@ export const addCheckpoint = checkpoint => dispatch => {
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             dispatch(fetchSingleJobSuccess(data));
         })
         .catch(err => {

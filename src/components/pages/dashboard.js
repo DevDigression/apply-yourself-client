@@ -15,7 +15,7 @@ export class Dashboard extends React.Component {
   render() {
     let links = ["Stats", "Logout"];
     let jobs = this.props.jobs;
-    console.log(this.props.jobs);
+
     return (
       <div className="dashboard">
         <NavBar links={links} />

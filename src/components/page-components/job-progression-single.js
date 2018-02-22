@@ -5,18 +5,16 @@ import "./job-progression-single.css";
 
 export class JobProgressionSingle extends React.Component {
   render() {
-    var ranges = [
-      Math.random() * 10,
-      Math.random() * 20 + 10,
-      Math.random() * 20 + 30
-    ];
+    let totalCheckpoints = 7;
+    let currentCheckpoint = this.props.currentCheckpoint;
 
+    var ranges = [1, 2, 3, 4, 5, 6, 7];
     var datum = {
-      title: "A",
-      subtitle: "B",
+      title: "Progression",
+      subtitle: "Stages: ",
       ranges: ranges,
-      measures: [Math.random() * ranges[2]],
-      markers: [Math.random() * ranges[2]]
+      measures: [currentCheckpoint]
+      // markers: [currentCheckpoint / totalCheckpoints]
     };
 
     return (
@@ -34,7 +32,7 @@ export class JobProgressionSingle extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  stages: state.stages
+  currentJob: state.protectedData.currentJob
 });
 
 export default connect(mapStateToProps)(JobProgressionSingle);

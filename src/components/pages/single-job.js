@@ -30,7 +30,9 @@ export class SingleJob extends React.Component {
           <a href={this.props.currentJob.posting} target="_blank">
             <button>See Job Posting</button>
           </a>
-          <JobProgressionSingle />
+          <JobProgressionSingle
+            currentCheckpoint={this.props.currentJob.stage}
+          />
         </div>
         <div className="job-info">
           <div className="job-info-buttons">

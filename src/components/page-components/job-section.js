@@ -14,8 +14,6 @@ export default class JobSection extends React.Component {
 
   render() {
     let jobBg = this.props.bgColor;
-    let currentStage = this.props.job.checkpoints.length;
-    console.log(currentStage);
     return (
       <div className={`job-section ${jobBg}`}>
         <Link to={`job/${this.props.job.id}`}>

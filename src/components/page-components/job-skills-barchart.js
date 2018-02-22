@@ -10,12 +10,12 @@ export class JobSkillsBarChart extends React.Component {
         values: []
       }
     ];
-    for (let i = 0; i < skills.length; i++) {
+    Object.keys(skills).forEach(skill => {
       datum[0].values.push({
-        label: skills[i].skill,
-        value: skills[i].value
+        label: skill,
+        value: skills[skill]
       });
-    }
+    });
     return datum;
   }
   render() {
@@ -43,8 +43,6 @@ export class JobSkillsBarChart extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  // skills: state.skills
-});
+const mapStateToProps = state => ({});
 
 export default connect(mapStateToProps)(JobSkillsBarChart);

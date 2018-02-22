@@ -5,18 +5,16 @@ import "./job-progression-avg.css";
 
 export class JobProgressionAvg extends React.Component {
   render() {
-    var ranges = [
-      Math.random() * 10,
-      Math.random() * 20 + 10,
-      Math.random() * 20 + 30
-    ];
+    let numberOfJobs = this.props.jobNumberTotal;
+    let jobProgressionTotal = this.props.jobProgressionTotal;
 
+    var ranges = [1, 2, 3, 4, 5, 6, 7];
     var datum = {
-      title: "A",
-      subtitle: "B",
+      title: "Progression",
+      subtitle: "Stages: ",
       ranges: ranges,
-      measures: [Math.random() * ranges[2]],
-      markers: [Math.random() * ranges[2]]
+      measures: [jobProgressionTotal / numberOfJobs]
+      // markers: [jobProgressionTotal / numberOfJobs]
     };
 
     return (
@@ -34,7 +32,7 @@ export class JobProgressionAvg extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  jobs: state.jobs
+  jobs: state.protectedData.jobs
 });
 
 export default connect(mapStateToProps)(JobProgressionAvg);

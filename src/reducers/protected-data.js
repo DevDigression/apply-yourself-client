@@ -28,9 +28,6 @@ export default function reducer(state = initialState, action) {
       error: null
     });
   } else if (action.type === FETCH_SINGLE_JOB_SUCCESS) {
-    let lastCheckpoint = action.data.checkpoints.length - 1;
-    let currentCheckpoint = action.data.checkpoints[lastCheckpoint].stage;
-    console.log(action.data);
     return Object.assign({}, state, {
       currentJob: action.data,
       checkpoints: [...action.data.checkpoints],

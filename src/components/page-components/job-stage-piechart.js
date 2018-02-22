@@ -5,25 +5,16 @@ import "../pages/stats.css";
 
 export class JobStagePieChart extends React.Component {
   calculateData(stages) {
-    let jobs = this.props.jobs;
-    let jobData = {};
+    let jobStages = this.props.jobStages;
 
-    jobs.forEach(job => {
-      if (!jobData[job.stage]) {
-        jobData[job.stage] = 1;
-      } else {
-        jobData[job.stage]++;
-      }
-    });
-    console.log(jobData);
     let data = [
-      { key: "1", y: jobData[1] },
-      { key: "2", y: jobData[2] },
-      { key: "3", y: jobData[3] },
-      { key: "4", y: jobData[4] },
-      { key: "5", y: jobData[5] },
-      { key: "6", y: jobData[6] },
-      { key: "7", y: jobData[7] }
+      { key: "1", y: jobStages[1] },
+      { key: "2", y: jobStages[2] },
+      { key: "3", y: jobStages[3] },
+      { key: "4", y: jobStages[4] },
+      { key: "5", y: jobStages[5] },
+      { key: "6", y: jobStages[6] },
+      { key: "7", y: jobStages[7] }
       // { key: "Total", y: 35 }
     ];
     return data;

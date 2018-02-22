@@ -30,7 +30,7 @@ Pending:
 * Test
 
 - Edit checkpoint notes/textarea ?
-- Checkpoints displaying array length (need stage ?)
+- Placeholder image
 
 Bonus
 
