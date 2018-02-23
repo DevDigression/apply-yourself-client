@@ -16,6 +16,7 @@ export class JobSkillsBarChart extends React.Component {
         value: skills[skill]
       });
     });
+    datum[0].values.sort((a, b) => b.value - a.value);
     return datum;
   }
   render() {
@@ -29,7 +30,8 @@ export class JobSkillsBarChart extends React.Component {
     return (
       <div className="job-skills-barchart">
         <NVD3Chart
-          height={300}
+          // height={300}
+          // width={370}
           context={context}
           color={{ name: "getColor", type: "function" }}
           tooltip={{ enabled: true }}

@@ -1,10 +1,8 @@
 import React from "react";
 import { Field, reduxForm, focus, reset } from "redux-form";
-import Input from "../input";
 import Textarea from "../textarea";
 import CheckpointDropdown from "../checkpoint-dropdown";
 import { connect } from "react-redux";
-import { required, nonEmpty } from "../../validators";
 import "./checkpoint-form.css";
 
 export class CheckpointForm extends React.Component {

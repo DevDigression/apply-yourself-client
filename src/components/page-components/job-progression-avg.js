@@ -10,8 +10,8 @@ export class JobProgressionAvg extends React.Component {
 
     var ranges = [1, 2, 3, 4, 5, 6, 7];
     var datum = {
-      title: "Progression",
-      subtitle: "Stages: ",
+      // title: "Progression",
+      // subtitle: "Stages: ",
       ranges: ranges,
       measures: [jobProgressionTotal / numberOfJobs]
       // markers: [jobProgressionTotal / numberOfJobs]

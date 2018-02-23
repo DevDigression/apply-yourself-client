@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-// import requiresLogin from "../requires-login";
+import requiresLogin from "../requires-login";
 import { Link } from "react-router-dom";
 import { fetchJobs, sortByDate } from "../../actions/protected-data";
 import NavBar from "../navbar";
@@ -53,14 +53,14 @@ export class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const { currentUser } = state.auth;
+  // const { currentUser } = state.auth;
   return {
-    // username: state.auth.currentUser.username,
+    username: state.auth.currentUser.username,
     // name: `${currentUser.firstName} ${currentUser.lastName}`,
-    // protectedData: state.protectedData.data,
+    protectedData: state.protectedData.data,
     jobs: state.protectedData.jobs
   };
 };
 
-export default connect(mapStateToProps)(Dashboard);
-// export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+// export default connect(mapStateToProps)(Dashboard);
+export default requiresLogin()(connect(mapStateToProps)(Dashboard));

@@ -56,12 +56,13 @@ export const sortByDate = jobs => dispatch => {
     dispatch(sortJobsByDate(jobs));
 };
 
-export const fetchJobs = () => dispatch => {
-    // dispatch(authRequest());
+export const fetchJobs = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     fetch(`${API_BASE_URL}/jobs`, {
         method: "GET",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
         }
     })
         .then(res => res.json())
@@ -71,13 +72,14 @@ export const fetchJobs = () => dispatch => {
         });
 };
 
-export const fetchJobById = id => dispatch => {
-    // dispatch(authRequest());
+export const fetchJobById = id => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     console.log("fetchJobById");
     fetch(`${API_BASE_URL}/jobs/${id}`, {
         method: "GET",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
         }
     })
         .then(res => res.json())
@@ -87,12 +89,13 @@ export const fetchJobById = id => dispatch => {
         });
 };
 
-export const addJob = job => dispatch => {
-    // dispatch(authRequest());
+export const addJob = job => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/jobs`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify({
             title: job.title,
@@ -114,12 +117,13 @@ export const addJob = job => dispatch => {
     });
 };
 
-export const addCheckpoint = checkpoint => dispatch => {
-    // dispatch(authRequest());
+export const addCheckpoint = checkpoint => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/jobs/${checkpoint.jobid}/checkpoint`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify({
             stage: checkpoint.stage,
@@ -136,12 +140,13 @@ export const addCheckpoint = checkpoint => dispatch => {
         });
 };
 
-export const editJob = job => dispatch => {
-    // dispatch(authRequest());
+export const editJob = job => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/jobs/edit/${job.id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify({
             title: job.title,
@@ -164,12 +169,13 @@ export const editJob = job => dispatch => {
     });
 };
 
-export const deleteJob = jobid => dispatch => {
-    // dispatch(authRequest());
+export const deleteJob = jobid => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/jobs/${jobid}`, {
         method: "DELETE",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
         }
     })
         .then(dispatch(fetchJobs()))
@@ -178,12 +184,13 @@ export const deleteJob = jobid => dispatch => {
         });
 };
 
-export const deleteCheckpoint = checkpoint => dispatch => {
-    // dispatch(authRequest());
+export const deleteCheckpoint = checkpoint => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/jobs/${checkpoint.jobid}/checkpoint`, {
         method: "DELETE",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify({
             checkpoint: checkpoint.checkpointid,
@@ -197,12 +204,13 @@ export const deleteCheckpoint = checkpoint => dispatch => {
         });
 };
 
-export const addNotes = notes => dispatch => {
-    // dispatch(authRequest());
+export const addNotes = notes => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/jobs/${notes.jobid}/notes`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
         },
         body: JSON.stringify({
             notes: notes.notes,

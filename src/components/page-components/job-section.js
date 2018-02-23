@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 import "../pages/dashboard.css";
 
 export default class JobSection extends React.Component {

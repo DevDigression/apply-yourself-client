@@ -1,21 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { clearAuth } from "../actions/auth";
+import { clearAuthToken } from "../local-storage";
 import "./navbar.css";
 
-export default class NavBar extends React.Component {
+export class NavBar extends React.Component {
+  logOut() {
+    this.props.dispatch(clearAuth());
+    clearAuthToken();
+  }
+
   render() {
-    // if (loggedIn) {
+    // if (this.props.loggedIn) {
     //   //links=
     // } else {
     //   //links=
     // }
-    let links = this.props.links.map((link, i) => (
-      <li key={i}>
-        <Link to={`/${link.toLowerCase()}`} className={`nav-link`}>
-          {link}
-        </Link>
-      </li>
-    ));
+
+    let links = this.props.links.map((link, i) => {
+      if (link === "Logout") {
+        return (
+          <li key={i}>
+            <Link
+              to={`/login`}
+              className={`nav-link`}
+              onClick={() => this.logOut()}
+            >
+              {link}
+            </Link>
+          </li>
+        );
+      }
+      return (
+        <li key={i}>
+          <Link to={`/${link.toLowerCase()}`} className={`nav-link`}>
+            {link}
+          </Link>
+        </li>
+      );
+    });
 
     return (
       <div className={`navbar`}>
@@ -29,3 +53,9 @@ export default class NavBar extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(NavBar);

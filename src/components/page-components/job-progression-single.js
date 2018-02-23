@@ -5,13 +5,12 @@ import "./job-progression-single.css";
 
 export class JobProgressionSingle extends React.Component {
   render() {
-    let totalCheckpoints = 7;
     let currentCheckpoint = this.props.currentCheckpoint;
 
     var ranges = [1, 2, 3, 4, 5, 6, 7];
     var datum = {
-      title: "Progression",
-      subtitle: "Stages: ",
+      // title: "Progression",
+      // subtitle: "Stages: ",
       ranges: ranges,
       measures: [currentCheckpoint]
       // markers: [currentCheckpoint / totalCheckpoints]

@@ -6,16 +6,29 @@ import JobSkillsBarChart from "../page-components/job-skills-barchart";
 import JobProgressionAvg from "../page-components/job-progression-avg";
 import SkillsList from "../page-components/skills-list";
 import requiresLogin from "../requires-login";
+import { fetchJobs } from "../../actions/protected-data";
 import "./stats.css";
 
 export class Stats extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(fetchJobs());
+  }
+
   render() {
     let links = ["Dashboard"];
 
     let jobs = this.props.jobs;
     let jobNumberTotal = this.props.jobs.length;
     let jobProgressionTotal = 0;
-    let jobStages = {};
+    let jobStages = {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0
+    };
     let jobSkills = {};
 
     jobs.forEach(job => {
@@ -25,7 +38,7 @@ export class Stats extends React.Component {
         jobStages[job.stage]++;
       }
     });
-    console.log(jobStages);
+
     jobs.forEach(job => {
       job.keywords.forEach(keyword => {
         if (!jobSkills[keyword]) {
@@ -59,14 +72,37 @@ export class Stats extends React.Component {
           </div>
           <div className="stages-list">
             <ul>
-              <li>1. Resume / Cover Letter Sent: {jobStages[1]}</li>
-              <li>2. Phone Screen: {jobStages[2]}</li>
-              <li>3. First Interview (Culture Fit): {jobStages[3]}</li>
-              <li>4. Coding Challenge: {jobStages[4]}</li>
-              <li>5. Technical Interview: {jobStages[5]}</li>
-              <li>6. Onsite Interview: {jobStages[6]}</li>
-              <li>7. Job Offer: {jobStages[7]}</li>
-              <li>Total: {jobNumberTotal}</li>
+              <li>
+                1. Resume / Cover Letter Sent:{" "}
+                <span className="job-stage-data">{jobStages[1]}</span>
+              </li>
+              <li>
+                2. Phone Screen:{" "}
+                <span className="job-stage-data">{jobStages[2]}</span>
+              </li>
+              <li>
+                3. First Interview (Culture Fit):{" "}
+                <span className="job-stage-data">{jobStages[3]}</span>
+              </li>
+              <li>
+                4. Coding Challenge:{" "}
+                <span className="job-stage-data">{jobStages[4]}</span>
+              </li>
+              <li>
+                5. Technical Interview:{" "}
+                <span className="job-stage-data">{jobStages[5]}</span>
+              </li>
+              <li>
+                6. Onsite Interview:{" "}
+                <span className="job-stage-data">{jobStages[6]}</span>
+              </li>
+              <li>
+                7. Job Offer:{" "}
+                <span className="job-stage-data">{jobStages[7]}</span>
+              </li>
+              <li>
+                Total: <span className="job-stage-data">{jobNumberTotal}</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -85,14 +121,14 @@ export class Stats extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const { currentUser } = state.auth;
+  // const { currentUser } = state.auth;
   return {
-    // username: state.auth.currentUser.username,
+    username: state.auth.currentUser.username,
     // name: `${currentUser.firstName} ${currentUser.lastName}`,
-    // protectedData: state.protectedData.data,
+    protectedData: state.protectedData.data,
     jobs: state.protectedData.jobs
   };
 };
 
-export default connect(mapStateToProps)(Stats);
-// export default requiresLogin()(connect(mapStateToProps)(Stats));
+// export default connect(mapStateToProps)(Stats);
+export default requiresLogin()(connect(mapStateToProps)(Stats));

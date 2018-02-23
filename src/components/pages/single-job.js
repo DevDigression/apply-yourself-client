@@ -1,11 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  fetchJobById,
-  deleteJob,
-  addCheckpoint
-} from "../../actions/protected-data";
+import { fetchJobById, deleteJob } from "../../actions/protected-data";
 import NavBar from "../navbar";
 import Notes from "../page-components/notes";
 import JobProgressionSingle from "../page-components/job-progression-single";
@@ -103,7 +99,7 @@ export class SingleJob extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const { currentUser } = state.auth;
+  // const { currentUser } = state.auth;
   return {
     // username: state.auth.currentUser.username,
     // name: `${currentUser.firstName} ${currentUser.lastName}`,

@@ -7,20 +7,23 @@ Date/Status -> on click -> dispatch sortByDate -> reducer sorts
 
 * Polish design / functionality
 
-3. Create a button where you can delete the checkpoints.
+ToDos
 
-BONUS.
-Figure out a way of keeping checkpoints in order by using the step #. (so maybe sort the job.checkpintArray after pushing in a new checkpoint on step 1? ). then save the job.
+Priorities
+
+* Fix all warnings/erros/suggestions on console
+* Fill it in with real data
+* Add requires login to all components that need to be signed in
 
 ToDos
 
-Stats:
+* Jobs at each stage. make nulls -> 0s
+* Add descriptions for graphs: ex how far are you going into jobs? for the second one
+* Make the charts wider.
+* Do a 2 more charts (at least one different)
+* Change color scheme. -> blue
 
-1. Create a component for PieChart
-2. Make it render with default/burned data.
-3. Responsiveness
-4. Change calculateData to use real data.
-5. All other charts.
+* Add conditional logic in nav to display dasboard/stats/logout or signup/sign in.
 
 Pending:
 
@@ -30,13 +33,12 @@ Pending:
 * Test
 
 - Edit checkpoint notes/textarea ?
-- Placeholder image
-
-Bonus
+- Add default/placeholder image
+- Checkpoints: display for title (CheckpointDropdown)
+- Sort by Status
+- Completion virtual (actual %)
 
 * react-nvd3 https://github.com/NuCivic/react-nvd3
     ### DevOps
 
 ### LATER ON
-
-* statistics
