@@ -2,18 +2,12 @@
 
 ### ToDos
 
-* Filter jobs by user -> Only display jobs for currentUser
-  * Add userids to the Jobs schema that references User
-  * Filter jobs when showing ({user: req.user.id})
-  * Add user id to token
-  * (Logout / Login)
+* Show a message when there are no jobs -> "Add a new Job to get started!"
 * Add conditional logic in nav to display dasboard/stats/logout or signup/sign in.
 * Show N/A when you don't have contact info/ deadlines
 * Show the right titles on Checkpoints
 * Sort by Status
 * Add default/placeholder image
-
-
 
 ### Design + HTML +CSS
 
@@ -21,7 +15,7 @@
 
 * Fix barchart column titles
 
-* Job progression bar 
+* Job progression bar
 
   ​
 
@@ -30,4 +24,4 @@
 * Check nav links. "About Us" works?
 
 - Completion virtual (actual %)
-- Change chart color scheme. -> blue? 
+- Change chart color scheme. -> blue?
