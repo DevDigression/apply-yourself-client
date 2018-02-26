@@ -32,11 +32,7 @@ export class Stats extends React.Component {
     let jobSkills = {};
 
     jobs.forEach(job => {
-      if (!jobStages[job.stage]) {
-        jobStages[job.stage] = 1;
-      } else {
-        jobStages[job.stage]++;
-      }
+      jobStages[job.stage]++;
     });
 
     jobs.forEach(job => {
