@@ -17,15 +17,6 @@ export class EditJobPage extends React.Component {
     if (values.keywords.length > 0) {
       values.keywords = values.keywords.split(",");
     }
-    if (values.contact === "") {
-      values.contact = "N/A";
-    }
-    if (values.deadline == null) {
-      values.deadline = "N/A";
-    }
-    // if (values.image === "") {
-    //   values.image = "https://image.flaticon.com/icons/png/512/744/744422.png";
-    // }
     this.props.dispatch(editJob(values));
     return this.props.history.push("/dashboard");
   }

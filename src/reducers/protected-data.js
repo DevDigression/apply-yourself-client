@@ -24,7 +24,6 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action) {
-  console.log(action.data);
   if (action.type === FETCH_JOBS_SUCCESS) {
     return Object.assign({}, state, {
       jobs: action.data.jobs,

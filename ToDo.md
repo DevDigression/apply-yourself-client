@@ -5,10 +5,10 @@
 <!-- * Show a message when there are no jobs -> "Add a new Job to get started!" -->
 
 * Add conditional logic in nav to display dasboard/stats/logout or signup/sign in.
-* Show N/A when you don't have contact info/ deadlines
-  <!-- * Show the right titles on Checkpoints -->
-  <!-- * Sort by Status -->
-* Add default/placeholder image
+    <!-- * Show N/A when you don't have contact info/ deadlines -->
+      <!-- * Show the right titles on Checkpoints -->
+      <!-- * Sort by Status -->
+    <!-- * Add default/placeholder image -->
 
 ### Design + HTML +CSS
 

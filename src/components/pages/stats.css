@@ -36,6 +36,10 @@
 	stroke: #2f80ed;
 }
 
+.nvtooltip {
+	opacity: 0;
+}
+
 .stages {
 	width: 90%;
 	display: block;

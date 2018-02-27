@@ -25,6 +25,7 @@ export class JobProgressionAvg extends React.Component {
           datum={datum}
           // x="label"
           // y="value"
+          tooltip={{ enabled: true }}
         />
       </div>
     );
