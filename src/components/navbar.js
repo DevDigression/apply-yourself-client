@@ -13,9 +13,9 @@ export class NavBar extends React.Component {
 
   render() {
     // if (this.props.loggedIn) {
-    //   //links=
+    //   let links = ["Dashboard", "Stats", "Logout"];
     // } else {
-    //   //links=
+    //   let links = ["Login", "Register"];
     // }
 
     let links = this.props.links.map((link, i) => {

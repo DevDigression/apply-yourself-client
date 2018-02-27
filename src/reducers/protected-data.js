@@ -3,6 +3,7 @@ import {
   FETCH_SINGLE_JOB_SUCCESS,
   CLEAR_JOB_SUCCESS,
   SORT_JOBS_BY_DATE,
+  SORT_JOBS_BY_STATUS,
   FETCH_ERROR
 } from "../actions/protected-data";
 
@@ -46,6 +47,15 @@ export default function reducer(state = initialState, action) {
     });
     return Object.assign({}, state, {
       jobs: [...jobsByDate],
+      error: null
+    });
+  } else if (action.type === SORT_JOBS_BY_STATUS) {
+    console.log(action.data);
+    let jobsByStatus = action.data.sort(function(a, b) {
+      return Number(b.stage) - Number(a.stage);
+    });
+    return Object.assign({}, state, {
+      jobs: [...jobsByStatus],
       error: null
     });
   } else if (action.type === FETCH_ERROR) {

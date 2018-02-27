@@ -2,8 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import requiresLogin from "../requires-login";
 import { Link } from "react-router-dom";
-import { fetchJobs, sortByDate } from "../../actions/protected-data";
+import {
+  fetchJobs,
+  sortByDate,
+  sortByStatus
+} from "../../actions/protected-data";
 import NavBar from "../navbar";
+import Welcome from "../page-components/welcome";
 import JobSection from "../page-components/job-section";
 import "./dashboard.css";
 
@@ -15,7 +20,6 @@ export class Dashboard extends React.Component {
   render() {
     let links = ["Stats", "Logout"];
     let jobs = this.props.jobs;
-
     return (
       <div className="dashboard">
         <NavBar links={links} />
@@ -29,7 +33,13 @@ export class Dashboard extends React.Component {
               >
                 Date
               </span>{" "}
-              | <span className="sort-status">Status</span>
+              |{" "}
+              <span
+                className="sort-status"
+                onClick={() => this.props.dispatch(sortByStatus(jobs))}
+              >
+                Status
+              </span>
             </div>
           </div>
           <div className="add-job">
@@ -40,13 +50,15 @@ export class Dashboard extends React.Component {
           <div className="clear" />
         </div>
         <div className="jobs-list" />
-        {jobs.map((job, index) => (
-          <JobSection
-            key={index}
-            job={job}
-            bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"}
-          />
-        ))}
+        {jobs.map((job, index) => {
+          return (
+            <JobSection
+              key={index}
+              job={job}
+              bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"}
+            />
+          );
+        })}
       </div>
     );
   }

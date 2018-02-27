@@ -20,12 +20,11 @@
 
 .progression-graph {
 	width: 100%;
-	margin: 0 auto;
 }
 
 .progression-graph svg {
 	width: 90%;
-	margin: 0 auto;
+	margin-right: 50px;
 	fill: #fff;
 	stroke: #2f80ed;
 }
@@ -96,15 +95,16 @@
 @media only screen and (max-width: 768px) {
 	.progression-avg {
 		width: 100%;
+		margin: 20px auto;
 	}
 
 	.progression-graph {
 		width: 100%;
-		margin: 0 auto;
+		margin: 0;
 	}
 
 	.progression-graph svg {
-		width: 100%;
+		width: 80%;
 		margin: 0 auto;
 	}
 
@@ -113,9 +113,17 @@
 		padding-top: 0;
 	}
 
+	.stages h3 {
+		margin-top: 0;
+		padding-top: 0;
+	}
+
 	.skills {
 		margin: 0 auto;
-		padding-top: 20px;
+	}
+
+	.skills h3 {
+		margin-top: 0;
 	}
 
 	.stages-list {
