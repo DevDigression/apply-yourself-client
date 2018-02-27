@@ -23,6 +23,9 @@ export class EditJobPage extends React.Component {
     if (values.deadline == null) {
       values.deadline = "N/A";
     }
+    // if (values.image === "") {
+    //   values.image = "https://image.flaticon.com/icons/png/512/744/744422.png";
+    // }
     this.props.dispatch(editJob(values));
     return this.props.history.push("/dashboard");
   }

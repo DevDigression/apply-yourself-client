@@ -18,11 +18,13 @@ const initialState = {
     checkpoints: [],
     stage: 0,
     completion: 0,
+    image: "",
     notes: ""
   }
 };
 
 export default function reducer(state = initialState, action) {
+  console.log(action.data);
   if (action.type === FETCH_JOBS_SUCCESS) {
     return Object.assign({}, state, {
       jobs: action.data.jobs,

@@ -50,15 +50,19 @@ export class Dashboard extends React.Component {
           <div className="clear" />
         </div>
         <div className="jobs-list" />
-        {jobs.map((job, index) => {
-          return (
-            <JobSection
-              key={index}
-              job={job}
-              bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"}
-            />
-          );
-        })}
+        {this.props.jobs < 1 ? (
+          <Welcome />
+        ) : (
+          jobs.map((job, index) => {
+            return (
+              <JobSection
+                key={index}
+                job={job}
+                bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"}
+              />
+            );
+          })
+        )}
       </div>
     );
   }

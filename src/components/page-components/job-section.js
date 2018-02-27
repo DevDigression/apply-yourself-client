@@ -12,6 +12,7 @@ export default class JobSection extends React.Component {
   }
 
   render() {
+    console.log(this.props.job);
     let jobBg = this.props.bgColor;
     return (
       <div className={`job-section ${jobBg}`}>
