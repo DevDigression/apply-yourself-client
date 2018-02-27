@@ -13,13 +13,50 @@ import JobSection from "../page-components/job-section";
 import "./dashboard.css";
 
 export class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dates: false,
+      status: false
+    };
+  }
+
   componentDidMount() {
     this.props.dispatch(fetchJobs());
+  }
+
+  handleDates() {
+    if (this.state.dates === false && this.state.status === false) {
+      this.setState({
+        dates: true,
+        status: false
+      });
+    } else if (this.state.dates === false && this.state.status === true) {
+      this.setState({
+        dates: true,
+        status: false
+      });
+    }
+  }
+
+  handleStatus() {
+    if (this.state.dates === false && this.state.status === false) {
+      this.setState({
+        dates: false,
+        status: true
+      });
+    } else if (this.state.dates === true && this.state.status === false) {
+      this.setState({
+        dates: false,
+        status: true
+      });
+    }
   }
 
   render() {
     let links = ["Stats", "Logout"];
     let jobs = this.props.jobs;
+
     return (
       <div className="dashboard">
         <NavBar links={links} />
@@ -28,15 +65,21 @@ export class Dashboard extends React.Component {
             <h5>Sort By:</h5>
             <div className="sort-options">
               <span
-                className="sort-date"
-                onClick={() => this.props.dispatch(sortByDate(jobs))}
+                className={this.state.dates ? "blue" : "black"}
+                onClick={() => {
+                  this.handleDates();
+                  this.props.dispatch(sortByDate(jobs));
+                }}
               >
                 Date
               </span>{" "}
               |{" "}
               <span
-                className="sort-status"
-                onClick={() => this.props.dispatch(sortByStatus(jobs))}
+                className={this.state.status ? "blue" : "black"}
+                onClick={() => {
+                  this.handleStatus();
+                  this.props.dispatch(sortByStatus(jobs));
+                }}
               >
                 Status
               </span>

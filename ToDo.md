@@ -2,7 +2,8 @@
 
 ### ToDos
 
-* Show a message when there are no jobs -> "Add a new Job to get started!"
+<!-- * Show a message when there are no jobs -> "Add a new Job to get started!" -->
+
 * Add conditional logic in nav to display dasboard/stats/logout or signup/sign in.
 * Show N/A when you don't have contact info/ deadlines
   <!-- * Show the right titles on Checkpoints -->
@@ -11,7 +12,9 @@
 
 ### Design + HTML +CSS
 
-* Add descriptions for graphs: ex how far are you going into jobs? for the second oneDo a 2 more charts (at least one different)
+<!-- * Add descriptions for graphs: ex how far are you going into jobs? for the second one -->
+
+* Do a 2 more charts (at least one different)
 
 * Fix barchart column titles
 

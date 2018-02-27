@@ -53,7 +53,13 @@ export class Stats extends React.Component {
       <div className="stats">
         <NavBar links={links} />
         <div className="progression-avg">
-          <h3>Average Jobs Progression</h3>
+          <div className="progression-header">
+            <h3>Average Jobs Progression</h3>
+            <p>
+              See how far your job progression has gone on average to monitor
+              your overall progress!
+            </p>
+          </div>
           <div className="progression-graph">
             <JobProgressionAvg
               jobProgressionTotal={jobProgressionTotal}
@@ -62,7 +68,13 @@ export class Stats extends React.Component {
           </div>
         </div>
         <div className="stages">
-          <h3>Jobs at Each Stage</h3>
+          <div className="stages-header">
+            <h3>Jobs at Each Stage</h3>
+            <p>
+              See where most of your job prospects currently are, and which need
+              more work!
+            </p>
+          </div>
           <div className="stages-graph">
             <JobStagePieChart jobStages={jobStages} />
           </div>
@@ -103,7 +115,13 @@ export class Stats extends React.Component {
           </div>
         </div>
         <div className="skills">
-          <h3>Desired Skills</h3>
+          <div className="skills-header">
+            <h3>Desired Skills</h3>
+            <p>
+              Determine what skills are most common in job postings, and focus
+              accordingly!
+            </p>
+          </div>
           <div className="skills-graph">
             <JobSkillsBarChart skills={jobSkills} />
           </div>
