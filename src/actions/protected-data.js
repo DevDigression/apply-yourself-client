@@ -25,6 +25,12 @@ export const sortJobsByDate = data => ({
     data
 });
 
+export const SORT_JOBS_BY_STATUS = "SORT_JOBS_BY_STATUS";
+export const sortJobsByStatus = data => ({
+    type: SORT_JOBS_BY_STATUS,
+    data
+});
+
 export const FETCH_ERROR = "FETCH_ERROR";
 export const fetchProtectedDataError = error => ({
     type: FETCH_ERROR,
@@ -54,6 +60,10 @@ export const clearJobData = clear => dispatch => {
 
 export const sortByDate = jobs => dispatch => {
     dispatch(sortJobsByDate(jobs));
+};
+
+export const sortByStatus = jobs => dispatch => {
+    dispatch(sortJobsByStatus(jobs));
 };
 
 export const fetchJobs = () => (dispatch, getState) => {
@@ -90,6 +100,8 @@ export const fetchJobById = id => (dispatch, getState) => {
 };
 
 export const addJob = job => (dispatch, getState) => {
+    console.log(job.image);
+    console.log(job.date);
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/jobs`, {
         method: "POST",

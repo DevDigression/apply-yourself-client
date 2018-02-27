@@ -8,30 +8,31 @@ import "./job-form-page.css";
 export class AddJobPage extends React.Component {
   componentDidMount() {
     let clearJob = {
-            title: "",
-            company: "",
-            posting: "",
-            image: "",
-            contact: "",
-            deadline: "",
-            style: "",
-            keywords: [],
-            notes: [],
-            date: "",
-            stage: "",
-            completion: "",
-            checkpoints: [],
-            id: ""
+      title: "",
+      company: "",
+      posting: "",
+      image: "",
+      contact: "",
+      deadline: "",
+      style: "",
+      keywords: [],
+      notes: [],
+      date: "",
+      stage: "",
+      completion: "",
+      checkpoints: [],
+      id: ""
     };
     this.props.dispatch(clearJobData(clearJob));
   }
 
   onSubmit(values) {
+    console.log(values);
     if (values.keywords.length > 0) {
-    values.keywords = values.keywords.split(",");
-  }
+      values.keywords = values.keywords.split(",");
+    }
     this.props.dispatch(addJob(values));
-    return this.props.history.push('/dashboard');
+    return this.props.history.push("/dashboard");
   }
 
   render() {
@@ -40,7 +41,7 @@ export class AddJobPage extends React.Component {
       <div className="add-job-page">
         <NavBar links={links} />
         <div className="add-job-container">
-          <JobForm title="Add Job" onSubmit={(values) => this.onSubmit(values)} />
+          <JobForm title="Add Job" onSubmit={values => this.onSubmit(values)} />
         </div>
       </div>
     );

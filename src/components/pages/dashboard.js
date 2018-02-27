@@ -2,14 +2,55 @@ import React from "react";
 import { connect } from "react-redux";
 import requiresLogin from "../requires-login";
 import { Link } from "react-router-dom";
-import { fetchJobs, sortByDate } from "../../actions/protected-data";
+import {
+  fetchJobs,
+  sortByDate,
+  sortByStatus
+} from "../../actions/protected-data";
 import NavBar from "../navbar";
+import Welcome from "../page-components/welcome";
 import JobSection from "../page-components/job-section";
 import "./dashboard.css";
 
 export class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dates: false,
+      status: false
+    };
+  }
+
   componentDidMount() {
     this.props.dispatch(fetchJobs());
+  }
+
+  handleDates() {
+    if (this.state.dates === false && this.state.status === false) {
+      this.setState({
+        dates: true,
+        status: false
+      });
+    } else if (this.state.dates === false && this.state.status === true) {
+      this.setState({
+        dates: true,
+        status: false
+      });
+    }
+  }
+
+  handleStatus() {
+    if (this.state.dates === false && this.state.status === false) {
+      this.setState({
+        dates: false,
+        status: true
+      });
+    } else if (this.state.dates === true && this.state.status === false) {
+      this.setState({
+        dates: false,
+        status: true
+      });
+    }
   }
 
   render() {
@@ -24,12 +65,24 @@ export class Dashboard extends React.Component {
             <h5>Sort By:</h5>
             <div className="sort-options">
               <span
-                className="sort-date"
-                onClick={() => this.props.dispatch(sortByDate(jobs))}
+                className={this.state.dates ? "blue" : "black"}
+                onClick={() => {
+                  this.handleDates();
+                  this.props.dispatch(sortByDate(jobs));
+                }}
               >
                 Date
               </span>{" "}
-              | <span className="sort-status">Status</span>
+              |{" "}
+              <span
+                className={this.state.status ? "blue" : "black"}
+                onClick={() => {
+                  this.handleStatus();
+                  this.props.dispatch(sortByStatus(jobs));
+                }}
+              >
+                Status
+              </span>
             </div>
           </div>
           <div className="add-job">
@@ -40,13 +93,19 @@ export class Dashboard extends React.Component {
           <div className="clear" />
         </div>
         <div className="jobs-list" />
-        {jobs.map((job, index) => (
-          <JobSection
-            key={index}
-            job={job}
-            bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"}
-          />
-        ))}
+        {this.props.jobs < 1 ? (
+          <Welcome />
+        ) : (
+          jobs.map((job, index) => {
+            return (
+              <JobSection
+                key={index}
+                job={job}
+                bgColor={index % 2 !== 0 ? "grey-bg" : "white-bg"}
+              />
+            );
+          })
+        )}
       </div>
     );
   }

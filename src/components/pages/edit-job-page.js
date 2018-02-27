@@ -15,10 +15,10 @@ export class EditJobPage extends React.Component {
 
   onSubmit(values) {
     if (values.keywords.length > 0) {
-    values.keywords = values.keywords.split(",");
-  }
+      values.keywords = values.keywords.split(",");
+    }
     this.props.dispatch(editJob(values));
-    return this.props.history.push('/dashboard');
+    return this.props.history.push("/dashboard");
   }
 
   render() {
@@ -27,7 +27,10 @@ export class EditJobPage extends React.Component {
       <div className="add-job-page">
         <NavBar links={links} />
         <div className="add-job-container">
-          <JobForm title="Edit Job" onSubmit={(values) => this.onSubmit(values)} />
+          <JobForm
+            title="Edit Job"
+            onSubmit={values => this.onSubmit(values)}
+          />
         </div>
       </div>
     );

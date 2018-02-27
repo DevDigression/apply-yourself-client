@@ -12,13 +12,14 @@ export class NavBar extends React.Component {
   }
 
   render() {
-    // if (this.props.loggedIn) {
-    //   //links=
-    // } else {
-    //   //links=
-    // }
+    let links;
+    if (this.props.loggedIn) {
+      links = ["Dashboard", "Stats", "Logout"];
+    } else {
+      links = ["Login", "Register"];
+    }
 
-    let links = this.props.links.map((link, i) => {
+    links = links.map((link, i) => {
       if (link === "Logout") {
         return (
           <li key={i}>
