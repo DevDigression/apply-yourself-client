@@ -65,9 +65,8 @@
 }
 
 .job-info-buttons {
-	float: right;
-	width: 40%;
-	margin: 0 auto;
+	width: 60%;
+	margin: 20px auto;
 }
 
 .job-info-buttons button {

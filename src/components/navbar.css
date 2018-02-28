@@ -42,14 +42,17 @@
 	color: #c4c4c4;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 500px) {
 	.logo {
-		font-size: 18px;
-		padding: 15px;
+		text-align: center;
+		display: block;
+		float: none;
+		padding: 20px;
 	}
 
 	.links {
 		font-size: 14px;
-		padding: 18px;
+		padding-top: 0;
+		text-align: center;
 	}
 }

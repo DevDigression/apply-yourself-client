@@ -16,4 +16,5 @@
 
 <!-- * Hide "Minimum" on NVD3 progression bar -->
 
-* center "edit" + "remove" above Deadline/Contact and so on
+<!-- * center "edit" + "remove" above Deadline/Contact and so on
+ -->
