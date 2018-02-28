@@ -49,9 +49,21 @@ export class JobForm extends React.Component {
         <label htmlFor="deadline">Deadline</label>
         <Field component={Input} type="date" name="deadline" id="deadline" />
         <label htmlFor="style">Style of Company</label>
-        <Field component={JobDropdown} type="select" name="style" id="style" />
+        <Field
+          component={JobDropdown}
+          type="select"
+          name="style"
+          id="style"
+          validate={[required, nonEmpty]}
+        />
         <label htmlFor="keywords">Tech Keywords (separated by commas)</label>
-        <Field component={Input} type="text" name="keywords" id="keywords" />
+        <Field
+          component={Input}
+          type="text"
+          name="keywords"
+          id="keywords"
+          validate={[required]}
+        />
         <label htmlFor="image">Company Image (paste image URL)</label>
         <Field component={Input} type="text" name="image" id="image" />
         <button disabled={this.props.pristine || this.props.submitting}>
@@ -61,7 +73,6 @@ export class JobForm extends React.Component {
     );
   }
 }
-
 
 JobForm = reduxForm({
   form: "job-form",

@@ -24,6 +24,7 @@ export class JobProgressionSingle extends React.Component {
           datum={datum}
           // x="label"
           // y="value"
+          tooltip={{ enabled: false }}
         />
       </div>
     );

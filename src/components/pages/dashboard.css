@@ -154,10 +154,19 @@
 	margin: 50px auto;
 	text-align: center;
 	color: #333;
+	text-decoration: none;
 }
 
-.welcome span {
+.add-job-link {
 	color: #2d9cdb;
+	display: inline;
+	text-decoration: none;
+}
+
+.add-job-link span {
+	color: #2d9cdb;
+	display: inline;
+	text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {

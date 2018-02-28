@@ -73,7 +73,7 @@ export class Dashboard extends React.Component {
               >
                 Date
               </span>{" "}
-              |{" "}
+              <span> | </span>{" "}
               <span
                 className={this.state.status ? "blue" : "black"}
                 onClick={() => {
@@ -81,7 +81,7 @@ export class Dashboard extends React.Component {
                   this.props.dispatch(sortByStatus(jobs));
                 }}
               >
-                Status
+                Stage
               </span>
             </div>
           </div>
