@@ -14,5 +14,6 @@
 
 <!-- * Change text to sort by "Stages" instead of "Status" -->
 
-* Hide "Minimum" on NVD3 progression bar
+<!-- * Hide "Minimum" on NVD3 progression bar -->
+
 * center "edit" + "remove" above Deadline/Contact and so on
