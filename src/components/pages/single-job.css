@@ -38,9 +38,14 @@
 
 .job-header svg {
 	margin-top: 50px;
+	margin-right: 50px;
 	width: 80%;
 	fill: #fff;
 	stroke: #2f80ed;
+}
+
+.nv-chart {
+	width: 100%;
 }
 
 .job-info {
@@ -165,8 +170,12 @@
 @media only screen and (max-width: 768px) {
 	.job-header svg {
 		margin-top: 20px;
-		width: 100%;
+		margin-right: 75px;
+		width: 80%;
+		fill: #fff;
+		stroke: #2f80ed;
 	}
+
 	.job-info-list {
 		width: 100%;
 		margin: 0 auto;

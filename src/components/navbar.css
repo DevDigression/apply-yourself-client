@@ -47,12 +47,15 @@
 		text-align: center;
 		display: block;
 		float: none;
-		padding: 20px;
+/*		padding: 20px;*/
 	}
 
 	.links {
 		font-size: 14px;
 		padding-top: 0;
+		padding-right: 10px;
 		text-align: center;
+		display: block;
+		margin: 0 auto;
 	}
 }

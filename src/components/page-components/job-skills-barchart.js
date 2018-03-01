@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import NVD3Chart from "react-nvd3";
-import "./job-skills-barchart.css";
 
 export class JobSkillsBarChart extends React.Component {
   calculateData(skills) {

@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import NVD3Chart from "react-nvd3";
-import "./job-progression-single.css";
 
 export class JobProgressionSingle extends React.Component {
   render() {

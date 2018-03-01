@@ -18,3 +18,6 @@
 
 <!-- * center "edit" + "remove" above Deadline/Contact and so on
  -->
+
+
+- Job not adding on first submit (have to reload)

@@ -100,8 +100,8 @@ export const fetchJobById = id => (dispatch, getState) => {
 };
 
 export const addJob = job => (dispatch, getState) => {
-    console.log(job.image);
-    console.log(job.date);
+    console.log("Adding job:");
+    console.log(job);
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/jobs`, {
         method: "POST",

@@ -27,10 +27,11 @@ export class AddJobPage extends React.Component {
   }
 
   onSubmit(values) {
-    console.log(values);
     if (values.keywords.length > 0) {
       values.keywords = values.keywords.split(",");
     }
+    console.log("Submitting Values");
+    console.log(values);
     this.props.dispatch(addJob(values));
     return this.props.history.push("/dashboard");
   }

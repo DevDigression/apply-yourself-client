@@ -30,16 +30,19 @@
 	margin: 50px auto;
 }
 
+.nv-chart {
+	width: 100%;
+}
+
 .progression-graph {
 	width: 100%;
-	margin: 0 auto;
 }
 
 .progression-graph svg {
+	margin-left: 25px;
 	width: 90%;
 	fill: #fff;
 	stroke: #2f80ed;
-	margin: 0 auto;
 }
 
 .stages {
@@ -139,6 +142,10 @@
 	margin: 0 auto;
 }
 
+@media only screen and (max-width: 1024px) {
+
+}
+
 @media only screen and (max-width: 768px) {
 	.progression-avg {
 		width: 100%;
@@ -151,8 +158,9 @@
 	}
 
 	.progression-graph svg {
-		width: 90%;
-		margin: 0 auto;
+		width: 80%;
+		fill: #fff;
+		stroke: #2f80ed;
 	}
 
 	.stages {
@@ -217,6 +225,11 @@
 		font-size: 20px;
 		padding: 10px;
 	}
+
+	.job-stage-piechart {
+	width: 100%;
+	margin: 0 auto;
+}
 	.job-stage-data {
 		padding-left: 0;
 	}
@@ -228,5 +241,6 @@
 	}
 	.progression-graph svg {
 		width: 100%;
+		margin-left: 0;
 	}
 }
