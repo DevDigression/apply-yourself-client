@@ -14,15 +14,15 @@ export class EditJobPage extends React.Component {
   }
 
   onSubmit(values) {
-    if (values.keywords.length > 0) {
-      values.keywords = values.keywords.split(",");
-    }
+    // if (values.keywords.length > 0) {
+    //   values.keywords = values.keywords.split(",");
+    // }
     this.props.dispatch(editJob(values));
     return this.props.history.push("/dashboard");
   }
 
   render() {
-    let links = ["Stats", "Dashboard"]; // TODO do you need to change this?
+    let links = ["Stats", "Dashboard"];
     return (
       <div className="add-job-page">
         <NavBar links={links} />

@@ -84,7 +84,6 @@ export const fetchJobs = () => (dispatch, getState) => {
 
 export const fetchJobById = id => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    console.log("fetchJobById");
     fetch(`${API_BASE_URL}/jobs/${id}`, {
         method: "GET",
         headers: {

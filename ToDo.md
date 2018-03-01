@@ -19,6 +19,7 @@
 <!-- * center "edit" + "remove" above Deadline/Contact and so on
  -->
 
-* Might be fixed: 
-- Logging out deletes user from db
-- Job not adding on first submit (have to reload)
+
+- Edit form not saving unless keywords edited --> conditional
+- Notes not saving (not getting posted to db)  ---> conditional logic caused the problem
+- Job not adding on first submit (have to reload) - sometimes
