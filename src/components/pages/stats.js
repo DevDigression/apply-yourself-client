@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import NavBar from "../navbar";
 import JobStagePieChart from "../page-components/job-stage-piechart";
 import JobSkillsBarChart from "../page-components/job-skills-barchart";
+import JobStylesBarChart from "../page-components/job-styles-barchart";
 import JobProgressionAvg from "../page-components/job-progression-avg";
 import SkillsList from "../page-components/skills-list";
+import JobStylesLineChart from "../page-components/job-styles-linechart";
 import requiresLogin from "../requires-login";
 import { fetchJobs } from "../../actions/protected-data";
 import "./stats.css";
@@ -29,10 +31,18 @@ export class Stats extends React.Component {
       "6": 0,
       "7": 0
     };
+
+    let jobStyles = {
+      startup: 0,
+      enterprise: 0
+    };
+
     let jobSkills = {};
 
     jobs.forEach(job => {
+      console.log(job);
       jobStages[job.stage]++;
+      jobStyles[job.style]++;
     });
 
     jobs.forEach(job => {
@@ -48,7 +58,7 @@ export class Stats extends React.Component {
     jobs.forEach(job => {
       jobProgressionTotal += Number(job.stage);
     });
-
+    console.log(jobStyles);
     return (
       <div className="stats">
         <NavBar links={links} />
@@ -127,6 +137,21 @@ export class Stats extends React.Component {
           </div>
           <div className="skills-list">
             <SkillsList jobSkills={jobSkills} />
+          </div>
+        </div>
+        <div className="styles">
+          <div className="styles-header">
+            <h3>Job Styles</h3>
+            <p>
+              Compare the style of jobs you are applying to by number and by
+              stage!
+            </p>
+          </div>
+          <div className="styles-bar-graph">
+            <JobStylesBarChart styles={jobStyles} />
+          </div>
+          <div className="styles-line-graph">
+            <JobStylesLineChart jobs={jobs} />
           </div>
         </div>
       </div>

@@ -5,8 +5,8 @@
 <!-- * Make style of company and keywords required -->
 
 * Do a 2 more charts (at least one different)
-* Fix barchart column titles
-* Change chart color scheme. -> blue?
+  <!-- * Fix barchart column titles -->
+    <!-- * Change chart color scheme. -> blue? -->
 
 ### Design + HTML +CSS
 
