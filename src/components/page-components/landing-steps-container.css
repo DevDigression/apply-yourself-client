@@ -6,8 +6,13 @@ p {
 	margin: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 .landing-steps {
 	padding-top: 20px;
+	padding-bottom: 20px;
 	clear: both;
 	display: block;
 }

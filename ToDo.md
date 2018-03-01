@@ -19,5 +19,6 @@
 <!-- * center "edit" + "remove" above Deadline/Contact and so on
  -->
 
-
+* Might be fixed: 
+- Logging out deletes user from db
 - Job not adding on first submit (have to reload)
