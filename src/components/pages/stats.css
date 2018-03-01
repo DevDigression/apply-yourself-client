@@ -142,6 +142,15 @@
 	margin: 0 auto;
 }
 
+	.nv-x g {
+		height: 400px;
+	}
+
+	.nv-x text {
+		font-size: 12px;
+		transform: rotate(65deg) translateX(25px);
+	}
+
 @media only screen and (max-width: 1024px) {
 
 }

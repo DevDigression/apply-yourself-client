@@ -83,6 +83,7 @@ export const fetchJobs = () => (dispatch, getState) => {
 };
 
 export const fetchJobById = id => (dispatch, getState) => {
+<<<<<<< HEAD
   const authToken = getState().auth.authToken;
   console.log("fetchJobById");
   fetch(`${API_BASE_URL}/jobs/${id}`, {
@@ -97,6 +98,21 @@ export const fetchJobById = id => (dispatch, getState) => {
     .catch(err => {
       dispatch(fetchProtectedDataError(err));
     });
+=======
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/jobs/${id}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => res.json())
+        .then(data => dispatch(fetchSingleJobSuccess(data)))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+>>>>>>> e0497235bef50c7fdd91012ab84b06e1eb1e1f42
 };
 
 export const addJob = job => (dispatch, getState) => {

@@ -34,7 +34,9 @@ export class Stats extends React.Component {
 
     let jobStyles = {
       startup: 0,
-      enterprise: 0
+      enterprise: 0,
+      nonprofit: 0,
+      contract: 0
     };
 
     let jobSkills = {};

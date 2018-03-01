@@ -14,6 +14,7 @@ export class SingleJob extends React.Component {
   }
 
   render() {
+    console.log(this.props.currentJob);
     let links = ["Dashboard", "Logout"];
     let checkpoints = this.props.currentJob.checkpoints;
     return (
@@ -66,7 +67,7 @@ export class SingleJob extends React.Component {
           </div>
           <div className="job-notes">
             <h4>
-              Notes <span className="autosave">(autosave on exit)</span>
+              Notes <span className="autosave">(autosaves on exit)</span>
             </h4>
             <Notes
               initialValue={this.props.currentJob.notes}
@@ -104,9 +105,6 @@ export class SingleJob extends React.Component {
 const mapStateToProps = state => {
   // const { currentUser } = state.auth;
   return {
-    // username: state.auth.currentUser.username,
-    // name: `${currentUser.firstName} ${currentUser.lastName}`,
-    // protectedData: state.protectedData.data,
     currentJob: state.protectedData.currentJob,
     checkpoints: state.protectedData.checkpoints
   };

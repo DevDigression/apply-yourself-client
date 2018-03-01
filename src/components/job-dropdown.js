@@ -15,6 +15,8 @@ export default class JobDropdown extends React.Component {
                     <option value=""></option>
                     <option value="startup">Startup</option>
                     <option value="enterprise">Enterprise</option>
+                    <option value="nonprofit">Nonprofit</option>
+                    <option value="contract">Contract</option>
                 </select>
             </div>
         );
