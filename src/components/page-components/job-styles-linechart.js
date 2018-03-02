@@ -1,6 +1,5 @@
 import React from "react";
 import NVD3Chart from "react-nvd3";
-import { connect } from "react-redux";
 
 export default class JobStylesLineChart extends React.Component {
 
@@ -78,7 +77,7 @@ export default class JobStylesLineChart extends React.Component {
       
 
 
-  const data = this.getDatum(this.props.jobs);
+  // const data = this.getDatum(this.props.jobs);
 
   var datum = [{
       key: "Startup",
