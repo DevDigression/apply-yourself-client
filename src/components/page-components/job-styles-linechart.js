@@ -1,55 +1,72 @@
 import React from "react";
-import { connect } from "react-redux";
 import NVD3Chart from "react-nvd3";
+import { connect } from "react-redux";
 
-export class JobStylesLineChart extends React.Component {
-  calculateData(jobs) {
-    console.log(jobs);
-    let datum = [
+function getDatum(j) {
+    var sin = [],
+        cos = [];
+
+    for (var i = 0; i < 100; i++) {
+      sin.push({x: i, y: Math.sin(i/j)});
+      cos.push({x: i, y: .5 * Math.cos(i/j)});
+    }
+
+    return [
       {
-        key: "Startup",
-        color: "#2f80ed",
-        values: []
+        values: sin,
+        key: 'Sine Wave',
+        color: '#ff7f0e'
       },
       {
-        key: "Enterprise",
-        color: "#333",
-        values: []
+        values: cos,
+        key: 'Cosine Wave',
+        color: '#2ca02c'
       }
     ];
-    for (let i = 0; i < jobs.length; i++) {
-      if (jobs[i].style == "startup") {
-        datum[0].values.push([jobs[i].style, jobs[i].stage]);
-      } else {
-        datum[1].values.push([jobs[i].style, jobs[i].stage]);
-      }
+  }
+
+export default class JobStylesLineChart extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        count: 1
+      };
+      this.handleClick = this.handleClick.bind(this);
     }
-    return datum;
-  }
-  render() {
-    const data = this.calculateData(this.props.jobs);
-    const xdata = function(d, i) {
-      return i;
-    };
-    const ydata = function(d, i) {
-      return d[1];
-    };
-    return (
-      <div className="job-styles-linechart">
-        <NVD3Chart
-          type="linePlusBarChart"
-          datum={data}
-          x={xdata}
-          y={ydata}
-          options={{ focusEnable: false }}
-        />
-      </div>
-    );
-  }
-}
 
-const mapStateToProps = state => ({
-  jobs: state.protectedData.jobs
-});
+    handleClick() {
+      this.setState({count: this.state.count + 1})
+    }
 
-export default connect(mapStateToProps)(JobStylesLineChart);
+    render() {
+      const data = (this.state.count % 2 == 0)? getDatum(10): getDatum(11);
+      return (
+        <div>
+        <button onClick={this.handleClick}>Change Data</button>
+        {
+          React.createElement(NVD3Chart, {
+            xAxis: {
+              tickFormat: function(d){ return d; },
+              axisLabel: 'Period'
+            },
+            yAxis: {
+              tickFormat: function(d) {return parseFloat(d).toFixed(2); }
+            },
+            xDomain: [-10, 120],
+            type:'lineChart',
+            datum: data,
+            x: 'label',
+            y: 'value',
+            duration: 1,
+            margin: {
+              left: 200
+            },
+            renderEnd: function(){
+              console.log('renderEnd');
+            }
+          })
+        }
+        </div>
+      )
+    }
+  };

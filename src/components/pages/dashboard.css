@@ -50,7 +50,7 @@
 .sort-options {
 	font-size: 20px;
 	display: inline;
-	
+	cursor: pointer;
 }
 
 .sort-options:active {
