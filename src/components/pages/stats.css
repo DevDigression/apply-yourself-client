@@ -146,6 +146,15 @@
 	fill: #FFF;
 }
 
+.nv-scatterChart {
+	stroke: #222;
+}
+
+.nv-point-paths {
+	fill: #FFF;
+	display: none !important;
+}
+
 .nv-x g {
 		height: 400px;
 	}
