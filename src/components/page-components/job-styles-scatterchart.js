@@ -8,7 +8,7 @@ jobsData(jobs, stages) {
           var data = [],
               styles = ['startup', 'enterprise', 'nonprofit', 'contract'],
               shapes = ['circle', 'triangle-up', 'diamond', 'square']
-          var xVal = 0, yVal = 0;
+          var xVal = 0;
 
           for (var i = 0; i < jobs.length; i++) {
               data.push({
