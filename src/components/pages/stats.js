@@ -153,7 +153,7 @@ export class Stats extends React.Component {
             <JobStylesBarChart styles={jobStyles} />
           </div>
           <div className="styles-line-graph">
-            <JobStylesLineChart jobs={jobs} />
+            <JobStylesLineChart jobs={jobs} styles={jobStyles} stages={jobStages} totalJobs={jobNumberTotal} />
           </div>
         </div>
       </div>

@@ -14,17 +14,12 @@ export class EditJobPage extends React.Component {
   }
 
   onSubmit(values) {
-<<<<<<< HEAD
+    console.log(values);
     if (values.keywords.length > 0) {
-      values.keywords = values.keywords.split(",");
+      values.keywords.split(",");
     } else {
-      values.keywords = [];
+      values.keywords = [''];
     }
-=======
-    // if (values.keywords.length > 0) {
-    //   values.keywords = values.keywords.split(",");
-    // }
->>>>>>> e0497235bef50c7fdd91012ab84b06e1eb1e1f42
     this.props.dispatch(editJob(values));
     return this.props.history.push("/dashboard");
   }

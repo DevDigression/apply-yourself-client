@@ -2,70 +2,128 @@ import React from "react";
 import NVD3Chart from "react-nvd3";
 import { connect } from "react-redux";
 
-function getDatum(j) {
-    var sin = [],
-        cos = [];
+export default class JobStylesLineChart extends React.Component {
 
-    for (var i = 0; i < 100; i++) {
-      sin.push({x: i, y: Math.sin(i/j)});
-      cos.push({x: i, y: .5 * Math.cos(i/j)});
+  getDatum(jobs) {
+    let startup = [],
+        enterprise = [],
+        nonprofit = [],
+        contract = [];
+
+
+    jobs.forEach(job => {
+      let s = 0, e = 0, n = 0, c = 0;
+
+      if (job.style === "startup") {
+      s++;
+      startup.push({x: s, y: Number(job.stage)});
+    } else if (job.style === "enterprise") {
+      e++;
+      enterprise.push({x: e, y: Number(job.stage)});
+    } else if (job.style === "nonprofit") {
+      n++;
+      nonprofit.push({x: n, y: Number(job.stage)});
+    } else if (job.style === "contract") {
+      c++;
+      contract.push({x: c, y: Number(job.stage)});
     }
+    });
 
     return [
       {
-        values: sin,
-        key: 'Sine Wave',
+        values: startup,
+        key: 'Startup',
         color: '#ff7f0e'
       },
       {
-        values: cos,
-        key: 'Cosine Wave',
+        values: enterprise,
+        key: 'Enterprise',
+        color: '#2ca02c'
+      },
+            {
+        values: nonprofit,
+        key: 'Nonprofit',
+        color: '#2ca02c'
+      },
+            {
+        values: contract,
+        key: 'Contract',
         color: '#2ca02c'
       }
     ];
   }
 
-export default class JobStylesLineChart extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        count: 1
-      };
-      this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-      this.setState({count: this.state.count + 1})
-    }
 
     render() {
-      const data = (this.state.count % 2 == 0)? getDatum(10): getDatum(11);
+
+      let fakeJobs = [
+      {style: "enterprise", stage: 1}, 
+      {style:"startup", stage: 3}, 
+      {style:"contract", stage: 1}, 
+      {style: "nonprofit", stage: 3},
+      {style: "enterprise", stage: 2}, 
+      {style:"startup", stage: 3}, 
+      {style:"contract", stage: 1}, 
+      {style: "nonprofit", stage: 2},
+      {style: "enterprise", stage: 3}, 
+      {style: "enterprise", stage: 4},
+      {style: "enterprise", stage: 5},
+      {style: "enterprise", stage: 6},
+      {style: "enterprise", stage: 7},    
+      ]
+      const data = this.getDatum(fakeJobs);
+      
+
+
+
+
+  var datum = [{
+      key: "Startup",
+      values: [ [0 , 0], [1 , 1], [2, 2], [3, 3], [4, 4], [5, 5]] 
+      // mean: 3
+    }
+  ];
+
+
+
+
+
       return (
         <div>
-        <button onClick={this.handleClick}>Change Data</button>
-        {
-          React.createElement(NVD3Chart, {
-            xAxis: {
-              tickFormat: function(d){ return d; },
-              axisLabel: 'Period'
-            },
-            yAxis: {
-              tickFormat: function(d) {return parseFloat(d).toFixed(2); }
-            },
-            xDomain: [-10, 120],
-            type:'lineChart',
-            datum: data,
-            x: 'label',
-            y: 'value',
-            duration: 1,
-            margin: {
-              left: 200
-            },
-            renderEnd: function(){
-              console.log('renderEnd');
-            }
-          })
-        }
+         {
+        //   React.createElement(NVD3Chart, {
+        //     // xAxis: {
+        //     //   tickFormat: function(d){
+        //     //   console.log(d); 
+        //     //     return d; }
+        //     // },
+        //     // yAxis: {
+        //     //   tickFormat: function(d) {
+        //     //     console.log(d); 
+        //     //     return d; }
+        //     // },
+        //     xDomain: [0, 5],
+        //     yDomain: [0, 7],
+        //     type:'lineChart',
+        //     datum: data,
+        //     x: 'label',
+        //     y: 'value',
+        //     duration: 1,
+        //     // margin: {
+        //     //   left: 200
+        //     // }
+        //   })
+      React.createElement(NVD3Chart, {
+      type:'lineChart',
+      datum: datum,
+      x: function(d) {
+        return d[0];
+      },
+      y: function(d) {
+        return d[1];
+      },
+    })
+         }
         </div>
       )
     }
