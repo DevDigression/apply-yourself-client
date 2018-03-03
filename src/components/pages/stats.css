@@ -16,6 +16,16 @@
 	margin-bottom: 10px;
 }
 
+.data-zero {
+	color: #333;
+	padding-left: 20px;
+}
+
+.data-positive {
+	padding-left: 20px;
+	color: #2f80ed;
+}
+
 .progression-header,
 .stages-header,
 .skills-header,
@@ -49,13 +59,14 @@
 	width: 90%;
 	display: block;
 	margin: 50px auto;
+	clear: both;
+	padding-top: 50px;
 }
 
 .skills {
 	width: 90%;
 	display: block;
 	margin: 50px auto;
-	padding-top: 100px;
 	clear: both;
 }
 
@@ -115,42 +126,40 @@
 	width: 90%;
 	display: block;
 	margin: 50px auto;
-	padding-top: 100px;
+	padding-top: 50px;
+	padding-bottom: 100px;
 	clear: both;
 }
 
 .styles-bar-graph {
 	width: 50%;
 	display: inline-block;
+	float: left;
 	margin: 0 auto;
 }
 
 .styles-bar-graph svg {
 	width: 100%;
-	/*	height: 400px;*/
+	height: 400px;
 	margin: 0 auto;
 }
 
-.styles-line-graph {
+.styles-scatter-graph {
+	width: 50%;
+	display: inline-block;
+	float: right;
+	margin: 0 auto;
+}
+
+.styles-scatter-graph svg {
 	width: 100%;
-	display: block;
-	margin: 0 auto;
-	clear: both;
-}
-
-.styles-line-graph svg {
-	width: 600px;
-	height: 600px;
+	height: 400px;
 	margin: 0 auto;
 }
 
 .nv-background {
 	fill: #FFF;
 }
-
-/*.nv-scatterWrap {
-	width: 1000px;
-}*/
 
 .nv-scatterChart {
 	stroke: #222;
@@ -163,13 +172,13 @@
 }
 
 .nv-x g {
-		height: 400px;
-	}
+		height: auto;
+}
 
 .nv-x text {
 		font-size: 12px;
 		transform: rotate(65deg) translateX(25px);
-	}
+}
 
 @media only screen and (max-width: 1024px) {
 
@@ -194,20 +203,14 @@
 
 	.stages {
 		margin: 0 auto;
-		padding-top: 0;
 	}
 
-	.stages h3 {
+	.skills h3, .stages h3, .styles h3 {
 		margin-top: 0;
-		padding-top: 0;
 	}
 
 	.skills {
 		margin: 0 auto;
-	}
-
-	.skills h3 {
-		margin-top: 0;
 	}
 
 	.stages-list {
@@ -256,11 +259,47 @@
 	}
 
 	.job-stage-piechart {
-	width: 100%;
-	margin: 0 auto;
-}
+		width: 100%;
+		margin: 0 auto;
+	}
+
 	.job-stage-data {
 		padding-left: 0;
+	}
+
+	.styles {
+		
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	clear: both;
+	}
+
+	.styles-bar-graph {
+		width: 100%;
+		display: block;
+		float: none;
+		margin: 0 auto;
+	}
+
+	.styles-bar-graph svg {
+		width: 100%;
+		height: 400px;
+		margin: 0 auto;
+	}
+
+	.styles-scatter-graph {
+		width: 100%;
+		display: block;
+		float: none;
+		margin-top: 75px;
+	}
+
+	.styles-scatter-graph svg {
+		width: 90%;
+		height: 400px;
+		margin: 0 auto;
 	}
 }
 

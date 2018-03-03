@@ -5,7 +5,7 @@ export default function SkillsList(props) {
 	skills.sort((a, b) => props.jobSkills[b] - props.jobSkills[a]);
 	let skillsList = skills.map((skill, index) => (
 		<li key={index}>
-			{skill} : {props.jobSkills[skill]}
+			{skill} : <span className={props.jobSkills[skill] === 0 ? "data-zero" : "data-positive"}>{props.jobSkills[skill]}</span>
 		</li>
 	));
 	return (

@@ -4,9 +4,9 @@ import NavBar from "../navbar";
 import JobStagePieChart from "../page-components/job-stage-piechart";
 import JobSkillsBarChart from "../page-components/job-skills-barchart";
 import JobStylesBarChart from "../page-components/job-styles-barchart";
+import JobScatterChart from "../page-components/job-scatterchart";
 import JobProgressionAvg from "../page-components/job-progression-avg";
 import SkillsList from "../page-components/skills-list";
-import JobsLineChart from "../page-components/jobs-linechart";
 import requiresLogin from "../requires-login";
 import { fetchJobs } from "../../actions/protected-data";
 import "./stats.css";
@@ -60,7 +60,7 @@ export class Stats extends React.Component {
     jobs.forEach(job => {
       jobProgressionTotal += Number(job.stage);
     });
-    console.log(jobStyles);
+
     return (
       <div className="stats">
         <NavBar links={links} />
@@ -79,6 +79,21 @@ export class Stats extends React.Component {
             />
           </div>
         </div>
+                <div className="skills">
+          <div className="skills-header">
+            <h3>Desired Skills</h3>
+            <p>
+              Determine what skills are most common in job postings, and focus
+              accordingly!
+            </p>
+          </div>
+          <div className="skills-graph">
+            <JobSkillsBarChart skills={jobSkills} />
+          </div>
+          <div className="skills-list">
+            <SkillsList jobSkills={jobSkills} />
+          </div>
+        </div>
         <div className="stages">
           <div className="stages-header">
             <h3>Jobs at Each Stage</h3>
@@ -94,66 +109,50 @@ export class Stats extends React.Component {
             <ul>
               <li>
                 1. Resume / Cover Letter Sent:{" "}
-                <span className="job-stage-data">{jobStages[1]}</span>
+                <span className={jobStages[1] === 0 ? "data-zero" : "data-positive"}>{jobStages[1]}</span>
               </li>
               <li>
                 2. Phone Screen:{" "}
-                <span className="job-stage-data">{jobStages[2]}</span>
+                <span className={jobStages[2] === 0 ? "data-zero" : "data-positive"}>{jobStages[2]}</span>
               </li>
               <li>
                 3. First Interview (Culture Fit):{" "}
-                <span className="job-stage-data">{jobStages[3]}</span>
+                <span className={jobStages[3] === 0 ? "data-zero" : "data-positive"}>{jobStages[3]}</span>
               </li>
               <li>
                 4. Coding Challenge:{" "}
-                <span className="job-stage-data">{jobStages[4]}</span>
+                <span className={jobStages[4] === 0 ? "data-zero" : "data-positive"}>{jobStages[4]}</span>
               </li>
               <li>
                 5. Technical Interview:{" "}
-                <span className="job-stage-data">{jobStages[5]}</span>
+                <span className={jobStages[5] === 0 ? "data-zero" : "data-positive"}>{jobStages[5]}</span>
               </li>
               <li>
                 6. Onsite Interview:{" "}
-                <span className="job-stage-data">{jobStages[6]}</span>
+                <span className={jobStages[6] === 0 ? "data-zero" : "data-positive"}>{jobStages[6]}</span>
               </li>
               <li>
                 7. Job Offer:{" "}
-                <span className="job-stage-data">{jobStages[7]}</span>
+                <span className={jobStages[7] === 0 ? "data-zero" : "data-positive"}>{jobStages[7]}</span>
               </li>
               <li>
-                Total: <span className="job-stage-data">{jobNumberTotal}</span>
+                Total: <span className={jobNumberTotal === 0 ? "data-zero" : "data-positive"}>{jobNumberTotal}</span>
               </li>
             </ul>
-          </div>
-        </div>
-        <div className="skills">
-          <div className="skills-header">
-            <h3>Desired Skills</h3>
-            <p>
-              Determine what skills are most common in job postings, and focus
-              accordingly!
-            </p>
-          </div>
-          <div className="skills-graph">
-            <JobSkillsBarChart skills={jobSkills} />
-          </div>
-          <div className="skills-list">
-            <SkillsList jobSkills={jobSkills} />
           </div>
         </div>
         <div className="styles">
           <div className="styles-header">
             <h3>Job Styles</h3>
             <p>
-              Compare the style of jobs you are applying to by number and by
-              stage!
+              Compare the style of jobs you are applying to by number and determine whether the jobs you prioritized are being completed accordingly!
             </p>
           </div>
           <div className="styles-bar-graph">
             <JobStylesBarChart styles={jobStyles} />
           </div>
-          <div className="styles-line-graph">
-            <JobsLineChart jobs={jobs} />
+          <div className="styles-scatter-graph">
+            <JobScatterChart jobs={jobs} />
           </div>
         </div>
       </div>
