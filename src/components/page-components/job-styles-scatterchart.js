@@ -2,31 +2,59 @@ import React from "react";
 import NVD3Chart from "react-nvd3";
 
 export default class JobStylesScatterChart extends React.Component {
-jobsData(jobs, stages) {
-          var data = [],
+jobsData(jobs) {
+          let data = [],
               styles = ['startup', 'enterprise', 'nonprofit', 'contract'],
               shapes = ['circle', 'triangle-up', 'diamond', 'square'];
-          var xVal = 0;
 
-          for (var i = 0; i < 4; i++) {
+          for (let i = 0; i < styles.length; i++) {
               data.push({
                   key: styles[i],
                   values: []
               });
-              console.log(data);
-              console.log(jobs);
-              for (var j = 0; j < jobs.length; j++) {
-                  data[i].values.push({
-                      x: jobs[i].keywords.length,
-                      y: jobs[i].stage,
-                      // size: Math.round(Math.random() * 100) / 100,
-                      shape: shapes[j-1]
-                  });
-              }
+          //     for (var j = 0; j < jobs.length; j++) {
+          //         data[i].values.push({
+          //             x: jobs[i].keywords.length,
+          //             y: jobs[i].stage,
+          //             // size: Math.round(Math.random() * 100) / 100,
+          //             shape: shapes[j-1]
+          //         });
+          //         console.log(data[i].values);
+          //     }
+          // }
+          console.log(data);
+          for (let j = 0; j < jobs.length; j++) {
+            if (jobs[j].style === "startup") {
+              data[i].values.push({
+                x: jobs[j].keywords.length,
+                y: jobs[j].stage,
+                size: Math.round(Math.random() * 100) / 100,
+                shape: 'circle'});
+          } else if (jobs[i].style === "enterprise") {
+              data[i].values.push({
+                x: jobs[j].keywords.length,
+                y: jobs[j].stage,
+                size: Math.round(Math.random() * 100) / 100,
+                shape: 'circle'});
+          } else if (jobs[j].style === "nonprofit") {
+              data[i].values.push({
+                x: jobs[j].keywords.length,
+                y: jobs[j].stage,
+                size: Math.round(Math.random() * 100) / 100,
+                shape: 'circle'});
+          } else if (jobs[i].style === "contract") {
+              data[i].values.push({
+                x: jobs[j].keywords.length,
+                y: jobs[j].stage,
+                size: Math.round(Math.random() * 100) / 100,
+                shape: 'circle'});
           }
-          return data;
+       
     }
-
+    console.log(data);
+       return data;
+}
+}
     render() {
       let jobs = this.props.jobs;
       let jobStyles = this.props.styles;
@@ -35,8 +63,8 @@ jobsData(jobs, stages) {
         <div>
           <NVD3Chart
             type="scatterChart"
-            datum={this.jobsData(jobs, 7)}
-            containerStyle={{ width: 500, height: 500 }}
+            datum={this.jobsData(jobs)}
+            // containerStyle={{ width: 1000, height: 500 }}
           />
         </div>
       );

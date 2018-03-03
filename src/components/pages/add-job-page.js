@@ -13,7 +13,7 @@ export class AddJobPage extends React.Component {
       posting: "",
       image: "",
       contact: "",
-      deadline: "",
+      priority: 0,
       style: "",
       keywords: [],
       notes: [],

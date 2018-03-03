@@ -19,9 +19,9 @@ export const clearJobSuccess = data => ({
   data
 });
 
-export const SORT_JOBS_BY_DATE = "SORT_JOBS_BY_DATE";
+export const SORT_JOBS_BY_PRIORITY = "SORT_JOBS_BY_PRIORITY";
 export const sortJobsByDate = data => ({
-  type: SORT_JOBS_BY_DATE,
+  type: SORT_JOBS_BY_PRIORITY,
   data
 });
 
@@ -58,7 +58,7 @@ export const clearJobData = clear => dispatch => {
   dispatch(clearJobSuccess(clear));
 };
 
-export const sortByDate = jobs => dispatch => {
+export const sortByPriority = jobs => dispatch => {
   dispatch(sortJobsByDate(jobs));
 };
 
@@ -115,7 +115,7 @@ export const addJob = job => (dispatch, getState) => {
       posting: job.posting,
       image: job.image,
       contact: job.contact,
-      deadline: job.deadline,
+      priority: job.priority,
       style: job.style,
       keywords: job.keywords,
       notes: job.notes,
@@ -168,7 +168,7 @@ export const editJob = job => (dispatch, getState) => {
       posting: job.posting,
       image: job.image,
       contact: job.contact,
-      deadline: job.deadline,
+      priority: job.priority,
       style: job.style,
       keywords: job.keywords,
       notes: job.notes,

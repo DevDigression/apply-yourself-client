@@ -4,7 +4,7 @@ import requiresLogin from "../requires-login";
 import { Link } from "react-router-dom";
 import {
   fetchJobs,
-  sortByDate,
+  sortByPriority,
   sortByStatus
 } from "../../actions/protected-data";
 import NavBar from "../navbar";
@@ -16,7 +16,7 @@ export class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dates: false,
+      priority: false,
       status: false
     };
   }
@@ -25,29 +25,29 @@ export class Dashboard extends React.Component {
     this.props.dispatch(fetchJobs());
   }
 
-  handleDates() {
-    if (this.state.dates === false && this.state.status === false) {
+  handlePriority() {
+    if (this.state.priority === false && this.state.status === false) {
       this.setState({
-        dates: true,
+        priority: true,
         status: false
       });
-    } else if (this.state.dates === false && this.state.status === true) {
+    } else if (this.state.priority === false && this.state.status === true) {
       this.setState({
-        dates: true,
+        priority: true,
         status: false
       });
     }
   }
 
   handleStatus() {
-    if (this.state.dates === false && this.state.status === false) {
+    if (this.state.priority === false && this.state.status === false) {
       this.setState({
-        dates: false,
+        priority: false,
         status: true
       });
-    } else if (this.state.dates === true && this.state.status === false) {
+    } else if (this.state.priority === true && this.state.status === false) {
       this.setState({
-        dates: false,
+        priority: false,
         status: true
       });
     }
@@ -56,7 +56,7 @@ export class Dashboard extends React.Component {
   render() {
     let links = ["Stats", "Logout"];
     let jobs = this.props.jobs;
-
+console.log(jobs);
     return (
       <div className="dashboard">
         <NavBar links={links} />
@@ -65,13 +65,13 @@ export class Dashboard extends React.Component {
             <h5>Sort By:</h5>
             <div className="sort-options">
               <span
-                className={this.state.dates ? "blue" : "black"}
+                className={this.state.priority ? "blue" : "black"}
                 onClick={() => {
-                  this.handleDates();
-                  this.props.dispatch(sortByDate(jobs));
+                  this.handlePriority();
+                  this.props.dispatch(sortByPriority(jobs));
                 }}
               >
-                Date
+                Priority
               </span>{" "}
               <span> | </span>{" "}
               <span

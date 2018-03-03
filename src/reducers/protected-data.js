@@ -2,7 +2,7 @@ import {
   FETCH_JOBS_SUCCESS,
   FETCH_SINGLE_JOB_SUCCESS,
   CLEAR_JOB_SUCCESS,
-  SORT_JOBS_BY_DATE,
+  SORT_JOBS_BY_PRIORITY,
   SORT_JOBS_BY_STATUS,
   FETCH_ERROR
 } from "../actions/protected-data";
@@ -17,6 +17,7 @@ const initialState = {
     keywords: [],
     checkpoints: [],
     stage: 0,
+    priority: 0,
     completion: 0,
     image: "",
     notes: ""
@@ -40,14 +41,12 @@ export default function reducer(state = initialState, action) {
       currentJob: action.data,
       error: null
     });
-  } else if (action.type === SORT_JOBS_BY_DATE) {
-    let jobsByDate = action.data.sort(function(a, b) {
-      let dateA = new Date(a.date);
-      let dateB = new Date(b.date);
-      return dateB - dateA;
+  } else if (action.type === SORT_JOBS_BY_PRIORITY) {
+    let jobsByPriority = action.data.sort(function(a, b) {
+      return b.priority - a.priority;
     });
     return Object.assign({}, state, {
-      jobs: [...jobsByDate],
+      jobs: [...jobsByPriority],
       error: null
     });
   } else if (action.type === SORT_JOBS_BY_STATUS) {

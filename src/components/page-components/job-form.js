@@ -2,6 +2,7 @@ import React from "react";
 import { Field, reduxForm, focus, reset } from "redux-form";
 import Input from "../input";
 import JobDropdown from "../job-dropdown";
+import PriorityDropdown from "../priority-dropdown";
 import { connect } from "react-redux";
 import { required, nonEmpty } from "../../validators";
 import "./job-form.css";
@@ -42,12 +43,12 @@ export class JobForm extends React.Component {
           id="company"
           validate={[required, nonEmpty]}
         />
-        <label htmlFor="posting">Posting</label>
+        <label htmlFor="posting">Job Posting URL</label>
         <Field component={Input} type="text" name="posting" id="posting" />
         <label htmlFor="contact">Primary Contact</label>
         <Field component={Input} type="text" name="contact" id="contact" />
-        <label htmlFor="deadline">Deadline</label>
-        <Field component={Input} type="date" name="deadline" id="deadline" />
+        <label htmlFor="priority">Priority</label>
+        <Field component={PriorityDropdown} type="select" name="priority" id="priority" validate={[required]}/>
         <label htmlFor="style">Style of Company</label>
         <Field
           component={JobDropdown}
@@ -64,7 +65,7 @@ export class JobForm extends React.Component {
           id="keywords"
           validate={[required]}
         />
-        <label htmlFor="image">Company Image (paste image URL)</label>
+        <label htmlFor="image">Company Image URL</label>
         <Field component={Input} type="text" name="image" id="image" />
         <button disabled={this.props.pristine || this.props.submitting}>
           Submit
