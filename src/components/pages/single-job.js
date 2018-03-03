@@ -13,6 +13,14 @@ export class SingleJob extends React.Component {
     this.props.dispatch(fetchJobById(this.props.match.params.jobid));
   }
 
+  formatDate(newDate) {
+    let date = new Date(newDate);
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+  }
+
   render() {
     console.log(this.props.currentJob);
     let links = ["Dashboard", "Logout"];
@@ -54,14 +62,14 @@ export class SingleJob extends React.Component {
           <div className="job-info-list">
             <ul>
               {this.props.currentJob.contact ? (
-                <li>Contact Info: {this.props.currentJob.contact}</li>
+                <li><span className="job-info-item">Contact Info: </span>{this.props.currentJob.contact}</li>
               ) : null}
               {this.props.currentJob.deadline ? (
-                <li>Application Deadline: {this.props.currentJob.deadline}</li>
+                <li><span className="job-info-item">Application Deadline: </span>{this.formatDate(this.props.currentJob.deadline)}</li>
               ) : null}
-              <li>Style of Company: {this.props.currentJob.style}</li>
+              <li><span className="job-info-item">Style of Company: </span>{capitalize(this.props.currentJob.style)}</li>
               <li>
-                Tech Keywords: {this.props.currentJob.keywords.join(", ")}
+                <span className="job-info-item">Tech Keywords: </span>{this.props.currentJob.keywords.join(", ")}
               </li>
             </ul>
           </div>
@@ -100,6 +108,12 @@ export class SingleJob extends React.Component {
       </div>
     );
   }
+}
+
+function capitalize (string) {
+  if (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 }
 
 const mapStateToProps = state => {

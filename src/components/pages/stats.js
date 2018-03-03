@@ -6,6 +6,7 @@ import JobSkillsBarChart from "../page-components/job-skills-barchart";
 import JobStylesBarChart from "../page-components/job-styles-barchart";
 import JobProgressionAvg from "../page-components/job-progression-avg";
 import SkillsList from "../page-components/skills-list";
+import JobStylesLineChart from "../page-components/job-styles-linechart";
 import JobStylesScatterChart from "../page-components/job-styles-scatterchart";
 import requiresLogin from "../requires-login";
 import { fetchJobs } from "../../actions/protected-data";

@@ -11,7 +11,7 @@ export class JobStylesBarChart extends React.Component {
     ];
     Object.keys(styles).forEach(style => {
       datum[0].values.push({
-        label: style,
+        label: capitalize(style),
         value: styles[style]
       });
     });
@@ -39,6 +39,12 @@ export class JobStylesBarChart extends React.Component {
       </div>
     );
   }
+}
+
+function capitalize (string) {
+  if (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 }
 
 const mapStateToProps = state => ({});

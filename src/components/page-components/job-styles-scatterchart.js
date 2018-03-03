@@ -3,21 +3,21 @@ import NVD3Chart from "react-nvd3";
 
 export default class JobStylesScatterChart extends React.Component {
 jobsData(jobs, stages) {
-  console.log(jobs);
-  console.log(stages);
           var data = [],
               styles = ['startup', 'enterprise', 'nonprofit', 'contract'],
-              shapes = ['circle', 'triangle-up', 'diamond', 'square']
+              shapes = ['circle', 'triangle-up', 'diamond', 'square'];
           var xVal = 0;
 
-          for (var i = 0; i < jobs.length; i++) {
+          for (var i = 0; i < 4; i++) {
               data.push({
                   key: styles[i],
                   values: []
               });
-              for (var j = 0; j < stages; j++) {
+              console.log(data);
+              console.log(jobs);
+              for (var j = 0; j < jobs.length; j++) {
                   data[i].values.push({
-                      x: xVal++,
+                      x: jobs[i].keywords.length,
                       y: jobs[i].stage,
                       // size: Math.round(Math.random() * 100) / 100,
                       shape: shapes[j-1]
@@ -25,20 +25,17 @@ jobsData(jobs, stages) {
               }
           }
           return data;
-      }
-
-
+    }
 
     render() {
       let jobs = this.props.jobs;
       let jobStyles = this.props.styles;
       let totalJobs = this.props.totalJobs;
-      console.log(jobStyles)
       return (
         <div>
           <NVD3Chart
             type="scatterChart"
-            datum={this.jobsData(jobs, totalJobs)}
+            datum={this.jobsData(jobs, 7)}
             containerStyle={{ width: 500, height: 500 }}
           />
         </div>

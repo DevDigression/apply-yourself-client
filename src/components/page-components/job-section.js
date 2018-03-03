@@ -25,13 +25,13 @@ export default class JobSection extends React.Component {
               <h6>{this.props.job.company}</h6>
             </div>
             <div className="job-stage">
-              <p>Current Stage:</p>
+              <p><span className="job-stage-item">Current Stage:</span></p>
               <p>{this.props.job.stage}</p>
             </div>
           </div>
           <div className="job-status">
-            <p>Added {this.formatDate(this.props.job.date)}</p>
-            <p>Completion: {this.props.job.completion}</p>
+            <p><span className="job-status-item">Added </span>{this.formatDate(this.props.job.date)}</p>
+            <p><span className="job-status-item">Completion: </span>{this.props.job.completion}</p>
           </div>
         </Link>
         <div className="clear" />
