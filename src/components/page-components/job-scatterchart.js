@@ -3,9 +3,8 @@ import NVD3Chart from "react-nvd3";
 
 export default class JobScatterChart extends React.Component {
   jobsData(jobs) {
-            let data = [],
-                styles = ['Startup', 'Enterprise', 'Nonprofit', 'Contract'],
-                shapes = ['circle', 'triangle-up', 'diamond', 'square'];
+            let data = [];
+            let styles = ['Startup', 'Enterprise', 'Nonprofit', 'Contract'];
 
             for (let i = 0; i < styles.length; i++) {
                 data.push({

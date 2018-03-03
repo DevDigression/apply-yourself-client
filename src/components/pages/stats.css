@@ -92,11 +92,11 @@
 }
 
 .skills-list {
-	width: 40%;
+	width: 20%;
 	display: inline-block;
 	margin: 0 auto;
-	padding-left: 10%;
 	float: left;
+	text-align: right;
 }
 
 .skills-graph {
@@ -263,17 +263,12 @@
 		margin: 0 auto;
 	}
 
-	.job-stage-data {
-		padding-left: 0;
-	}
-
-	.styles {
-		
-	width: 100%;
-	display: block;
-	margin: 0 auto;
-	padding-bottom: 50px;
-	clear: both;
+	.styles {	
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+		padding-bottom: 50px;
+		clear: both;
 	}
 
 	.styles-bar-graph {
