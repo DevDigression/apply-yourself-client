@@ -14,9 +14,8 @@ export class EditJobPage extends React.Component {
   }
 
   onSubmit(values) {
-    console.log(values);
     if (values.keywords.length > 0) {
-      values.keywords.split(",");
+      values.keywords = values.keywords.split(",");
     }
     this.props.dispatch(editJob(values));
     return this.props.history.push("/dashboard");

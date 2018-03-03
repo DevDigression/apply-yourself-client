@@ -178,7 +178,9 @@ export const editJob = job => (dispatch, getState) => {
       checkpoints: job.checkpoints,
       id: job._id
     })
-  }).catch(err => {
+  })
+.then(data => dispatch(fetchJobs()))
+  .catch(err => {
     dispatch(fetchProtectedDataError(err));
   });
 };
