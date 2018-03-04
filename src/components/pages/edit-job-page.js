@@ -14,14 +14,16 @@ export class EditJobPage extends React.Component {
   }
 
   onSubmit(values) {
+    console.log(values.keywords);
     if (values.keywords.length > 0) {
       values.keywords = values.keywords.split(",");
-    }
+    } else values.keywords = [""];
     this.props.dispatch(editJob(values));
     return this.props.history.push("/dashboard");
   }
 
   render() {
+    console.log(this.props)
     let links = ["Stats", "Dashboard"];
     return (
       <div className="add-job-page">
@@ -29,6 +31,7 @@ export class EditJobPage extends React.Component {
         <div className="add-job-container">
           <JobForm
             title="Edit Job"
+            existingValues={this.props.currentJob}
             onSubmit={values => this.onSubmit(values)}
           />
         </div>
@@ -38,7 +41,8 @@ export class EditJobPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  currentJob: state.protectedData.currentJob
 });
 
 export default connect(mapStateToProps)(EditJobPage);

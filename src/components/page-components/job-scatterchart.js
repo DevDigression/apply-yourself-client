@@ -52,8 +52,11 @@ export default class JobScatterChart extends React.Component {
           <NVD3Chart
             type="scatterChart"
             datum={this.jobsData(jobs)}
-            x="Priority"
-            y="Stage"
+            xLabel="Priority"
+            yLabel="Stage"
+            axisLabel="Priority"
+            xAxisLabel="Priority"
+            label={{x: "Priority", y: "Stage"}}
             // containerStyle={{ width: 500, height: 500 }}
           />
         </div>

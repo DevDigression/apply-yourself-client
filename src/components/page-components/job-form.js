@@ -17,6 +17,7 @@ export class JobForm extends React.Component {
         </div>
       );
     }
+    console.log(this.props.existingValues.keywords);
 
     return (
       <form
@@ -57,13 +58,13 @@ export class JobForm extends React.Component {
           id="style"
           validate={[required, nonEmpty]}
         />
-        <label htmlFor="keywords">Tech Keywords (separated by commas)</label>
+        <label htmlFor="keywords">Desired Skills (separated by commas)</label>
         <Field
           component={Input}
           type="text"
           name="keywords"
           id="keywords"
-          validate={[required]}
+          validate={this.props.existingValues.keywords.length > 0 ? null : [required]}
         />
         <label htmlFor="image">Company Image URL</label>
         <Field component={Input} type="text" name="image" id="image" />

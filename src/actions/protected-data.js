@@ -179,7 +179,7 @@ export const editJob = job => (dispatch, getState) => {
       id: job._id
     })
   })
-.then(data => dispatch(fetchJobs()))
+  .then(data => dispatch(fetchJobs()))
   .catch(err => {
     dispatch(fetchProtectedDataError(err));
   });

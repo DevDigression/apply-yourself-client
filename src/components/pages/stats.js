@@ -145,7 +145,7 @@ export class Stats extends React.Component {
           <div className="styles-header">
             <h3>Job Styles</h3>
             <p>
-              Compare the style of jobs you are applying to by number and determine whether the jobs you prioritized are being completed accordingly!
+              Compare the style of jobs you are applying to and determine whether the jobs you prioritized are being completed accordingly!
             </p>
           </div>
           <div className="styles-bar-graph">

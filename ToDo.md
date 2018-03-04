@@ -8,11 +8,14 @@
 
 <!-- - Notes not saving (not getting posted to db) -> conditional logic caused the problem -->
 
-- Job not adding on first submit (have to reload) - sometimes
+<!-- - Job not adding on first submit (have to reload) - sometimes -->
 
 * Test it!
 
 * Add DEMO
+
+Priority (1 or 10 highest?)
+Tech keywords = desired skills
 
 <!-- * Might be fixed:
 
