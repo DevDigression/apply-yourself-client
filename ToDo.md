@@ -14,10 +14,16 @@
 
 * Add DEMO
 
-Priority (1 or 10 highest?)
-Tech keywords = desired skills
-
 <!-- * Might be fixed:
 
 - Logging out deletes user from db (Setup testing .env + variables on Heroku)
 - Job not adding on first submit (have to reload) -->
+
+
+Feedback:
+
+Priority (1 or 10 highest ?)
+Tech keywords = desired skills
+Slow loading (images)
+Stats alternate background colors
+Larger font on job form

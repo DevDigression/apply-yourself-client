@@ -8,13 +8,19 @@
 	border-radius: 5px;
 }
 
-.checkpoint-form input {
-	margin: 10px auto;
+.checkpoint-form label {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+.checkpoint-form select {
+	margin: 15px auto;
 	width: 70%;
 }
 
 .checkpoint-form textarea {
-	margin: 10px auto;
+	margin: 15px auto;
+	height: 75px;
 	width: 70%;
 }
 

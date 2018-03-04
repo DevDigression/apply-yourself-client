@@ -26,7 +26,7 @@ export default class JobSection extends React.Component {
             </div>
             <div className="job-stage">
               <p><span className="job-stage-item">Current Stage:</span></p>
-              <p>{this.props.job.stage}</p>
+              <p><span className="job-stage-number">{this.props.job.stage}</span></p>
             </div>
           </div>
           <div className="job-status">

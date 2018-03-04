@@ -3,6 +3,7 @@ import { Field, reduxForm, focus, reset } from "redux-form";
 import Textarea from "../textarea";
 import CheckpointDropdown from "../checkpoint-dropdown";
 import { connect } from "react-redux";
+import { required, nonEmpty } from "../../validators";
 import "./checkpoint-form.css";
 
 export class CheckpointForm extends React.Component {
@@ -32,9 +33,10 @@ export class CheckpointForm extends React.Component {
           type="select"
           name="stage"
           id="stage"
+          validate={[required]}
         />
         <label htmlFor="content">Additional Info</label>
-        <Field component={Textarea} type="text" name="content" id="content" />
+        <Field component={Textarea} type="text" name="content" id="content" validate={[required]} />
         <button disabled={this.props.pristine || this.props.submitting}>
           Submit
         </button>

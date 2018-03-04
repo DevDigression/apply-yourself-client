@@ -12,7 +12,7 @@ export default function LandingSteps(props) {
           img="https://images.unsplash.com/photo-1502758898459-10885c4d334c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=dfb01718cacade8007f7e86f0b385230"
         >
           Find a job of interest. Add it to your list. Include information such
-          as primary contact, desired skills and a job-specific cover letter.
+          as primary contact and desired skills. Assign each job a priority level.
         </LandingStep>
 
         <LandingStep

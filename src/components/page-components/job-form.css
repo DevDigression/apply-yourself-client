@@ -8,13 +8,18 @@
 	border-radius: 5px;
 }
 
+.job-form label {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
 .job-form input {
-	margin: 10px auto;
+	margin: 20px auto;
 	width: 70%;
 }
 
 .job-form select {
-	margin: 10px auto;
+	margin: 20px auto;
 	width: 70%;
 }
 
@@ -23,7 +28,7 @@
 }
 
 .job-form h2 {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .job-form button {

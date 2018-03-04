@@ -136,7 +136,7 @@
 	padding-top: 50px;
 	display: inline-block;
 	width: 30%;
-	text-align: left;
+	text-align: center;
 	color: #333;
 }
 
@@ -154,6 +154,10 @@
 	font-size: 20px;
 	font-weight: bold;
 	padding-right: 5px;
+}
+
+.job-stage-number {
+	padding-top: 5px;
 }
 
 .welcome {
