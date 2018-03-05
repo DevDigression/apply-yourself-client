@@ -9,7 +9,6 @@ export default class JobScatterChart extends React.Component {
             for (let i = 0; i < styles.length; i++) {
                 data.push({
                     key: styles[i],
-                    xAxis: 'Priority',
                     values: []
                 });
             }
@@ -40,26 +39,26 @@ export default class JobScatterChart extends React.Component {
                   size: Math.round(Math.random() * 100) / 100,
                   shape: 'square'});
             }
-            }
+      }
       return data;
     }
 
     render() {
       let jobs = this.props.jobs;
-
+      let config = this.jobsData(jobs);
       return (
         <div>
           <NVD3Chart
             type="scatterChart"
             datum={this.jobsData(jobs)}
-            axisLabels={{x: 'Priority', y: 'Stage'}}
             xDomain={[0, 10]}
             yDomain={[0, 7]}
+            xAxis={{axisLabel: 'Priority', tickFormat: function(d){ return d; }}}
+            yAxis={{axisLabel: 'Stage'}}
             tooltip={{enabled: true}}
-            // tooltipContent={key => '<h3>' + key + '</h3>'}
-            // dotRadius={10}
-            // pointSize={10}
-            // size={10}
+            configure={chart => console.log(chart.tooltip.contentGenerator(config))}
+            contentGenerator={value => console.log(value)}
+            options={{ showDistX: true, showDistY: true }}
           />
         </div>
       );
