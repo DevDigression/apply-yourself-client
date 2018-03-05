@@ -23,7 +23,6 @@ export default class JobsLineChart extends React.Component {
       values: []
     }
   ];
-  console.log(jobs);
 
   jobs.forEach(job => {
     if (job.style === "startup") {
@@ -37,7 +36,6 @@ export default class JobsLineChart extends React.Component {
     }
   });
 
-console.log(data);
   return data;
 }
     render() {      

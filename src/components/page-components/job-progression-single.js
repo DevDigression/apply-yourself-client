@@ -8,11 +8,8 @@ export class JobProgressionSingle extends React.Component {
 
     var ranges = [1, 2, 3, 4, 5, 6, 7];
     var datum = {
-      // title: "Progression",
-      // subtitle: "Stages: ",
       ranges: ranges,
       measures: [currentCheckpoint]
-      // markers: [currentCheckpoint / totalCheckpoints]
     };
 
     return (
@@ -21,8 +18,6 @@ export class JobProgressionSingle extends React.Component {
           id="jobProgressionSingle"
           type="bulletChart"
           datum={datum}
-          // x="label"
-          // y="value"
           tooltip={{ enabled: false }}
         />
       </div>

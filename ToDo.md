@@ -13,7 +13,9 @@
 * Test it!
  - Jobs done; others?
 
-* Add DEMO
+* Labels for scatter chart
+
+<!-- * Add DEMO -->
 
 <!-- * Might be fixed:
 

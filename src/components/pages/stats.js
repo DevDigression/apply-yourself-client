@@ -42,7 +42,6 @@ export class Stats extends React.Component {
     let jobSkills = {};
 
     jobs.forEach(job => {
-      console.log(job);
       jobStages[job.stage]++;
       jobStyles[job.style]++;
     });
