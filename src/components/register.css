@@ -12,7 +12,7 @@
 }
 
 .registration-form {
-	width: 300px;
+	width: 400px;
 	margin: 5% auto;
 	text-align: center;
 	background: #c4c4c4;
@@ -21,11 +21,17 @@
 	border-radius: 5px;
 }
 
+.registration-form label {
+	font-size: 20px;
+}
+
 .registration-form input {
 	margin: 10px auto;
+	width: 70%;
 }
 
 .registration-form h2 {
+	font-size: 30px;
 	margin-bottom: 50px;
 }
 
@@ -45,7 +51,7 @@
 	}
 
 	.registration-form {
-		margin: 20% auto;
+		margin: 10% auto;
 		width: 275px;
 	}
 }

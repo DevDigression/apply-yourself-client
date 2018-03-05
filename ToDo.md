@@ -11,6 +11,7 @@
 <!-- - Job not adding on first submit (have to reload) - sometimes -->
 
 * Test it!
+ - Jobs done; others?
 
 * Add DEMO
 

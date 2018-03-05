@@ -14,7 +14,6 @@ export class EditJobPage extends React.Component {
   }
 
   onSubmit(values) {
-    console.log(values.keywords);
     if (values.keywords.length > 0) {
       values.keywords = values.keywords.split(",");
     } else values.keywords = [""];
@@ -23,7 +22,6 @@ export class EditJobPage extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     let links = ["Stats", "Dashboard"];
     return (
       <div className="add-job-page">

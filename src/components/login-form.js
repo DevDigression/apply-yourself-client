@@ -1,6 +1,7 @@
 import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
 import Input from "./input";
+import { Link } from "react-router-dom";
 import { login } from "../actions/auth";
 import { required, nonEmpty } from "../validators";
 import "./login.css";
@@ -11,6 +12,11 @@ export class LoginForm extends React.Component {
     }
 
     render() {
+        const demoUser = {
+            username: "demouser",
+            password: "demo123456"
+        };
+
         let error;
         if (this.props.error) {
             error = (
@@ -44,9 +50,15 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className="submit-btn" disabled={this.props.pristine || this.props.submitting}>
                     Submit
                 </button>
+                <div className="register-section">
+                Don't have an account? <p><Link to="/register">Register a new one!</Link></p>
+                </div>
+                <div className="demo-section">
+                <p>Or try a demo by clicking below!<button className="demo-btn" onClick={() => this.onSubmit(demoUser)}>Demo</button></p>
+                </div>
             </form>
         );
     }
