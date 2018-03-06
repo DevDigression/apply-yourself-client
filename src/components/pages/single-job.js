@@ -69,7 +69,7 @@ export class SingleJob extends React.Component {
               ) : null}
               <li><span className="job-info-item">Style of Company: </span>{capitalize(this.props.currentJob.style)}</li>
               <li>
-                <span className="job-info-item">Tech Keywords: </span>{this.props.currentJob.keywords.join(", ")}
+                <span className="job-info-item">Desired Skills: </span>{this.props.currentJob.keywords.join(", ")}
               </li>
             </ul>
           </div>

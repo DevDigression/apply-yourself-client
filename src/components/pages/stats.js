@@ -143,14 +143,17 @@ export class Stats extends React.Component {
         <div className="styles">
           <div className="styles-header">
             <h3>Job Styles</h3>
-            <p>
-              Compare the style of jobs you are applying to and determine whether the jobs you prioritized are being completed accordingly!
-            </p>
           </div>
           <div className="styles-bar-graph">
+            <p>
+              Compare the style of jobs you are applying to by the numbers - then take a look at the scatter plot to the right to see which jobs are being completed most successfully!
+            </p>
             <JobStylesBarChart styles={jobStyles} />
           </div>
           <div className="styles-scatter-graph">
+            <p>
+              Try to build a correlation of success by ensuring that the jobs you prioritized (furthest along the X Axis) are being completed accordingly (furthest along the Y Axis)!
+            </p>
             <JobScatterChart jobs={jobs} />
           </div>
         </div>

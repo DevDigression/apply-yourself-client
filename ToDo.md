@@ -4,16 +4,17 @@
 
 <!-- * Do a 2 more charts (at least one different). -->
 
-* Edit form not saving unless keywords edited
+<!-- * Edit form not saving unless keywords edited -->
 
 <!-- - Notes not saving (not getting posted to db) -> conditional logic caused the problem -->
 
 <!-- - Job not adding on first submit (have to reload) - sometimes -->
 
-* Test it!
- - Jobs done; others?
+* Auth/User tests --> error with user id
 
-* Labels for scatter chart
+* Enzyme tests --> working on Single Job
+
+<!-- * Labels for scatter chart -->
 
 <!-- * Add DEMO -->
 
@@ -21,12 +22,3 @@
 
 - Logging out deletes user from db (Setup testing .env + variables on Heroku)
 - Job not adding on first submit (have to reload) -->
-
-
-Feedback:
-
-Priority (1 or 10 highest ?)
-Tech keywords = desired skills
-Slow loading (images)
-Stats alternate background colors
-Larger font on job form

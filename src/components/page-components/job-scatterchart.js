@@ -18,26 +18,26 @@ export default class JobScatterChart extends React.Component {
                 data[0].values.push({
                   x: jobs[j].priority,
                   y: Number(jobs[j].stage),
-                  size: Math.round(Math.random() * 100) / 100,
+                  size: 5,
                   shape: 'circle'});
             } else if (jobs[j].style === "enterprise") {
                 data[1].values.push({
                   x: jobs[j].priority,
                   y: Number(jobs[j].stage),
-                  size: Math.round(Math.random() * 100) / 100,
-                  shape: 'triangle-up'});
+                  size: 5,
+                  shape: 'circle'});
             } else if (jobs[j].style === "nonprofit") {
                 data[2].values.push({
                   x: jobs[j].priority,
                   y: Number(jobs[j].stage),
-                  size: Math.round(Math.random() * 100) / 100,
-                  shape: 'diamond'});
+                  size: 5,
+                  shape: 'circle'});
             } else if (jobs[j].style === "contract") {
                 data[3].values.push({
                   x: jobs[j].priority,
                   y: Number(jobs[j].stage),
-                  size: Math.round(Math.random() * 100) / 100,
-                  shape: 'square'});
+                  size: 5,
+                  shape: 'circle'});
             }
       }
       return data;
@@ -53,12 +53,13 @@ export default class JobScatterChart extends React.Component {
             datum={this.jobsData(jobs)}
             xDomain={[0, 10]}
             yDomain={[0, 7]}
-            xAxis={{axisLabel: 'Priority', tickFormat: function(d){ return d; }}}
+            xAxis={{axisLabel: 'Priority'}}
             yAxis={{axisLabel: 'Stage'}}
-            tooltip={{enabled: true}}
-            configure={chart => console.log(chart.tooltip.contentGenerator(config))}
-            contentGenerator={value => console.log(value)}
-            options={{ showDistX: true, showDistY: true }}
+            tooltip={{enabled: true, contentGenerator: function(d, node) {
+              return d;
+            }}}
+            scale={1}
+            // options={{ showDistX: true, showDistY: true }}
           />
         </div>
       );

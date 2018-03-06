@@ -4,7 +4,7 @@ import Input from "../input";
 import JobDropdown from "../job-dropdown";
 import PriorityDropdown from "../priority-dropdown";
 import { connect } from "react-redux";
-import { required, nonEmpty } from "../../validators";
+import { required, nonEmpty, keywords } from "../../validators";
 import "./job-form.css";
 
 export class JobForm extends React.Component {
@@ -63,7 +63,7 @@ console.log(this.props.initialValues.keywords);
           type="text"
           name="keywords"
           id="keywords"
-          validate={this.props.initialValues.keywords.length > 0 ? null : [required]}
+          validate={[required, keywords]}
         />
         <label htmlFor="image">Company Image URL</label>
         <Field component={Input} type="text" name="image" id="image" />
