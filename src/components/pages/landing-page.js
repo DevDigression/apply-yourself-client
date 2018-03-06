@@ -11,7 +11,6 @@ import landingPageData from "./landing-page-data";
 import footerText from "../page-components/landing-footer-data";
 
 export function LandingPage(props) {
-  // If we are logged in redirect straight to the user's dashboard
   if (props.loggedIn) {
     return <Redirect to="/dashboard" />;
   }

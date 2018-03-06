@@ -22,7 +22,6 @@ export class SingleJob extends React.Component {
   }
 
   render() {
-    console.log(this.props.currentJob);
     let links = ["Dashboard", "Logout"];
     let checkpoints = this.props.currentJob.checkpoints;
     return (

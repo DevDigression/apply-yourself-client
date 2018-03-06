@@ -8,7 +8,6 @@ import "./checkpoint-form.css";
 
 export class CheckpointForm extends React.Component {
   render() {
-    console.log(this.props);
     let error;
     if (this.props.error) {
       error = (

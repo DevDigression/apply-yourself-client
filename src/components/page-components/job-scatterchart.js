@@ -45,7 +45,7 @@ export default class JobScatterChart extends React.Component {
 
     render() {
       let jobs = this.props.jobs;
-      let config = this.jobsData(jobs);
+
       return (
         <div>
           <NVD3Chart
@@ -58,8 +58,6 @@ export default class JobScatterChart extends React.Component {
             tooltip={{enabled: true, contentGenerator: function(d, node) {
               return d;
             }}}
-            scale={1}
-            // options={{ showDistX: true, showDistY: true }}
           />
         </div>
       );

@@ -15,10 +15,8 @@ import { refreshAuthToken } from "../actions/auth";
 export class App extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn && !this.props.loggedIn) {
-      // When we are logged in, refresh the auth token periodically
       this.startPeriodicRefresh();
     } else if (!nextProps.loggedIn && this.props.loggedIn) {
-      // Stop refreshing when we log out
       this.stopPeriodicRefresh();
     }
   }
@@ -30,7 +28,7 @@ export class App extends React.Component {
   startPeriodicRefresh() {
     this.refreshInterval = setInterval(
       () => this.props.dispatch(refreshAuthToken()),
-      60 * 60 * 1000 // One hour
+      60 * 60 * 1000
     );
   }
 
@@ -64,5 +62,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(App));

@@ -17,7 +17,7 @@ export class JobForm extends React.Component {
         </div>
       );
     }
-console.log(this.props.initialValues.keywords);
+
     return (
       <form
         className="job-form"

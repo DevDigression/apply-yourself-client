@@ -31,7 +31,6 @@ export default class JobSection extends React.Component {
           </div>
           <div className="job-status">
             <p><span className="job-status-item">Added </span>{this.formatDate(this.props.job.date)}</p>
-            {/*<p><span className="job-status-item">Completion: </span>{this.props.job.completion}</p>*/}
             <p><span className="job-status-item">Priority: </span>{this.props.job.priority}</p>
           </div>
         </Link>

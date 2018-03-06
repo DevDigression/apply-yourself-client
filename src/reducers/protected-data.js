@@ -50,7 +50,6 @@ export default function reducer(state = initialState, action) {
       error: null
     });
   } else if (action.type === SORT_JOBS_BY_STATUS) {
-    console.log(action.data);
     let jobsByStatus = action.data.sort(function(a, b) {
       return Number(b.stage) - Number(a.stage);
     });
