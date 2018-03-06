@@ -4,7 +4,7 @@ import Input from "../input";
 import JobDropdown from "../job-dropdown";
 import PriorityDropdown from "../priority-dropdown";
 import { connect } from "react-redux";
-import { required, nonEmpty, keywords } from "../../validators";
+import { required, nonEmpty } from "../../validators";
 import "./job-form.css";
 
 export class JobForm extends React.Component {
@@ -48,7 +48,13 @@ export class JobForm extends React.Component {
         <label htmlFor="contact">Primary Contact</label>
         <Field component={Input} type="text" name="contact" id="contact" />
         <label htmlFor="priority">Priority</label>
-        <Field component={PriorityDropdown} type="select" name="priority" id="priority" validate={[required]}/>
+        <Field
+          component={PriorityDropdown}
+          type="select"
+          name="priority"
+          id="priority"
+          validate={[required]}
+        />
         <label htmlFor="style">Style of Company</label>
         <Field
           component={JobDropdown}
@@ -61,9 +67,9 @@ export class JobForm extends React.Component {
         <Field
           component={Input}
           type="text"
-          name="keywords"
-          id="keywords"
-          validate={[required, keywords]}
+          name="keywordsinput"
+          id="keywordsinput"
+          validate={[required, nonEmpty]}
         />
         <label htmlFor="image">Company Image URL</label>
         <Field component={Input} type="text" name="image" id="image" />
@@ -82,8 +88,12 @@ JobForm = reduxForm({
   onSubmitFail: (errors, dispatch) => dispatch(focus("job-form", "title"))
 })(JobForm);
 
-JobForm = connect(state => ({
-  initialValues: state.protectedData.currentJob
-}))(JobForm);
+JobForm = connect(state => {
+  var ret = {
+    initialValues: state.protectedData.currentJob
+  };
+  ret.initialValues.keywordsinput = ret.initialValues.keywords.join(", ");
+  return ret;
+})(JobForm);
 
 export default JobForm;

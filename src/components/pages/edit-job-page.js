@@ -14,6 +14,7 @@ export class EditJobPage extends React.Component {
   }
 
   onSubmit(values) {
+    values.keywords = values.keywordsinput.split(",");
     this.props.dispatch(editJob(values));
     return this.props.history.push("/dashboard");
   }

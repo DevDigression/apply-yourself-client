@@ -16,6 +16,7 @@ export class AddJobPage extends React.Component {
       priority: 0,
       style: "",
       keywords: [],
+      keywordsinput: "",
       notes: [],
       date: "",
       stage: "",
@@ -27,6 +28,7 @@ export class AddJobPage extends React.Component {
   }
 
   onSubmit(values) {
+    values.keywords = values.keywordsinput.split(",");
     this.props.dispatch(addJob(values));
     return this.props.history.push("/dashboard");
   }
