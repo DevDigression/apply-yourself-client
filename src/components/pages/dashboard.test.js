@@ -52,7 +52,5 @@ describe('<Dashboard/>', () => {
         const wrapper = shallow(<Dashboard jobs={seedJobs} dispatch={dispatch} />);
         const jobs = wrapper.find(JobSection);
         expect(jobs.length).toEqual(seedJobs.length);
-        // const firstJob = jobs.first();
-        // expect(firstJob.prop('job.title')).toEqual(seedJobs[0].title);
     });
 });
