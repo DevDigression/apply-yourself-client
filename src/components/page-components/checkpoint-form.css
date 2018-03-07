@@ -10,22 +10,21 @@
 
 .checkpoint-form label {
 	font-size: 20px;
-	padding-bottom: 10px;
 }
 
 .checkpoint-form select {
-	margin: 15px auto;
-	width: 70%;
+	margin: 5px auto 20px auto;
+	width: 80%;
 }
 
 .checkpoint-form textarea {
-	margin: 15px auto;
+	margin: 10px auto;
 	height: 75px;
-	width: 70%;
+	width: 80%;
 }
 
 .checkpoint-form h2 {
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .checkpoint-form button {
@@ -52,7 +51,11 @@
 		width: 90%;
 	}
 
-	.checkpoint-form input {
-		width: 95%;
+	.checkpoint-form select {
+		width: 90%;
+	}
+
+	.checkpoint-form textarea {
+		width: 90%;
 	}
 }

@@ -2,9 +2,24 @@ import React from "react";
 
 export default class CheckpointDropdown extends React.Component {
     render() {
+
+        let error;
+        if (this.props.meta.touched && this.props.meta.error) {
+            error = <div className="form-error">{this.props.meta.error}</div>;
+        }
+
+        let warning;
+        if (this.props.meta.touched && this.props.meta.warning) {
+            warning = (
+                <div className="form-warning">{this.props.meta.warning}</div>
+            );
+        }
+
         return (
             <div className="form-dropdown">
                 <label htmlFor={this.props.name}>{this.props.label}</label>
+                <h4 className="error-message">{error}</h4>
+                <h4 className="warning-message">{warning}</h4>
                 <select
                     {...this.props.input}
                     name="style"

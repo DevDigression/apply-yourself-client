@@ -24,8 +24,8 @@ export class CheckpointForm extends React.Component {
           this.props.onSubmit(values)
         )}
       >
-        {error}
         <h2>{this.props.title}</h2>
+        <h4 className="error-message">{error}</h4>
         <label htmlFor="stage">Stage</label>
         <Field
           component={CheckpointDropdown}
