@@ -1,19 +1,19 @@
 .login {
 	background-image: url("../img/login-background.jpg");
 	background-size: cover;
-	min-height: 100%;
-	/*  	min-width: 1024px;*/
+	min-height: 700px;
 	width: 100%;
-	height: auto;
-	position: fixed;
+	height: 100%;
 	top: 0;
 	left: 0;
+	bottom: 0;
+	right: 0;
 	z-index: -1;
 }
 
 .login-form {
 	width: 400px;
-	margin: 2% auto;
+	margin: 5% auto;
 	text-align: center;
 	background: #c4c4c4;
 	padding: 20px;
@@ -26,7 +26,7 @@
 }
 
 .login-form input {
-	margin: 10px auto;
+	margin: 10px auto 0 auto;
 	width: 70%;
 }
 
@@ -55,8 +55,13 @@
 	background-color: #2f80ed;
 	color: #fff;
 	font-size: 18px;
-	margin: 0 auto 20px auto;
+	margin: 20px auto;
 	display: block;
+}
+
+.error-message, .warning-message {
+	margin-top: 5px;
+	color: #ff1a1a;
 }
 
 @media only screen and (max-width: 768px) {
@@ -65,7 +70,12 @@
 	}
 
 	.login-form {
+		margin: 10% auto;
 		width: 275px;
+	}
+
+	.login-form input {
+		width: 90%;
 	}
 
 	.submit-btn {

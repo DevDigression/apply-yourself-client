@@ -32,8 +32,8 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}
             >
-                {error}
                 <h2>Login</h2>
+                <h4 className="error-message">{error}</h4>
                 <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
