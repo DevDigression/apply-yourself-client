@@ -29,6 +29,7 @@ export class AddJobPage extends React.Component {
 
   onSubmit(values) {
     values.keywords = values.keywordsinput.split(",");
+    values.keywords = values.keywords.map(keyword => keyword.trim());
     this.props.dispatch(addJob(values));
     return this.props.history.push("/dashboard");
   }

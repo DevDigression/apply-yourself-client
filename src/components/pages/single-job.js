@@ -63,9 +63,6 @@ export class SingleJob extends React.Component {
               {this.props.currentJob.contact ? (
                 <li><span className="job-info-item">Contact Info: </span>{this.props.currentJob.contact}</li>
               ) : null}
-              {this.props.currentJob.deadline ? (
-                <li><span className="job-info-item">Application Deadline: </span>{this.formatDate(this.props.currentJob.deadline)}</li>
-              ) : null}
               <li><span className="job-info-item">Style of Company: </span>{capitalize(this.props.currentJob.style)}</li>
               <li>
                 <span className="job-info-item">Desired Skills: </span>{this.props.currentJob.keywords.join(", ")}

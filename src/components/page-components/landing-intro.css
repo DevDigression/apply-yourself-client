@@ -38,6 +38,20 @@
 	margin: 0 auto;
 }
 
+.intro-demo {
+	margin: 150px auto 0 80%;
+}
+
+.try-demo {
+	width: 100px;
+	height: 35px;
+	background-color: #2f80ed;
+	color: #fff;
+	font-size: 18px;
+/*	margin: 100px auto 100px 80%;*/
+/*	display: block;*/
+}
+
 @media only screen and (max-width: 768px) {
 	.intro-heading {
 		font-size: 60px;
@@ -61,5 +75,15 @@
 		background-image: url("../../img/landing-resume.jpeg");
 		background: rgba(0, 0, 0, 0.5);
 		min-height: 600px;
+	}
+
+	.intro-demo {
+		margin: 50px auto 0 auto;
+		display: block;
+	}
+
+	.try-demo {
+		margin: 0 auto;
+		display: block;
 	}
 }

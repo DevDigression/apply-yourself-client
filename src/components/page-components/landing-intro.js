@@ -1,8 +1,13 @@
 import React from "react";
-
+import { login } from "../../actions/auth";
+import { connect } from "react-redux";
 import "./landing-intro.css";
 
-export default class LandingIntro extends React.Component {
+export class LandingIntro extends React.Component {
+  handleDemo() {
+        return this.props.dispatch(login("demouser", "demo123456"));
+    }
+
   render() {
     return (
       <div className={`landing-intro`}>
@@ -16,8 +21,17 @@ export default class LandingIntro extends React.Component {
             <p>and focus on landing the coding job</p>
             <p>you’ve been looking for!</p>
           </div>
+          <div className={`intro-demo`}>
+            <button className="try-demo" onClick={() => this.handleDemo()}>Try Demo</button>
+          </div>
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(LandingIntro);

@@ -15,7 +15,9 @@ export function LoginPage(props) {
   return (
     <div className="login">
       <NavBar links={links} />
-      <LoginForm />
+      <div className="login-background">
+        <LoginForm />
+      </div>
     </div>
   );
 }

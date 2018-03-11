@@ -4,7 +4,7 @@ import Textarea from "../textarea";
 import CheckpointDropdown from "../checkpoint-dropdown";
 import { connect } from "react-redux";
 import { required } from "../../validators";
-import "./checkpoint-form.css";
+import "../pages/checkpoint-form-page.css";
 
 export class CheckpointForm extends React.Component {
   render() {

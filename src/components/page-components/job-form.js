@@ -92,7 +92,7 @@ JobForm = connect(state => {
   var ret = {
     initialValues: state.protectedData.currentJob
   };
-  ret.initialValues.keywordsinput = ret.initialValues.keywords.join(", ");
+  ret.initialValues.keywordsinput = ret.initialValues.keywords.join(",");
   return ret;
 })(JobForm);
 

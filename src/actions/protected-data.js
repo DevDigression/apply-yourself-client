@@ -20,7 +20,7 @@ export const clearJobSuccess = data => ({
 });
 
 export const SORT_JOBS_BY_PRIORITY = "SORT_JOBS_BY_PRIORITY";
-export const sortJobsByDate = data => ({
+export const sortJobsByPriority = data => ({
   type: SORT_JOBS_BY_PRIORITY,
   data
 });
@@ -59,7 +59,7 @@ export const clearJobData = clear => dispatch => {
 };
 
 export const sortByPriority = jobs => dispatch => {
-  dispatch(sortJobsByDate(jobs));
+  dispatch(sortJobsByPriority(jobs));
 };
 
 export const sortByStatus = jobs => dispatch => {
@@ -122,7 +122,7 @@ export const addJob = job => (dispatch, getState) => {
       id: job._id
     })
   })
-    .then(data => dispatch(fetchJobs())) // CHECK HERE IF JOB NOT SHOWING UP
+    .then(data => dispatch(fetchJobs()))
     .catch(err => {
       dispatch(fetchProtectedDataError(err));
     });
